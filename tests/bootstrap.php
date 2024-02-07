@@ -9,7 +9,7 @@ use const E_ALL;
 /**
  * Represents the bootstrap script of the tests.
  * @package codekandis/types
- * @author  Christian Ramelow <info@codekandis.net>
+ * @author Christian Ramelow <info@codekandis.net>
  */
 error_reporting( E_ALL );
 ini_set( 'display_errors', 'On' );
