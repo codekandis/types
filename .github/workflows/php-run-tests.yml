@@ -1,0 +1,24 @@
+name: Run tests
+
+on:
+  push:
+    branches: [
+      "main",
+      "development"
+    ]
+  pull_request:
+    branches: [
+      "main",
+      "development"
+    ]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  php-run-tests:
+    uses: ./.github/workflows/_php-run-tests.yml

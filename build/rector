@@ -1,0 +1,97 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+function showHelp()
+{
+	cat <<'EOF'
+Usage:
+  rector OPTION
+  rector --passthrough [RECTOR_ARGUMENTS...]
+
+Options:
+  -d, --dry-run        Run Rector in dry-run mode and show proposed changes.
+  -c, --apply-changes  Apply the proposed changes.
+  -p, --passthrough    Run Rector directly with arbitrary arguments.
+  -h, --help           Show this help and exit.
+EOF
+}
+
+function raiseError()
+{
+	local message="${1}"
+
+	printf "Error: ${message}\n\n" "${@:2}" >&2
+	showHelp >&2
+
+	exit 1
+}
+
+function ensureNoAdditionalArguments()
+{
+	local option="${1}"
+
+	if [[ "${#}" -ne 1 ]]
+	then
+		raiseError "Option '%s' does not accept additional arguments." "${option}"
+	fi
+}
+
+function executeRectorPassingThrough()
+{
+	php "${1}/../vendor/bin/rector" "${@:2}"
+}
+
+function executeRector()
+{
+	executeRectorPassingThrough "${1}" process --output-format="json" --config="${1}/rectorConfiguration.php" "${@:2}"
+}
+
+function runDry()
+{
+	executeRector "${1}" --dry-run
+}
+
+function applyChanges()
+{
+	executeRector "${1}"
+}
+
+function runPassingThrough()
+{
+	if [[ "${#}" -eq 1 ]]
+	then
+		executeRectorPassingThrough "${1}" --help
+	else
+		executeRectorPassingThrough "${@}"
+	fi
+}
+
+workingDirectory="$( dirname -- "${0}" )"
+
+if [[ "${#}" -eq 0 ]]; then
+	raiseError "At least one option is required."
+fi
+
+option="${1}"
+shift
+
+case "${option}" in
+	"-d" | "--dry-run" )
+		ensureNoAdditionalArguments "${option}" "${@}"
+		runDry "${workingDirectory}"
+		;;
+	"-c" | "--apply-changes" )
+		ensureNoAdditionalArguments "${option}" "${@}"
+		applyChanges "${workingDirectory}"
+		;;
+	"-p" | "--passthrough" )
+		runPassingThrough "${workingDirectory}" "${@}"
+		;;
+	"-h" | "--help" )
+		ensureNoAdditionalArguments "${option}" "${@}"
+		showHelp
+		;;
+	* )
+		raiseError "Unknown option: %s" "${option}"
+		;;
+esac
