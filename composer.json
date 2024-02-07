@@ -1,0 +1,62 @@
+{
+	"name": "codekandis/types",
+	"description": "`codekandis/types` is a library providing base types, interfaces, classes and exceptions.",
+	"keywords": [
+		"php",
+		"library",
+		"base",
+		"types",
+		"interfaces",
+		"classes",
+		"exceptions"
+	],
+	"minimum-stability": "stable",
+	"prefer-stable": true,
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Christian Ramelow",
+			"email": "info@codekandis.net",
+			"homepage": "https://codekandis.net",
+			"role": "Developer"
+		}
+	],
+	"support": {
+		"email": "info@codekandis.net",
+		"issues": "https://github.com/codekandis/types/issues",
+		"docs": "https://github.com/codekandis/types/blob/master/README.md",
+		"source": "https://github.com/codekandis/types/tree/master"
+	},
+	"require": {
+		"php": ">=8.4"
+	},
+	"require-dev": {
+		"roave/security-advisories": "dev-master",
+		"codekandis/phpunit": "^5.0.0",
+		"rector/rector": "^1.2.10"
+	},
+	"autoload": {
+		"psr-4": {
+			"CodeKandis\\Types\\": [
+				"src/"
+			]
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"CodeKandis\\Types\\Tests\\": [
+				"tests/"
+			]
+		}
+	},
+	"scripts": {
+		"test": [
+			"Composer\\Config::disableProcessTimeout",
+			"/usr/bin/env php ./vendor/phpunit/phpunit/phpunit --configuration ./build/phpunit.xml -dxdebug.mode=off --no-coverage"
+		],
+		"test-coverage": [
+			"Composer\\Config::disableProcessTimeout",
+			"/usr/bin/env php ./vendor/phpunit/phpunit/phpunit --configuration ./build/phpunit.xml -dxdebug.mode=coverage"
+		]
+	}
+}

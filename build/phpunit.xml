@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<phpunit
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd"
+	bootstrap="../tests/bootstrap.php"
+	beStrictAboutOutputDuringTests="true"
+	failOnPhpunitDeprecation="true"
+	displayDetailsOnTestsThatTriggerNotices="true"
+	displayDetailsOnTestsThatTriggerWarnings="true"
+	displayDetailsOnTestsThatTriggerErrors="true"
+	displayDetailsOnTestsThatTriggerDeprecations="true"
+	displayDetailsOnIncompleteTests="true"
+	displayDetailsOnSkippedTests="true"
+	displayDetailsOnPhpunitDeprecations="true"
+	colors="true"
+	cacheResult="false">
+	<testsuites>
+		<testsuite name="codekandis/types">
+			<directory>../tests</directory>
+		</testsuite>
+	</testsuites>
+	<source>
+		<include>
+			<directory>../src</directory>
+		</include>
+	</source>
+	<coverage>
+		<report>
+			<text outputFile="php://stdout" showUncoveredFiles="true"/>
+		</report>
+	</coverage>
+</phpunit>
