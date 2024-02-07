@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<phpunit
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/13.1/phpunit.xsd"
+	bootstrap="../tests/bootstrap.php"
+	beStrictAboutChangesToGlobalState="true"
+	beStrictAboutOutputDuringTests="true"
+	failOnEmptyTestSuite="true"
+	failOnWarning="true"
+	failOnNotice="true"
+	failOnDeprecation="true"
+	failOnRisky="true"
+	failOnPhpunitWarning="true"
+	failOnPhpunitNotice="true"
+	failOnPhpunitDeprecation="false"
+	displayDetailsOnTestsThatTriggerWarnings="true"
+	displayDetailsOnTestsThatTriggerNotices="true"
+	displayDetailsOnTestsThatTriggerErrors="true"
+	displayDetailsOnTestsThatTriggerDeprecations="true"
+	displayDetailsOnIncompleteTests="true"
+	displayDetailsOnSkippedTests="true"
+	displayDetailsOnPhpunitDeprecations="true"
+	displayDetailsOnAllIssues="true"
+	colors="false"
+	cacheResult="false">
+	<testsuites>
+		<testsuite name="architecture">
+			<directory>../tests/Suites/Architecture</directory>
+		</testsuite>
+		<testsuite name="unit">
+			<directory>../tests/Suites/Unit</directory>
+		</testsuite>
+	</testsuites>
+	<source>
+		<include>
+			<directory>../src</directory>
+		</include>
+	</source>
+	<coverage
+		includeUncoveredFiles="true"
+		ignoreDeprecatedCodeUnits="false">
+		<report>
+			<text outputFile="php://stdout" showUncoveredFiles="true"/>
+		</report>
+	</coverage>
+</phpunit>

@@ -1,0 +1,9 @@
+parameters:
+	level: max
+	phpVersion: 80500
+	paths:
+		- ../src
+	tmpDir: /tmp/phpstan/codekandis-types
+	treatPhpDocTypesAsCertain: true
+	checkMissingOverrideMethodAttribute: true
+	reportUnmatchedIgnoredErrors: true
