@@ -1,25 +1,54 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+function executeRectorInteractive()
+{
+	php "${1}/../vendor/bin/rector" "${@:2}"
+}
+
 function executeRector()
 {
-	php "${1}/../vendor/bin/rector" --output-format="json" --config="${1}/rectorConfiguration.php" "${@:2}"
+	executeRectorInteractive "${1}" --output-format="json" --config="${1}/rectorConfiguration.php" process "${@:2}"
+}
+
+function runDry()
+{
+	executeRector "${1}" --dry-run
+}
+
+function doChanges()
+{
+	executeRector "${1}"
+}
+
+function runInteractive()
+{
+	if [[ -z "${2}" ]]
+	then
+		executeRectorInteractive "${1}" --help
+	else
+		executeRectorInteractive "${@}"
+	fi
 }
 
 workingDirectory="$( dirname "${0}" )"
 
 case "${1}" in
-	"-h" | "--help" )
+	"-d" | "--dry-run" )
+		runDry "${workingDirectory}"
+		;;
+	"-c" | "--do-changes" )
+		doChanges "${workingDirectory}"
+		;;
+	"-i" | "--interactive" )
+		runInteractive "${workingDirectory}" "${@:2}"
+		;;
+	"-h" | "--help" | * )
 		echo "Options:"
 		echo
 		echo -e "  -d, --dry-run\t\tShows a diff of changes rector would do."
 		echo -e "  -c, --do-changes\tPerforms all changes automatically."
+		echo -e "  -i, --interactive\tRuns rector interactively."
 		echo -e "  -h, --help\t\tShows the help."
-		;;
-	"-c" | "--do-changes" )
-		executeRector "${workingDirectory}"
-		;;
-	"-d" | "--dry-run" | * )
-		executeRector "${workingDirectory}" --dry-run
 		;;
 esac
