@@ -45,7 +45,7 @@ abstract class MaskedTypeHintTypes extends BaseObject implements MaskedTypeHintT
 	 * Represents a masked `array`.
 	 * @var string
 	 */
-	public const string ARRAY = '<array>';
+	public const string ARRAY           = '<array>';
 
 	/**
 	 * Represents a masked `object`.

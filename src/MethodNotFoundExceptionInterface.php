@@ -2,10 +2,10 @@
 namespace CodeKandis\Types;
 
 /**
- * Represents the interface of any exception if a value is invalid.
+ * Represents the interface of any exception if a method does not exist.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-interface InvalidValueExceptionInterface extends RuntimeExceptionInterface
+interface MethodNotFoundExceptionInterface extends AccessErrorExceptionInterface
 {
 }
