@@ -45,7 +45,7 @@ abstract class GetTypeTypes extends BaseObject implements GetTypeTypesInterface
 	 * Represents an `array`.
 	 * @var string
 	 */
-	public const string ARRAY = 'array';
+	public const string ARRAY           = 'array';
 
 	/**
 	 * Represents an `object`.

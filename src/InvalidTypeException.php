@@ -1,8 +1,12 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Types;
 
-use LogicException;
+use CodeKandis\Types\TypeDetermination\TypeDeterminationKind;
+use CodeKandis\Types\TypeDetermination\TypeDeterminer;
+use Throwable;
 use function implode;
+use function is_string;
+use function reset;
 use function sprintf;
 
 /**
@@ -10,28 +14,84 @@ use function sprintf;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-class InvalidTypeException extends LogicException implements InvalidTypeExceptionInterface
+class InvalidTypeException extends RuntimeException implements InvalidTypeExceptionInterface
 {
 	/**
-	 * Represents the exception message if a type is invalid.
+	 * {@inheritDoc}
+	 */
+	public const string EXCEPTION_MESSAGE_DEFAULT = 'The type is invalid.';
+
+	/**
+	 * Represents the exception message with the invalid type.
 	 * @var string
 	 */
-	public const string EXCEPTION_MESSAGE_INVALID_TYPE = 'The type is invalid. `%1$s` expected, but `%2$s` given.';
+	public const string EXCEPTION_MESSAGE_WITH_INVALID_TYPE = 'The type `%1$s` is invalid.';
+
+	/**
+	 * Represents the exception message with the invalid type and expected types.
+	 * @var string
+	 */
+	public const string EXCEPTION_MESSAGE_WITH_INVALID_TYPE_AND_EXPECTED_TYPES = 'The type `%1$s` is invalid. Expected `%2$s`.';
 
 	/**
 	 * Static constructor method.
 	 * @param string $invalidType The invalid type.
-	 * @param string[] $expectedTypes The expected types.
+	 * @param int $code The error code of the exception.
+	 * @param ?Throwable $previous The previous throwable.
 	 * @return static
 	 */
-	public static function withInvalidTypeAndExpectedTypes( string $invalidType, string ...$expectedTypes ): static
+	public static function withInvalidType( string $invalidType, int $code = 0, ?Throwable $previous = null ): static
 	{
 		return new static(
+			sprintf( static::EXCEPTION_MESSAGE_WITH_INVALID_TYPE, $invalidType ),
+			$code,
+			$previous
+		);
+	}
+
+	/**
+	 * Static constructor method.
+	 * @param string $invalidType The invalid type.
+	 * @param array<array-key, string> $expectedTypes The expected types.
+	 * @param int $code The error code of the exception.
+	 * @param ?Throwable $previous The previous throwable.
+	 * @return static
+	 * @throws ValueIsEmptyExceptionInterface The expected types are empty.
+	 * @throws InvalidTypeExceptionInterface The type of an expected type is invalid. `string` expected.
+	 */
+	public static function withInvalidTypeAndExpectedTypes( string $invalidType, array $expectedTypes, int $code = 0, ?Throwable $previous = null ): static
+	{
+		if ( [] === $expectedTypes )
+		{
+			throw new ValueIsEmptyException();
+		}
+
+		$invalidExpectedTypes = array_filter(
+			$expectedTypes,
+			static fn( mixed $expectedType ): bool => false === is_string( $expectedType )
+		);
+
+		if ( [] !== $invalidExpectedTypes )
+		{
+			$determinedExpectedTypeType = new TypeDeterminer()
+				->determine(
+					reset( $invalidExpectedTypes ),
+					TypeDeterminationKind::GetType
+				);
+
+			throw new InvalidTypeException(
+				sprintf( static::EXCEPTION_MESSAGE_WITH_INVALID_TYPE_AND_EXPECTED_TYPES, $determinedExpectedTypeType, 'string' )
+			);
+		}
+
+		return new static(
 			sprintf(
-				static::EXCEPTION_MESSAGE_INVALID_TYPE,
-				implode( ' | ', $expectedTypes ),
-				$invalidType
-			)
+				static::EXCEPTION_MESSAGE_WITH_INVALID_TYPE_AND_EXPECTED_TYPES,
+				$invalidType,
+				implode( ' | ', $expectedTypes )
+			),
+			$code,
+			$previous
 		);
 	}
 }
