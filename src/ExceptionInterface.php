@@ -1,11 +1,13 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Types;
 
+use Throwable;
+
 /**
- * Represents the interface of any exception if a value is invalid.
+ * Represents the interface of any exception.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-interface InvalidValueExceptionInterface extends RuntimeExceptionInterface
+interface ExceptionInterface extends Throwable
 {
 }
