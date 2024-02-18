@@ -19,7 +19,40 @@ class InvalidValueException extends LogicException implements InvalidValueExcept
 	 * Represents the exception message if a value to convert is not valid.
 	 * @var string
 	 */
-	public const string EXCEPTION_MESSAGE_INVALID_VALUE = 'The value is invalid. `%s` expected, but `%s` given.';
+	public const string EXCEPTION_MESSAGE_INVALID_VALUE = 'The value `%s` is invalid.';
+
+	/**
+	 * Represents the exception message if a value to convert is not valid and expected values are provided.
+	 * @var string
+	 */
+	public const string EXCEPTION_MESSAGE_INVALID_VALUE_AND_EXPECTED_VALUES = 'The value `%s` is invalid. `%s` expected.';
+
+	/**
+	 * @inheritDoc
+	 */
+	#[Override]
+	public static function with_invalidValue( mixed $invalidValue ): static
+	{
+		$invalidValueType                 = gettype( $invalidValue );
+		$invalidValueStringRepresentation = match ( $invalidValueType )
+		{
+			NativeTypes::NULL            => '<null>',
+			NativeTypes::CLOSED_RESOURCE => '<closed resource>',
+			NativeTypes::RESOURCE        => '<resource>',
+			NativeTypes::ARRAY           => '<array>',
+			NativeTypes::OBJECT          => $invalidValue instanceof Stringable
+				? $invalidValue->__toString()
+				: '<object>',
+			NativeTypes::BOOLEAN         => false === $invalidValue
+				? '<false>'
+				: '<true>',
+			default                      => (string) $invalidValue
+		};
+
+		return new static(
+			sprintf( static::EXCEPTION_MESSAGE_INVALID_VALUE, $invalidValueStringRepresentation )
+		);
+	}
 
 	/**
 	 * @inheritDoc
@@ -45,9 +78,9 @@ class InvalidValueException extends LogicException implements InvalidValueExcept
 
 		return new static(
 			sprintf(
-				static::EXCEPTION_MESSAGE_INVALID_VALUE,
-				implode( ' | ', $expectedValues ),
-				$invalidValueStringRepresentation
+				static::EXCEPTION_MESSAGE_INVALID_VALUE_AND_EXPECTED_VALUES,
+				$invalidValueStringRepresentation,
+				implode( ' | ', $expectedValues )
 			)
 		);
 	}
