@@ -11,6 +11,12 @@ interface InvalidValueExceptionInterface
 	/**
 	 * Static constructor.
 	 * @param mixed $invalidValue The invalid value.
+	 */
+	public static function with_invalidValue( mixed $invalidValue ): static;
+
+	/**
+	 * Static constructor.
+	 * @param mixed $invalidValue The invalid value.
 	 * @param string[] $expectedValues The expected values.
 	 */
 	public static function with_invalidValueAndExpectedValues( mixed $invalidValue, string ...$expectedValues ): static;

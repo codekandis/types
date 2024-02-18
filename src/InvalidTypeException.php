@@ -16,7 +16,7 @@ class InvalidTypeException extends LogicException implements InvalidTypeExceptio
 	/**
 	 * Represents the exception message if the type of a value to convert is not valid.
 	 */
-	public const string EXCEPTION_MESSAGE_INVALID_TYPE = 'The type of the value is invalid. `%s` expected, but `%s` given.';
+	public const string EXCEPTION_MESSAGE_INVALID_TYPE = 'The type `%s` of the value is invalid. `%s` expected';
 
 	/**
 	 * @inheritDoc
@@ -27,8 +27,8 @@ class InvalidTypeException extends LogicException implements InvalidTypeExceptio
 		return new static(
 			sprintf(
 				static::EXCEPTION_MESSAGE_INVALID_TYPE,
-				implode( ' | ', $expectedTypes ),
-				$invalidType
+				$invalidType,
+				implode( ' | ', $expectedTypes )
 			)
 		);
 	}
