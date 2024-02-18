@@ -6,6 +6,6 @@ namespace CodeKandis\Types;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-interface InvalidTypeExceptionInterface
+interface InvalidTypeExceptionInterface extends RuntimeExceptionInterface
 {
 }
