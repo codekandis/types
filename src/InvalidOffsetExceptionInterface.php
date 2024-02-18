@@ -2,10 +2,10 @@
 namespace CodeKandis\Types;
 
 /**
- * Represents the interface of any exception if a value is invalid.
+ * Represents the interface of any exception if an offset is invalid.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-interface InvalidValueExceptionInterface extends RuntimeExceptionInterface
+interface InvalidOffsetExceptionInterface extends RuntimeExceptionInterface
 {
 }

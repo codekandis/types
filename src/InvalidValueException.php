@@ -1,11 +1,7 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Types;
 
-use CodeKandis\Types\TypeDetermination\TypeDeterminationKind;
-use CodeKandis\Types\TypeDetermination\TypeDeterminer;
-use LogicException;
-use Stringable;
-use function get_resource_type;
+use Throwable;
 use function implode;
 use function sprintf;
 
@@ -14,45 +10,62 @@ use function sprintf;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-class InvalidValueException extends LogicException implements InvalidValueExceptionInterface
+class InvalidValueException extends RuntimeException implements InvalidValueExceptionInterface
 {
+	use StringifyValueTrait;
+
 	/**
-	 * Represents the exception message if a value is invalid.
+	 * @inheritdoc
+	 */
+	public const string EXCEPTION_MESSAGE_DEFAULT = 'The value is invalid.';
+
+	/**
+	 * Represents the exception message with the invalid value.
 	 * @var string
 	 */
-	public const string EXCEPTION_MESSAGE_INVALID_VALUE = 'The value is invalid. `%1$s` expected, but `%2$s` given.';
+	public const string EXCEPTION_MESSAGE_WITH_INVALID_VALUE = 'The value `%1$s` is invalid.';
+
+	/**
+	 * Represents the exception message with the invalid value and expected values.
+	 * @var string
+	 */
+	public const string EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES = 'The value `%1$s` is invalid. `%2$s` expected.';
+
+	/**
+	 * Static constructor method.
+	 * @param mixed $invalidValue The invalid value.
+	 * @param int $code The error code of the exception.
+	 * @param ?Throwable $previous The previously catched throwable.
+	 * @return static
+	 */
+	public static function withInvalidValue( mixed $invalidValue, int $code = 0, ?Throwable $previous = null ): static
+	{
+		$stringfiedInvalidValue = static::stringifyValue( $invalidValue );
+
+		return new static(
+			sprintf( static::EXCEPTION_MESSAGE_WITH_INVALID_VALUE, $stringfiedInvalidValue ),
+			$code,
+			$previous
+		);
+	}
 
 	/**
 	 * Static constructor method.
 	 * @param mixed $invalidValue The invalid value.
 	 * @param string[] $expectedValues The expected values.
+	 * @param int $code The error code of the exception.
+	 * @param ?Throwable $previous The previously catched throwable.
 	 * @return static
 	 */
-	public static function withInvalidValueAndExpectedValues( mixed $invalidValue, string ...$expectedValues ): static
+	public static function withInvalidValueAndExpectedValues( mixed $invalidValue, array $expectedValues, int $code = 0, ?Throwable $previous = null ): static
 	{
-		$invalidValueType                 = ( new TypeDeterminer() )
-			->determine( $invalidValue, TypeDeterminationKind::GetType );
-		$invalidValueStringRepresentation = match ( $invalidValueType )
-		{
-			GetTypeTypes::NULL            => MaskedTypeHintTypes::NULL,
-			GetTypeTypes::RESOURCE        => MaskedTypeHintTypes::createTypedResource(
-				get_resource_type( $invalidValue )
-			),
-			GetTypeTypes::CLOSED_RESOURCE => MaskedTypeHintTypes::CLOSED_RESOURCE,
-			GetTypeTypes::ARRAY           => MaskedTypeHintTypes::ARRAY,
-			GetTypeTypes::OBJECT          => $invalidValue instanceof Stringable
-				? $invalidValue->__toString()
-				: MaskedTypeHintTypes::createTypedObject( $invalidValue::class ),
-			GetTypeTypes::BOOLEAN         => MaskedTypeHintTypes::createTypedBoolean( $invalidValue ),
-			default                       => (string) $invalidValue
-		};
+		$stringifiedInvalidValue   = static::stringifyValue( $invalidValue );
+		$stringyfiedExpectedValues = implode( ' | ', $expectedValues );
 
 		return new static(
-			sprintf(
-				static::EXCEPTION_MESSAGE_INVALID_VALUE,
-				implode( ' | ', $expectedValues ),
-				$invalidValueStringRepresentation
-			)
+			sprintf( static::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES, $stringifiedInvalidValue, $stringyfiedExpectedValues ),
+			$code,
+			$previous
 		);
 	}
 }
