@@ -9,7 +9,7 @@ use function sprintf;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-abstract class MaskedTypeHintTypes implements MaskedTypeHintTypesInterface
+abstract class MaskedTypeHintTypes extends BaseObject implements MaskedTypeHintTypesInterface
 {
 	/**
 	 * Represents a masked `unknown` type.

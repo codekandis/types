@@ -9,7 +9,7 @@ use function sprintf;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-abstract class TypeHintTypes implements TypeHintTypesInterface
+abstract class TypeHintTypes extends BaseObject implements TypeHintTypesInterface
 {
 	/**
 	 * Represents an `unknown` type.
