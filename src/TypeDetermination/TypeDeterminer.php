@@ -1,6 +1,7 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Types\TypeDetermination;
 
+use CodeKandis\Types\BaseObject;
 use CodeKandis\Types\GetTypeTypes;
 use CodeKandis\Types\TypeHintTypes;
 use Override;
@@ -11,7 +12,7 @@ use function gettype;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-class TypeDeterminer implements TypeDeterminerInterface
+class TypeDeterminer extends BaseObject implements TypeDeterminerInterface
 {
 	/**
 	 * Determines the native type of a value identical to the returned value of PHP's function `gettype()`.
