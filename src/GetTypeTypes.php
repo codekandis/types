@@ -9,7 +9,7 @@ use function sprintf;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-abstract class GetTypeTypes implements GetTypeTypesInterface
+abstract class GetTypeTypes extends BaseObject implements GetTypeTypesInterface
 {
 	/**
 	 * Represents an `unknown` type.
