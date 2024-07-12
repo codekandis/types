@@ -14,7 +14,17 @@ enum TypeDeterminationKind
 	case GetType;
 
 	/**
+	 * The returned type has to be identical to the returned value of PHP's function `gettype()` with specific detail.
+	 */
+	case GetTypeDetailed;
+
+	/**
 	 * The returned type has to be identical to PHP's type hints.
 	 */
 	case TypeHint;
+
+	/**
+	 * The returned type has to be identical to PHP's type hints with specific detail.
+	 */
+	case TypeHintDetailed;
 }
