@@ -5,6 +5,7 @@ use CodeKandis\Types\BaseObject;
 use CodeKandis\Types\GetTypeTypes;
 use CodeKandis\Types\TypeHintTypes;
 use Override;
+use function get_resource_type;
 use function gettype;
 
 /**
@@ -22,6 +23,26 @@ class TypeDeterminer extends BaseObject implements TypeDeterminerInterface
 	private function determineGetTyped( mixed $value ): string
 	{
 		return gettype( $value );
+	}
+
+	/**
+	 * Determines the native type of a value identical to the returned value of PHP's function `gettype()` with details.
+	 * @param mixed $value The value to determine its native type.
+	 * @return string The determined native type.
+	 */
+	private function determineGetTypedDetailed( mixed $value ): string
+	{
+		$getTypeType = gettype( $value );
+
+		return match ( $getTypeType )
+		{
+			GetTypeTypes::RESOURCE => GetTypeTypes::createTypedResource(
+				get_resource_type( $value )
+			),
+			GetTypeTypes::OBJECT   => GetTypeTypes::createTypedObject( $value::class ),
+			GetTypeTypes::BOOLEAN  => GetTypeTypes::createTypedBoolean( $value ),
+			default                => $getTypeType
+		};
 	}
 
 	/**
@@ -49,6 +70,32 @@ class TypeDeterminer extends BaseObject implements TypeDeterminerInterface
 	}
 
 	/**
+	 * Determines the straight type of a value identical to PHP's type hints with details.
+	 * @param mixed $value The value to determine its straight type.
+	 * @return string The determined straight type.
+	 */
+	private function determineTypeHintedDetailed( mixed $value ): string
+	{
+		$getTypeType = $this->determineGetTyped( $value );
+
+		return match ( $getTypeType )
+		{
+			GetTypeTypes::UNKNOWN_TYPE    => TypeHintTypes::UNKNOWN_TYPE,
+			GetTypeTypes::NULL            => TypeHintTypes::NULL,
+			GetTypeTypes::RESOURCE        => TypeHintTypes::createTypedResource(
+				get_resource_type( $value )
+			),
+			GetTypeTypes::CLOSED_RESOURCE => TypeHintTypes::CLOSED_RESOURCE,
+			GetTypeTypes::ARRAY           => TypeHintTypes::ARRAY,
+			GetTypeTypes::OBJECT          => TypeHintTypes::createTypedObject( $value::class ),
+			GetTypeTypes::BOOLEAN         => TypeHintTypes::createTypedBoolean( $value ),
+			GetTypeTypes::INTEGER         => TypeHintTypes::INTEGER,
+			GetTypeTypes::FLOAT           => TypeHintTypes::FLOAT,
+			GetTypeTypes::STRING          => TypeHintTypes::STRING
+		};
+	}
+
+	/**
 	 * @inheritdoc
 	 */
 	#[Override]
@@ -56,8 +103,10 @@ class TypeDeterminer extends BaseObject implements TypeDeterminerInterface
 	{
 		return match ( $kind )
 		{
-			TypeDeterminationKind::GetType  => $this->determineGetTyped( $value ),
-			TypeDeterminationKind::TypeHint => $this->determineTypeHinted( $value )
+			TypeDeterminationKind::GetType          => $this->determineGetTyped( $value ),
+			TypeDeterminationKind::GetTypeDetailed  => $this->determineGetTypedDetailed( $value ),
+			TypeDeterminationKind::TypeHint         => $this->determineTypeHinted( $value ),
+			TypeDeterminationKind::TypeHintDetailed => $this->determineTypeHintedDetailed( $value )
 		};
 	}
 }
