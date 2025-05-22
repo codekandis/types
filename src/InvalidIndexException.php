@@ -42,18 +42,21 @@ class InvalidIndexException extends RuntimeException implements InvalidIndexExce
 		$indexType = new TypeDeterminer()
 			->determine( $index, TypeDeterminationKind::GetType );
 
+		$getTypeTypes        = new GetTypeTypes();
+		$maskedTypeHintTypes = new MaskedTypeHintTypes();
+
 		return match ( $indexType )
 		{
-			GetTypeTypes::NULL            => MaskedTypeHintTypes::NULL,
-			GetTypeTypes::RESOURCE        => MaskedTypeHintTypes::createTypedResource(
+			$getTypeTypes->null           => $maskedTypeHintTypes->null,
+			$getTypeTypes->resource       => $maskedTypeHintTypes->createTypedResource(
 				get_resource_type( $index )
 			),
-			GetTypeTypes::CLOSED_RESOURCE => MaskedTypeHintTypes::CLOSED_RESOURCE,
-			GetTypeTypes::ARRAY           => MaskedTypeHintTypes::ARRAY,
-			GetTypeTypes::OBJECT          => $index instanceof Stringable
+			$getTypeTypes->closedResource => $maskedTypeHintTypes->closedResource,
+			$getTypeTypes->array          => $maskedTypeHintTypes->array,
+			$getTypeTypes->object         => $index instanceof Stringable
 				? $index->__toString()
-				: MaskedTypeHintTypes::createTypedObject( $index::class ),
-			GetTypeTypes::BOOLEAN         => MaskedTypeHintTypes::createTypedBoolean( $index ),
+				: $maskedTypeHintTypes->createTypedObject( $index::class ),
+			$getTypeTypes->boolean        => $maskedTypeHintTypes->createTypedBoolean( $index ),
 			default                       => (string) $index
 		};
 	}
