@@ -4,6 +4,7 @@ namespace CodeKandis\Types\TypeDetermination;
 use CodeKandis\Types\BaseObject;
 use CodeKandis\Types\GetTypeTypes;
 use CodeKandis\Types\TypeHintTypes;
+use CodeKandis\Types\TypesInterface;
 use Override;
 use function get_resource_type;
 use function gettype;
@@ -16,9 +17,25 @@ use function gettype;
 class TypeDeterminer extends BaseObject implements TypeDeterminerInterface
 {
 	/**
-	 * Determines the native type of a value identical to the returned value of PHP's function `gettype()`.
-	 * @param mixed $value The value to determine its native type.
-	 * @return string The determined native type.
+	 * Gets the `gettype()` types.
+	 * @var TypesInterface
+	 */
+	private TypesInterface $getTypeTypes {
+		get => $this->getTypeTypes ??= new GetTypeTypes();
+	}
+
+	/**
+	 * Gets the type hint types.
+	 * @var TypesInterface
+	 */
+	private TypesInterface $typeHintTypes {
+		get => $this->typeHintTypes ??= new TypeHintTypes();
+	}
+
+	/**
+	 * Determines the value type using PHP's `gettype()` format.
+	 * @param mixed $value The value to inspect.
+	 * @return string The `gettype()` type.
 	 */
 	private function determineGetTyped( mixed $value ): string
 	{
@@ -26,9 +43,9 @@ class TypeDeterminer extends BaseObject implements TypeDeterminerInterface
 	}
 
 	/**
-	 * Determines the native type of a value identical to the returned value of PHP's function `gettype()` with details.
-	 * @param mixed $value The value to determine its native type.
-	 * @return string The determined native type.
+	 * Determines the value type using PHP's `gettype()` format with resource, object and boolean details.
+	 * @param mixed $value The value to inspect.
+	 * @return string The detailed `gettype()` type.
 	 */
 	private function determineGetTypedDetailed( mixed $value ): string
 	{
@@ -36,19 +53,19 @@ class TypeDeterminer extends BaseObject implements TypeDeterminerInterface
 
 		return match ( $getTypeType )
 		{
-			GetTypeTypes::RESOURCE => GetTypeTypes::createTypedResource(
+			$this->getTypeTypes->resource => $this->getTypeTypes->createTypedResource(
 				get_resource_type( $value )
 			),
-			GetTypeTypes::OBJECT   => GetTypeTypes::createTypedObject( $value::class ),
-			GetTypeTypes::BOOLEAN  => GetTypeTypes::createTypedBoolean( $value ),
-			default                => $getTypeType
+			$this->getTypeTypes->object   => $this->getTypeTypes->createTypedObject( $value::class ),
+			$this->getTypeTypes->boolean  => $this->getTypeTypes->createTypedBoolean( $value ),
+			default                       => $getTypeType
 		};
 	}
 
 	/**
-	 * Determines the straight type of a value identical to PHP's type hints.
-	 * @param mixed $value The value to determine its straight type.
-	 * @return string The determined straight type.
+	 * Determines the value type using PHP type-hint names.
+	 * @param mixed $value The value to inspect.
+	 * @return string The type-hint name.
 	 */
 	private function determineTypeHinted( mixed $value ): string
 	{
@@ -56,23 +73,23 @@ class TypeDeterminer extends BaseObject implements TypeDeterminerInterface
 
 		return match ( $getTypeType )
 		{
-			GetTypeTypes::UNKNOWN_TYPE    => TypeHintTypes::UNKNOWN_TYPE,
-			GetTypeTypes::NULL            => TypeHintTypes::NULL,
-			GetTypeTypes::RESOURCE        => TypeHintTypes::RESOURCE,
-			GetTypeTypes::CLOSED_RESOURCE => TypeHintTypes::CLOSED_RESOURCE,
-			GetTypeTypes::ARRAY           => TypeHintTypes::ARRAY,
-			GetTypeTypes::OBJECT          => TypeHintTypes::OBJECT,
-			GetTypeTypes::BOOLEAN         => TypeHintTypes::BOOLEAN,
-			GetTypeTypes::INTEGER         => TypeHintTypes::INTEGER,
-			GetTypeTypes::FLOAT           => TypeHintTypes::FLOAT,
-			GetTypeTypes::STRING          => TypeHintTypes::STRING
+			$this->getTypeTypes->unknownType    => $this->typeHintTypes->unknownType,
+			$this->getTypeTypes->null           => $this->typeHintTypes->null,
+			$this->getTypeTypes->resource       => $this->typeHintTypes->resource,
+			$this->getTypeTypes->closedResource => $this->typeHintTypes->closedResource,
+			$this->getTypeTypes->array          => $this->typeHintTypes->array,
+			$this->getTypeTypes->object         => $this->typeHintTypes->object,
+			$this->getTypeTypes->boolean        => $this->typeHintTypes->boolean,
+			$this->getTypeTypes->integer        => $this->typeHintTypes->integer,
+			$this->getTypeTypes->float          => $this->typeHintTypes->float,
+			$this->getTypeTypes->string         => $this->typeHintTypes->string
 		};
 	}
 
 	/**
-	 * Determines the straight type of a value identical to PHP's type hints with details.
-	 * @param mixed $value The value to determine its straight type.
-	 * @return string The determined straight type.
+	 * Determines the value type using PHP type-hint names with resource, object and boolean details.
+	 * @param mixed $value The value to inspect.
+	 * @return string The detailed type-hint name.
 	 */
 	private function determineTypeHintedDetailed( mixed $value ): string
 	{
@@ -80,18 +97,18 @@ class TypeDeterminer extends BaseObject implements TypeDeterminerInterface
 
 		return match ( $getTypeType )
 		{
-			GetTypeTypes::UNKNOWN_TYPE    => TypeHintTypes::UNKNOWN_TYPE,
-			GetTypeTypes::NULL            => TypeHintTypes::NULL,
-			GetTypeTypes::RESOURCE        => TypeHintTypes::createTypedResource(
+			$this->getTypeTypes->unknownType    => $this->typeHintTypes->unknownType,
+			$this->getTypeTypes->null           => $this->typeHintTypes->null,
+			$this->getTypeTypes->resource       => $this->typeHintTypes->createTypedResource(
 				get_resource_type( $value )
 			),
-			GetTypeTypes::CLOSED_RESOURCE => TypeHintTypes::CLOSED_RESOURCE,
-			GetTypeTypes::ARRAY           => TypeHintTypes::ARRAY,
-			GetTypeTypes::OBJECT          => TypeHintTypes::createTypedObject( $value::class ),
-			GetTypeTypes::BOOLEAN         => TypeHintTypes::createTypedBoolean( $value ),
-			GetTypeTypes::INTEGER         => TypeHintTypes::INTEGER,
-			GetTypeTypes::FLOAT           => TypeHintTypes::FLOAT,
-			GetTypeTypes::STRING          => TypeHintTypes::STRING
+			$this->getTypeTypes->closedResource => $this->typeHintTypes->closedResource,
+			$this->getTypeTypes->array          => $this->typeHintTypes->array,
+			$this->getTypeTypes->object         => $this->typeHintTypes->createTypedObject( $value::class ),
+			$this->getTypeTypes->boolean        => $this->typeHintTypes->createTypedBoolean( $value ),
+			$this->getTypeTypes->integer        => $this->typeHintTypes->integer,
+			$this->getTypeTypes->float          => $this->typeHintTypes->float,
+			$this->getTypeTypes->string         => $this->typeHintTypes->string
 		};
 	}
 
