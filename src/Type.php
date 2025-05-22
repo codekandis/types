@@ -4,6 +4,8 @@ namespace CodeKandis\Types;
 use Override;
 use ReflectionClass;
 use ReflectionObject;
+use function spl_object_id;
+use function sprintf;
 
 /**
  * Represents a type representing an object.
@@ -17,6 +19,24 @@ class Type extends BaseObject implements TypeInterface
 	 */
 	public object $instance {
 		get => $this->instance;
+	}
+
+	/**
+	 * @inheritdoc
+	 */
+	public int $id {
+		get => spl_object_id( $this->instance );
+	}
+
+	/**
+	 * @inheritdoc
+	 */
+	public string $qualifiedId {
+		get => sprintf(
+			'object(%1$s)#%2$d',
+			$this->typeName,
+			$this->id
+		);
 	}
 
 	/**
