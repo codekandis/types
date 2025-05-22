@@ -9,112 +9,125 @@ use function sprintf;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-abstract class GetTypeTypes extends BaseObject implements GetTypeTypesInterface
+class GetTypeTypes extends BaseObject implements GetTypeTypesInterface
 {
 	/**
-	 * Represents an `unknown` type.
-	 * @var string
+	 * @inheritDoc
 	 */
-	public const string UNKNOWN_TYPE = 'unknown type';
-
-	/**
-	 * Represents a `null` type.
-	 * @var string
-	 */
-	public const string NULL = 'NULL';
-
-	/**
-	 * Represents a `resource`.
-	 * @var string
-	 */
-	public const string RESOURCE = 'resource';
-
-	/**
-	 * Represents a typed `resource` template.
-	 * @var string
-	 */
-	public const string TYPED_RESOURCE_TEMPLATE = 'resource<%s>';
-
-	/**
-	 * Represents a `closed resource`.
-	 * @var string
-	 */
-	public const string CLOSED_RESOURCE = 'resource (closed)';
-
-	/**
-	 * Represents an `array`.
-	 * @var string
-	 */
-	public const string ARRAY           = 'array';
-
-	/**
-	 * Represents an `object`.
-	 * @var string
-	 */
-	public const string OBJECT = 'object';
-
-	/**
-	 * Represents a typed `object` template.
-	 * @var string
-	 */
-	public const string TYPED_OBJECT_TEMPLATE = 'object<%s>';
-
-	/**
-	 * Represents a `boolean`.
-	 * @var string
-	 */
-	public const string BOOLEAN = 'boolean';
-
-	/**
-	 * Represents a typed `boolean` template.
-	 * @var string
-	 */
-	public const string TYPED_BOOLEAN_TEMPLATE = 'boolean<%s>';
-
-	/**
-	 * Represents an `integer`.
-	 * @var string
-	 */
-	public const string INTEGER = 'integer';
-
-	/**
-	 * Represents a `float`.
-	 * @var string
-	 */
-	public const string FLOAT = 'double';
-
-	/**
-	 * Represents a `string`.
-	 * @var string
-	 */
-	public const string STRING = 'string';
+	public string $unknownType {
+		get => 'unknown type';
+	}
 
 	/**
 	 * @inheritDoc
 	 */
-	#[Override]
-	public static function createTypedResource( string $resourceType ): string
-	{
-		return sprintf( static::TYPED_RESOURCE_TEMPLATE, $resourceType );
+	public string $null {
+		get => 'NULL';
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public string $resource {
+		get => 'resource';
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public string $typedResourceTemplate {
+		get => 'resource<%s>';
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public string $closedResource {
+		get => 'resource (closed)';
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public string $array {
+		get => 'array';
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public string $object {
+		get => 'object';
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public string $typedObjectTemplate {
+		get => 'object<%s>';
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public string $boolean {
+		get => 'boolean';
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public string $typedBooleanTemplate {
+		get => 'boolean<%s>';
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public string $integer {
+		get => 'integer';
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public string $float {
+		get => 'double';
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public string $string {
+		get => 'string';
 	}
 
 	/**
 	 * @inheritDoc
 	 */
 	#[Override]
-	public static function createTypedObject( string $className ): string
+	public function createTypedResource( string $resourceType ): string
 	{
-		return sprintf( static::TYPED_OBJECT_TEMPLATE, $className );
+		return sprintf( $this->typedResourceTemplate, $resourceType );
 	}
 
 	/**
 	 * @inheritDoc
 	 */
 	#[Override]
-	public static function createTypedBoolean( bool $value ): string
+	public function createTypedObject( string $className ): string
+	{
+		return sprintf( $this->typedObjectTemplate, $className );
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	#[Override]
+	public function createTypedBoolean( bool $value ): string
 	{
 		return sprintf(
-			static::TYPED_BOOLEAN_TEMPLATE,
+			$this->typedBooleanTemplate,
 			false === $value
 				? 'false'
 				: 'true'
