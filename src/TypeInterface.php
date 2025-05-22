@@ -5,14 +5,14 @@ use ReflectionClass;
 use ReflectionObject;
 
 /**
- * Represents the interface of any types representing an object.
+ * Represents the interface of any type describing an object.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-interface TypeInterface
+interface TypeInterface extends ObjectInterface
 {
 	/**
-	 * Gets the object the type depends on.
+	 * Gets the represented object.
 	 * @var object
 	 */
 	public object $instance {
@@ -20,7 +20,23 @@ interface TypeInterface
 	}
 
 	/**
-	 * Gets the type name of the class of the represented object.
+	 * Gets the represented object's PHP object ID.
+	 * @var int
+	 */
+	public int $objectId {
+		get;
+	}
+
+	/**
+	 * Gets the represented object's qualified PHP object ID.
+	 * @var string
+	 */
+	public string $qualifiedObjectId {
+		get;
+	}
+
+	/**
+	 * Gets the represented object's class name.
 	 * @var string
 	 */
 	public string $typeName {
@@ -28,7 +44,7 @@ interface TypeInterface
 	}
 
 	/**
-	 * Gets the `ReflectionClass` representing the class of the represented object.
+	 * Gets the represented object's reflected class.
 	 * @var ReflectionClass
 	 */
 	public ReflectionClass $reflectedClass {
@@ -36,7 +52,7 @@ interface TypeInterface
 	}
 
 	/**
-	 * Gets the `ReflectionObject` representing the represented object.
+	 * Gets the represented object's reflection.
 	 * @var ReflectionObject
 	 */
 	public ReflectionObject $reflectedObject {
@@ -46,19 +62,19 @@ interface TypeInterface
 	/**
 	 * Determines if the represented object is an instance of a specified class name or object.
 	 * @param string|object $classNameOrObject The class name or object to compare with.
-	 * @return bool `true` if the represented object is an instance of the class name or object, otherwise `false`.
+	 * @return bool `true` if the represented object is an instance of the specified type, otherwise `false`.
 	 */
 	public function isInstanceOf( string | object $classNameOrObject ): bool;
 
 	/**
-	 * Determines if the represented object is an instance of the same class and has the same attributes and values like a specified object.
+	 * Determines if the represented object equals a specified object by class, attributes and values.
 	 * @param object $object The object to compare with.
-	 * @return bool `true` if the represented object is an instance of the same class and has the same attributes and values like a specified object, otherwise `false`.
+	 * @return bool `true` if the represented object is equal to the specified object, otherwise `false`.
 	 */
 	public function isEqual( object $object ): bool;
 
 	/**
-	 * Determines if the represented object refers to the same instance like a specified object.
+	 * Determines if the represented object is the same instance as a specified object.
 	 * @param object $object The object to compare with.
 	 * @return bool `true` if the represented object refers to the same instance, otherwise `false`.
 	 */
