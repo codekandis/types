@@ -42,18 +42,21 @@ class InvalidValueException extends RuntimeException implements InvalidValueExce
 		$valueType = new TypeDeterminer()
 			->determine( $value, TypeDeterminationKind::GetType );
 
+		$getTypeTypes        = new GetTypeTypes();
+		$maskedTypeHintTypes = new MaskedTypeHintTypes();
+
 		return match ( $valueType )
 		{
-			GetTypeTypes::NULL            => MaskedTypeHintTypes::NULL,
-			GetTypeTypes::RESOURCE        => MaskedTypeHintTypes::createTypedResource(
+			$getTypeTypes->null           => $maskedTypeHintTypes->null,
+			$getTypeTypes->resource       => $maskedTypeHintTypes->createTypedResource(
 				get_resource_type( $value )
 			),
-			GetTypeTypes::CLOSED_RESOURCE => MaskedTypeHintTypes::CLOSED_RESOURCE,
-			GetTypeTypes::ARRAY           => MaskedTypeHintTypes::ARRAY,
-			GetTypeTypes::OBJECT          => $value instanceof Stringable
+			$getTypeTypes->closedResource => $maskedTypeHintTypes->closedResource,
+			$getTypeTypes->array          => $maskedTypeHintTypes->array,
+			$getTypeTypes->object         => $value instanceof Stringable
 				? $value->__toString()
-				: MaskedTypeHintTypes::createTypedObject( $value::class ),
-			GetTypeTypes::BOOLEAN         => MaskedTypeHintTypes::createTypedBoolean( $value ),
+				: $maskedTypeHintTypes->createTypedObject( $value::class ),
+			$getTypeTypes->boolean        => $maskedTypeHintTypes->createTypedBoolean( $value ),
 			default                       => (string) $value
 		};
 	}

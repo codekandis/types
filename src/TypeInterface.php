@@ -9,13 +9,29 @@ use ReflectionObject;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-interface TypeInterface
+interface TypeInterface extends ObjectInterface
 {
 	/**
 	 * Gets the object the type depends on.
 	 * @var object
 	 */
 	public object $instance {
+		get;
+	}
+
+	/**
+	 * Gets the unique identifier of the object.
+	 * @var int
+	 */
+	public int $id {
+		get;
+	}
+
+	/**
+	 * Gets the qualified unique identifier of the object.
+	 * @var string
+	 */
+	public string $qualifiedId {
 		get;
 	}
 
