@@ -39,8 +39,7 @@ class InvalidValueException extends RuntimeException implements InvalidValueExce
 	 */
 	protected static function stringifyValue( mixed $value ): string
 	{
-		$valueType = new TypeDeterminer()
-			->determine( $value, TypeDeterminationKind::GetType );
+		$valueType = new TypeDeterminer()->determine( $value, TypeDeterminationKind::GetType );
 
 		$getTypeTypes        = new GetTypeTypes();
 		$maskedTypeHintTypes = new MaskedTypeHintTypes();
