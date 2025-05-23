@@ -39,8 +39,7 @@ class InvalidIndexException extends RuntimeException implements InvalidIndexExce
 	 */
 	protected static function stringifyIndex( mixed $index ): string
 	{
-		$indexType = new TypeDeterminer()
-			->determine( $index, TypeDeterminationKind::GetType );
+		$indexType = new TypeDeterminer()->determine( $index, TypeDeterminationKind::GetType );
 
 		$getTypeTypes        = new GetTypeTypes();
 		$maskedTypeHintTypes = new MaskedTypeHintTypes();
