@@ -1,6 +1,7 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Types;
 
+use Throwable;
 use function sprintf;
 
 /**
@@ -30,24 +31,32 @@ class DuplicateObjectException extends AccessErrorException implements ObjectNot
 	/**
 	 * Static constructor method.
 	 * @param mixed $duplicatedObjectsClassName The duplicated object's class name.
+	 * @param int $code The error code of the exception.
+	 * @param ?Throwable $previous The previously catched throwable.
 	 * @return static
 	 */
-	public static function withDuplicatedObjectsClassName( mixed $duplicatedObjectsClassName ): static
+	public static function withDuplicatedObjectsClassName( mixed $duplicatedObjectsClassName, int $code = 0, ?Throwable $previous = null ): static
 	{
 		return new static(
-			sprintf( static::EXCEPTION_MESSAGE_WITH_DUPLICATED_OBJECTS_CLASS_NAME, $duplicatedObjectsClassName )
+			sprintf( static::EXCEPTION_MESSAGE_WITH_DUPLICATED_OBJECTS_CLASS_NAME, $duplicatedObjectsClassName ),
+			$code,
+			$previous
 		);
 	}
 
 	/**
 	 * Static constructor method.
 	 * @param mixed $duplicatedObjectsQualifiedId The duplicated object's qualified ID.
+	 * @param int $code The error code of the exception.
+	 * @param ?Throwable $previous The previously catched throwable.
 	 * @return static
 	 */
-	public static function withDuplicatedObjectsQualifiedId( mixed $duplicatedObjectsQualifiedId ): static
+	public static function withDuplicatedObjectsQualifiedId( mixed $duplicatedObjectsQualifiedId, int $code = 0, ?Throwable $previous = null ): static
 	{
 		return new static(
-			sprintf( static::EXCEPTION_MESSAGE_WITH_DUPLICATED_OBJECTS_QUALIFIED_ID, $duplicatedObjectsQualifiedId )
+			sprintf( static::EXCEPTION_MESSAGE_WITH_DUPLICATED_OBJECTS_QUALIFIED_ID, $duplicatedObjectsQualifiedId ),
+			$code,
+			$previous
 		);
 	}
 }

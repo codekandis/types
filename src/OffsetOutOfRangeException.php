@@ -1,6 +1,7 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Types;
 
+use Throwable;
 use function sprintf;
 
 /**
@@ -30,12 +31,16 @@ class OffsetOutOfRangeException extends InvalidOffsetException implements Offset
 	/**
 	 * Static constructor method.
 	 * @param int $outOfRangeOffset The out of range offset.
+	 * @param int $code The error code of the exception.
+	 * @param ?Throwable $previous The previously catched throwable.
 	 * @return static
 	 */
-	public static function withOutOfRangeOffset( int $outOfRangeOffset ): static
+	public static function withOutOfRangeOffset( int $outOfRangeOffset, int $code = 0, ?Throwable $previous = null ): static
 	{
 		return new static(
-			sprintf( static::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_OFFSET, (string) $outOfRangeOffset )
+			sprintf( static::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_OFFSET, (string) $outOfRangeOffset ),
+			$code,
+			$previous
 		);
 	}
 
@@ -44,12 +49,16 @@ class OffsetOutOfRangeException extends InvalidOffsetException implements Offset
 	 * @param mixed $outOfRangeOffset The out of range offset.
 	 * @param string $expectedMinOffset The expected minimum offset.
 	 * @param string $expectedMaxOffset The expected maximum offset.
+	 * @param int $code The error code of the exception.
+	 * @param ?Throwable $previous The previously catched throwable.
 	 * @return static
 	 */
-	public static function withOutOfRangeOffsetExpectedMinOffsetAndExpectedMaxOffset( int $outOfRangeOffset, string $expectedMinOffset, string $expectedMaxOffset ): static
+	public static function withOutOfRangeOffsetExpectedMinOffsetAndExpectedMaxOffset( int $outOfRangeOffset, string $expectedMinOffset, string $expectedMaxOffset, int $code = 0, ?Throwable $previous = null ): static
 	{
 		return new static(
-			sprintf( static::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_OFFSET_EXPECTED_MIN_OFFSET_AND_EXPECTED_MAX_OFFSET, (string) $outOfRangeOffset, $expectedMinOffset, $expectedMaxOffset )
+			sprintf( static::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_OFFSET_EXPECTED_MIN_OFFSET_AND_EXPECTED_MAX_OFFSET, (string) $outOfRangeOffset, $expectedMinOffset, $expectedMaxOffset ),
+			$code,
+			$previous
 		);
 	}
 }

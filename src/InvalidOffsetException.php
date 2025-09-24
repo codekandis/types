@@ -1,6 +1,7 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Types;
 
+use Throwable;
 use function implode;
 use function sprintf;
 
@@ -31,12 +32,16 @@ class InvalidOffsetException extends RuntimeException implements InvalidOffsetEx
 	/**
 	 * Static constructor method.
 	 * @param int $invalidOffset The invalid offset.
+	 * @param int $code The error code of the exception.
+	 * @param ?Throwable $previous The previously catched throwable.
 	 * @return static
 	 */
-	public static function withInvalidOffset( int $invalidOffset ): static
+	public static function withInvalidOffset( int $invalidOffset, int $code = 0, ?Throwable $previous = null ): static
 	{
 		return new static(
-			sprintf( static::EXCEPTION_MESSAGE_WITH_INVALID_OFFSET, (string) $invalidOffset )
+			sprintf( static::EXCEPTION_MESSAGE_WITH_INVALID_OFFSET, (string) $invalidOffset ),
+			$code,
+			$previous
 		);
 	}
 
@@ -44,14 +49,18 @@ class InvalidOffsetException extends RuntimeException implements InvalidOffsetEx
 	 * Static constructor method.
 	 * @param int $invalidOffset The invalid offset.
 	 * @param string[] $expectedOffsets The expected offsets.
+	 * @param int $code The error code of the exception.
+	 * @param ?Throwable $previous The previously catched throwable.
 	 * @return static
 	 */
-	public static function withInvalidOffsetAndExpectedOffsets( int $invalidOffset, string ...$expectedOffsets ): static
+	public static function withInvalidOffsetAndExpectedOffsets( int $invalidOffset, array $expectedOffsets, int $code = 0, ?Throwable $previous = null ): static
 	{
 		$stringyfiedExpectedOffsets = implode( ' | ', $expectedOffsets );
 
 		return new static(
-			sprintf( static::EXCEPTION_MESSAGE_WITH_INVALID_OFFSET_AND_EXPECTED_OFFSETS, (string) $invalidOffset, $stringyfiedExpectedOffsets )
+			sprintf( static::EXCEPTION_MESSAGE_WITH_INVALID_OFFSET_AND_EXPECTED_OFFSETS, (string) $invalidOffset, $stringyfiedExpectedOffsets ),
+			$code,
+			$previous
 		);
 	}
 }

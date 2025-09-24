@@ -1,10 +1,7 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Types;
 
-use CodeKandis\Types\TypeDetermination\TypeDeterminationKind;
-use CodeKandis\Types\TypeDetermination\TypeDeterminer;
-use Stringable;
-use function get_resource_type;
+use Throwable;
 use function implode;
 use function sprintf;
 
@@ -15,6 +12,8 @@ use function sprintf;
  */
 class InvalidIndexException extends RuntimeException implements InvalidIndexExceptionInterface
 {
+	use StringifyValueTrait;
+
 	/**
 	 * @inheritdoc
 	 */
@@ -33,44 +32,20 @@ class InvalidIndexException extends RuntimeException implements InvalidIndexExce
 	public const string EXCEPTION_MESSAGE_WITH_INVALID_INDEX_AND_EXPECTED_INDICES = 'The index `%1$s` is invalid. `%2$s` expected.';
 
 	/**
-	 * Stringifies a specific index.
-	 * @param mixed $index The index to stringify.
-	 * @return string The stringified index.
-	 */
-	protected static function stringifyIndex( mixed $index ): string
-	{
-		$indexType = new TypeDeterminer()->determine( $index, TypeDeterminationKind::GetType );
-
-		$getTypeTypes        = new GetTypeTypes();
-		$maskedTypeHintTypes = new MaskedTypeHintTypes();
-
-		return match ( $indexType )
-		{
-			$getTypeTypes->null           => $maskedTypeHintTypes->null,
-			$getTypeTypes->resource       => $maskedTypeHintTypes->createTypedResource(
-				get_resource_type( $index )
-			),
-			$getTypeTypes->closedResource => $maskedTypeHintTypes->closedResource,
-			$getTypeTypes->array          => $maskedTypeHintTypes->array,
-			$getTypeTypes->object         => $index instanceof Stringable
-				? $index->__toString()
-				: $maskedTypeHintTypes->createTypedObject( $index::class ),
-			$getTypeTypes->boolean        => $maskedTypeHintTypes->createTypedBoolean( $index ),
-			default                       => (string) $index
-		};
-	}
-
-	/**
 	 * Static constructor method.
 	 * @param mixed $invalidIndex The invalid index.
+	 * @param int $code The error code of the exception.
+	 * @param ?Throwable $previous The previously catched throwable.
 	 * @return static
 	 */
-	public static function withInvalidIndex( mixed $invalidIndex ): static
+	public static function withInvalidIndex( mixed $invalidIndex, int $code = 0, ?Throwable $previous = null ): static
 	{
-		$stringfiedInvalidIndex = static::stringifyIndex( $invalidIndex );
+		$stringfiedInvalidIndex = static::stringifyValue( $invalidIndex );
 
 		return new static(
-			sprintf( static::EXCEPTION_MESSAGE_WITH_INVALID_INDEX, $stringfiedInvalidIndex )
+			sprintf( static::EXCEPTION_MESSAGE_WITH_INVALID_INDEX, $stringfiedInvalidIndex ),
+			$code,
+			$previous
 		);
 	}
 
@@ -78,15 +53,19 @@ class InvalidIndexException extends RuntimeException implements InvalidIndexExce
 	 * Static constructor method.
 	 * @param mixed $invalidIndex The invalid index.
 	 * @param string[] $expectedIndices The expected indices.
+	 * @param int $code The error code of the exception.
+	 * @param ?Throwable $previous The previously catched throwable.
 	 * @return static
 	 */
-	public static function withInvalidIndexAndExpectedIndices( mixed $invalidIndex, string ...$expectedIndices ): static
+	public static function withInvalidIndexAndExpectedIndices( mixed $invalidIndex, array $expectedIndices, int $code = 0, ?Throwable $previous = null ): static
 	{
-		$stringifiedInvalidIndex    = static::stringifyIndex( $invalidIndex );
+		$stringifiedInvalidIndex    = static::stringifyValue( $invalidIndex );
 		$stringyfiedExpectedIndices = implode( ' | ', $expectedIndices );
 
 		return new static(
-			sprintf( static::EXCEPTION_MESSAGE_WITH_INVALID_INDEX_AND_EXPECTED_INDICES, $stringifiedInvalidIndex, $stringyfiedExpectedIndices )
+			sprintf( static::EXCEPTION_MESSAGE_WITH_INVALID_INDEX_AND_EXPECTED_INDICES, $stringifiedInvalidIndex, $stringyfiedExpectedIndices ),
+			$code,
+			$previous
 		);
 	}
 }

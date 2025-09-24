@@ -1,6 +1,7 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Types;
 
+use Throwable;
 use function sprintf;
 
 /**
@@ -24,12 +25,16 @@ class TraitNotFoundException extends AccessErrorException implements TraitNotFou
 	/**
 	 * Static constructor method.
 	 * @param string $nonExistentTraitName The nonexistent trait name.
+	 * @param int $code The error code of the exception.
+	 * @param ?Throwable $previous The previously catched throwable.
 	 * @return static
 	 */
-	public static function withNonExistentTraitName( string $nonExistentTraitName ): static
+	public static function withNonExistentTraitName( string $nonExistentTraitName, int $code = 0, ?Throwable $previous = null ): static
 	{
 		return new static(
-			sprintf( static::EXCEPTION_MESSAGE_WITH_NONEXISTENT_TRAIT_NAME, $nonExistentTraitName )
+			sprintf( static::EXCEPTION_MESSAGE_WITH_NONEXISTENT_TRAIT_NAME, $nonExistentTraitName ),
+			$code,
+			$previous
 		);
 	}
 }

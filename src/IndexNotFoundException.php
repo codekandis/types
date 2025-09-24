@@ -1,10 +1,7 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Types;
 
-use CodeKandis\Types\TypeDetermination\TypeDeterminationKind;
-use CodeKandis\Types\TypeDetermination\TypeDeterminer;
-use Stringable;
-use function get_resource_type;
+use Throwable;
 use function implode;
 use function sprintf;
 
@@ -15,6 +12,8 @@ use function sprintf;
  */
 class IndexNotFoundException extends RuntimeException implements IndexNotFoundExceptionInterface
 {
+	use StringifyValueTrait;
+
 	/**
 	 * @inheritdoc
 	 */
@@ -33,44 +32,20 @@ class IndexNotFoundException extends RuntimeException implements IndexNotFoundEx
 	public const string EXCEPTION_MESSAGE_WITH_NONEXISTENT_INDEX_AND_EXPECTED_INDICES = 'The index `%1$s` does not exist. `%2$s` expected.';
 
 	/**
-	 * Stringifies a specific index.
-	 * @param mixed $index The index to stringify.
-	 * @return string The stringified index.
-	 */
-	private static function stringifyIndex( mixed $index ): string
-	{
-		$indexType = new TypeDeterminer()->determine( $index, TypeDeterminationKind::GetType );
-
-		$getTypeTypes        = new GetTypeTypes();
-		$maskedTypeHintTypes = new MaskedTypeHintTypes();
-
-		return match ( $indexType )
-		{
-			$getTypeTypes->null           => $maskedTypeHintTypes->null,
-			$getTypeTypes->resource       => $maskedTypeHintTypes->createTypedResource(
-				get_resource_type( $index )
-			),
-			$getTypeTypes->closedResource => $maskedTypeHintTypes->closedResource,
-			$getTypeTypes->array          => $maskedTypeHintTypes->array,
-			$getTypeTypes->object         => $index instanceof Stringable
-				? $index->__toString()
-				: $maskedTypeHintTypes->createTypedObject( $index::class ),
-			$getTypeTypes->boolean        => $maskedTypeHintTypes->createTypedBoolean( $index ),
-			default                       => (string) $index
-		};
-	}
-
-	/**
 	 * Static constructor method.
 	 * @param mixed $nonExistentIndex The nonexistent index.
+	 * @param int $code The error code of the exception.
+	 * @param ?Throwable $previous The previously catched throwable.
 	 * @return static
 	 */
-	public static function withNonExistentIndex( mixed $nonExistentIndex ): static
+	public static function withNonExistentIndex( mixed $nonExistentIndex, int $code = 0, ?Throwable $previous = null ): static
 	{
-		$stringfiedNonExistentIndex = static::stringifyIndex( $nonExistentIndex );
+		$stringfiedNonExistentIndex = static::stringifyValue( $nonExistentIndex );
 
 		return new static(
-			sprintf( static::EXCEPTION_MESSAGE_WITH_NONEXISTENT_INDEX, $stringfiedNonExistentIndex )
+			sprintf( static::EXCEPTION_MESSAGE_WITH_NONEXISTENT_INDEX, $stringfiedNonExistentIndex ),
+			$code,
+			$previous
 		);
 	}
 
@@ -78,15 +53,19 @@ class IndexNotFoundException extends RuntimeException implements IndexNotFoundEx
 	 * Static constructor method.
 	 * @param mixed $nonExistentIndex The nonexistent index.
 	 * @param string[] $expectedIndices The expected indices.
+	 * @param int $code The error code of the exception.
+	 * @param ?Throwable $previous The previously catched throwable.
 	 * @return static
 	 */
-	public static function withNonExistentIndexAndExpectedIndices( mixed $nonExistentIndex, string ...$expectedIndices ): static
+	public static function withNonExistentIndexAndExpectedIndices( mixed $nonExistentIndex, array $expectedIndices, int $code = 0, ?Throwable $previous = null ): static
 	{
-		$stringifiedNonExistentIndex = static::stringifyIndex( $nonExistentIndex );
+		$stringifiedNonExistentIndex = static::stringifyValue( $nonExistentIndex );
 		$stringyfiedExpectedIndices  = implode( ' | ', $expectedIndices );
 
 		return new static(
-			sprintf( static::EXCEPTION_MESSAGE_WITH_NONEXISTENT_INDEX_AND_EXPECTED_INDICES, $stringifiedNonExistentIndex, $stringyfiedExpectedIndices )
+			sprintf( static::EXCEPTION_MESSAGE_WITH_NONEXISTENT_INDEX_AND_EXPECTED_INDICES, $stringifiedNonExistentIndex, $stringyfiedExpectedIndices ),
+			$code,
+			$previous
 		);
 	}
 }

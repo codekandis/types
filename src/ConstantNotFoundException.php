@@ -1,6 +1,7 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Types;
 
+use Throwable;
 use function sprintf;
 
 /**
@@ -24,12 +25,16 @@ class ConstantNotFoundException extends AccessErrorException implements Constant
 	/**
 	 * Static constructor method.
 	 * @param string $nonExistentConstantName The nonexistent constant name.
+	 * @param int $code The error code of the exception.
+	 * @param ?Throwable $previous The previously catched throwable.
 	 * @return static
 	 */
-	public static function withNonExistentConstantName( string $nonExistentConstantName ): static
+	public static function withNonExistentConstantName( string $nonExistentConstantName, int $code = 0, ?Throwable $previous = null ): static
 	{
 		return new static(
-			sprintf( static::EXCEPTION_MESSAGE_WITH_NONEXISTENT_CONSTANT_NAME, $nonExistentConstantName )
+			sprintf( static::EXCEPTION_MESSAGE_WITH_NONEXISTENT_CONSTANT_NAME, $nonExistentConstantName ),
+			$code,
+			$previous
 		);
 	}
 }

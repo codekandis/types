@@ -1,6 +1,7 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Types;
 
+use Throwable;
 use function sprintf;
 
 /**
@@ -25,12 +26,16 @@ class PropertyNotFoundException extends AccessErrorException implements Property
 	 * Static constructor method.
 	 * @param string $interfaceOrClassName The interface or class name of the nonexistent property.
 	 * @param string $nonExistentPropertyName The nonexistent property name.
+	 * @param int $code The error code of the exception.
+	 * @param ?Throwable $previous The previously catched throwable.
 	 * @return static
 	 */
-	public static function withInterfaceOrClassNameAndNonExistentPropertyName( string $interfaceOrClassName, string $nonExistentPropertyName ): static
+	public static function withInterfaceOrClassNameAndNonExistentPropertyName( string $interfaceOrClassName, string $nonExistentPropertyName, int $code = 0, ?Throwable $previous = null ): static
 	{
 		return new static(
-			sprintf( static::EXCEPTION_MESSAGE_WITH_INTERFACE_OR_CLASS_NAME_AND_NONEXISTENT_PROPERTY_NAME, $interfaceOrClassName, $nonExistentPropertyName )
+			sprintf( static::EXCEPTION_MESSAGE_WITH_INTERFACE_OR_CLASS_NAME_AND_NONEXISTENT_PROPERTY_NAME, $interfaceOrClassName, $nonExistentPropertyName ),
+			$code,
+			$previous
 		);
 	}
 }

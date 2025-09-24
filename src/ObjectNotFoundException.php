@@ -1,6 +1,7 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Types;
 
+use Throwable;
 use function sprintf;
 
 /**
@@ -30,24 +31,32 @@ class ObjectNotFoundException extends AccessErrorException implements ObjectNotF
 	/**
 	 * Static constructor method.
 	 * @param mixed $nonExistentObjectsClassName The nonexistent object's class name.
+	 * @param int $code The error code of the exception.
+	 * @param ?Throwable $previous The previously catched throwable.
 	 * @return static
 	 */
-	public static function withNonExistentObjectsClassName( mixed $nonExistentObjectsClassName ): static
+	public static function withNonExistentObjectsClassName( mixed $nonExistentObjectsClassName, int $code = 0, ?Throwable $previous = null ): static
 	{
 		return new static(
-			sprintf( static::EXCEPTION_MESSAGE_WITH_NONEXISTENT_OBJECTS_CLASS_NAME, $nonExistentObjectsClassName )
+			sprintf( static::EXCEPTION_MESSAGE_WITH_NONEXISTENT_OBJECTS_CLASS_NAME, $nonExistentObjectsClassName ),
+			$code,
+			$previous
 		);
 	}
 
 	/**
 	 * Static constructor method.
 	 * @param mixed $nonExistentObjectsQualifiedId The nonexistent object's qualified ID.
+	 * @param int $code The error code of the exception.
+	 * @param ?Throwable $previous The previously catched throwable.
 	 * @return static
 	 */
-	public static function withNonExistentObjectsQualifiedId( mixed $nonExistentObjectsQualifiedId ): static
+	public static function withNonExistentObjectsQualifiedId( mixed $nonExistentObjectsQualifiedId, int $code = 0, ?Throwable $previous = null ): static
 	{
 		return new static(
-			sprintf( static::EXCEPTION_MESSAGE_WITH_NONEXISTENT_OBJECTS_QUALIFIED_ID, $nonExistentObjectsQualifiedId )
+			sprintf( static::EXCEPTION_MESSAGE_WITH_NONEXISTENT_OBJECTS_QUALIFIED_ID, $nonExistentObjectsQualifiedId ),
+			$code,
+			$previous
 		);
 	}
 }

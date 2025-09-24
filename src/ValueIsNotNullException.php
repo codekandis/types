@@ -1,6 +1,7 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Types;
 
+use Throwable;
 use function sprintf;
 
 /**
@@ -24,14 +25,18 @@ class ValueIsNotNullException extends InvalidValueException implements ValueIsNo
 	/**
 	 * Static constructor method.
 	 * @param mixed $nonNullValue The nonnull value.
+	 * @param int $code The error code of the exception.
+	 * @param ?Throwable $previous The previously catched throwable.
 	 * @return static
 	 */
-	public static function withNonNullValue( mixed $nonNullValue ): static
+	public static function withNonNullValue( mixed $nonNullValue, int $code = 0, ?Throwable $previous = null ): static
 	{
 		$stringfiedNonNullValue = static::stringifyValue( $nonNullValue );
 
 		return new static(
-			sprintf( static::EXCEPTION_MESSAGE_WITH_NONNULL_VALUE, $stringfiedNonNullValue )
+			sprintf( static::EXCEPTION_MESSAGE_WITH_NONNULL_VALUE, $stringfiedNonNullValue ),
+			$code,
+			$previous
 		);
 	}
 }

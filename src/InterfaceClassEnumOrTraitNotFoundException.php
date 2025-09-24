@@ -1,6 +1,7 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Types;
 
+use Throwable;
 use function sprintf;
 
 /**
@@ -24,12 +25,16 @@ class InterfaceClassEnumOrTraitNotFoundException extends AccessErrorException im
 	/**
 	 * Static constructor method.
 	 * @param string $nonExistentInterfaceClassEnumOrTraitName The nonexistent interface, class, enum or trait name.
+	 * @param int $code The error code of the exception.
+	 * @param ?Throwable $previous The previously catched throwable.
 	 * @return static
 	 */
-	public static function withNonExistentInterfaceClassEnumOrTraitName( string $nonExistentInterfaceClassEnumOrTraitName ): static
+	public static function withNonExistentInterfaceClassEnumOrTraitName( string $nonExistentInterfaceClassEnumOrTraitName, int $code = 0, ?Throwable $previous = null ): static
 	{
 		return new static(
-			sprintf( static::EXCEPTION_MESSAGE_NONEXISTENT_INTERFACE_CLASS_ENUM_OR_TRAIT_NAME, $nonExistentInterfaceClassEnumOrTraitName )
+			sprintf( static::EXCEPTION_MESSAGE_NONEXISTENT_INTERFACE_CLASS_ENUM_OR_TRAIT_NAME, $nonExistentInterfaceClassEnumOrTraitName ),
+			$code,
+			$previous
 		);
 	}
 }

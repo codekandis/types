@@ -1,6 +1,7 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Types;
 
+use Throwable;
 use function implode;
 use function sprintf;
 
@@ -31,12 +32,16 @@ class InvalidTypeException extends RuntimeException implements InvalidTypeExcept
 	/**
 	 * Static constructor method.
 	 * @param string $invalidType The invalid type.
+	 * @param int $code The error code of the exception.
+	 * @param ?Throwable $previous The previously catched throwable.
 	 * @return static
 	 */
-	public static function withInvalidType( string $invalidType ): static
+	public static function withInvalidType( string $invalidType, int $code = 0, ?Throwable $previous = null ): static
 	{
 		return new static(
-			sprintf( static::EXCEPTION_MESSAGE_WITH_INVALID_TYPE, $invalidType )
+			sprintf( static::EXCEPTION_MESSAGE_WITH_INVALID_TYPE, $invalidType ),
+			$code,
+			$previous
 		);
 	}
 
@@ -44,16 +49,20 @@ class InvalidTypeException extends RuntimeException implements InvalidTypeExcept
 	 * Static constructor method.
 	 * @param string $invalidType The invalid type.
 	 * @param string[] $expectedTypes The expected types.
+	 * @param int $code The error code of the exception.
+	 * @param ?Throwable $previous The previously catched throwable.
 	 * @return static
 	 */
-	public static function withInvalidTypeAndExpectedTypes( string $invalidType, string ...$expectedTypes ): static
+	public static function withInvalidTypeAndExpectedTypes( string $invalidType, array $expectedTypes, int $code = 0, ?Throwable $previous = null ): static
 	{
 		return new static(
 			sprintf(
 				static::EXCEPTION_MESSAGE_WITH_INVALID_TYPE_AND_EXPECTED_TYPES,
 				$invalidType,
 				implode( ' | ', $expectedTypes )
-			)
+			),
+			$code,
+			$previous
 		);
 	}
 }

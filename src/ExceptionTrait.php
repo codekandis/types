@@ -10,7 +10,13 @@ use Throwable;
  */
 trait ExceptionTrait
 {
-	public function __construct( string $message = "", int $code = 0, ?Throwable $previous = null )
+	/**
+	 * Constructor method.
+	 * @param string $message The message of the exception.
+	 * @param int $code The error code of the exception.
+	 * @param ?Throwable $previous The previously catched throwable.
+	 */
+	public function __construct( string $message = '', int $code = 0, ?Throwable $previous = null )
 	{
 		return '' === $message
 			? parent::__construct( static::EXCEPTION_MESSAGE_DEFAULT, $code, $previous )

@@ -1,6 +1,7 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Types;
 
+use Throwable;
 use function sprintf;
 
 /**
@@ -25,12 +26,16 @@ class MethodNotFoundException extends AccessErrorException implements MethodNotF
 	 * Static constructor method.
 	 * @param string $interfaceOrClassName The interface or class name of the nonexistent method.
 	 * @param string $nonExistentMethodName The nonexistent method name.
+	 * @param int $code The error code of the exception.
+	 * @param ?Throwable $previous The previously catched throwable.
 	 * @return static
 	 */
-	public static function withInterfaceOrClassNameAndNonExistentMethodName( string $interfaceOrClassName, string $nonExistentMethodName ): static
+	public static function withInterfaceOrClassNameAndNonExistentMethodName( string $interfaceOrClassName, string $nonExistentMethodName, int $code = 0, ?Throwable $previous = null ): static
 	{
 		return new static(
-			sprintf( static::EXCEPTION_MESSAGE_WITH_INTERFACE_OR_CLASS_NAME_AND_NONEXISTENT_METHOD_NAME, $interfaceOrClassName, $nonExistentMethodName )
+			sprintf( static::EXCEPTION_MESSAGE_WITH_INTERFACE_OR_CLASS_NAME_AND_NONEXISTENT_METHOD_NAME, $interfaceOrClassName, $nonExistentMethodName ),
+			$code,
+			$previous
 		);
 	}
 }

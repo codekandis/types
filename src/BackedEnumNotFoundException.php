@@ -1,6 +1,7 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Types;
 
+use Throwable;
 use function sprintf;
 
 /**
@@ -24,12 +25,16 @@ class BackedEnumNotFoundException extends EnumNotFoundException implements Backe
 	/**
 	 * Static constructor method.
 	 * @param string $nonExistentPackedEnumName The nonexistent backed enum name.
+	 * @param int $code The error code of the exception.
+	 * @param ?Throwable $previous The previously catched throwable.
 	 * @return static
 	 */
-	public static function withNonExistentBackedEnumName( string $nonExistentPackedEnumName ): static
+	public static function withNonExistentBackedEnumName( string $nonExistentPackedEnumName, int $code = 0, ?Throwable $previous = null ): static
 	{
 		return new static(
-			sprintf( static::EXCEPTION_MESSAGE_WITH_NONEXISTENT_BACKED_ENUM_NAME, $nonExistentPackedEnumName )
+			sprintf( static::EXCEPTION_MESSAGE_WITH_NONEXISTENT_BACKED_ENUM_NAME, $nonExistentPackedEnumName ),
+			$code,
+			$previous
 		);
 	}
 }

@@ -1,6 +1,7 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Types;
 
+use Throwable;
 use function sprintf;
 
 /**
@@ -24,12 +25,16 @@ class InterfaceClassOrEnumNotFoundException extends AccessErrorException impleme
 	/**
 	 * Static constructor method.
 	 * @param string $nonExistentInterfaceClassOrEnumName The nonexistent interface, class or enum name.
+	 * @param int $code The error code of the exception.
+	 * @param ?Throwable $previous The previously catched throwable.
 	 * @return static
 	 */
-	public static function withNonExistentInterfaceClassOrEnumName( string $nonExistentInterfaceClassOrEnumName ): static
+	public static function withNonExistentInterfaceClassOrEnumName( string $nonExistentInterfaceClassOrEnumName, int $code = 0, ?Throwable $previous = null ): static
 	{
 		return new static(
-			sprintf( static::EXCEPTION_MESSAGE_WITH_NONEXISTENT_INTERFACE_CLASS_OR_ENUM_NAME, $nonExistentInterfaceClassOrEnumName )
+			sprintf( static::EXCEPTION_MESSAGE_WITH_NONEXISTENT_INTERFACE_CLASS_OR_ENUM_NAME, $nonExistentInterfaceClassOrEnumName ),
+			$code,
+			$previous
 		);
 	}
 }

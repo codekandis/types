@@ -1,6 +1,7 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Types;
 
+use Throwable;
 use function sprintf;
 
 /**
@@ -24,12 +25,16 @@ class EnumNotFoundException extends AccessErrorException implements EnumNotFound
 	/**
 	 * Static constructor method.
 	 * @param string $nonExistentEnumName The nonexistent enum name.
+	 * @param int $code The error code of the exception.
+	 * @param ?Throwable $previous The previously catched throwable.
 	 * @return static
 	 */
-	public static function withNonExistentEnumName( string $nonExistentEnumName ): static
+	public static function withNonExistentEnumName( string $nonExistentEnumName, int $code = 0, ?Throwable $previous = null ): static
 	{
 		return new static(
-			sprintf( static::EXCEPTION_MESSAGE_WITH_NONEXISTENT_ENUM_NAME, $nonExistentEnumName )
+			sprintf( static::EXCEPTION_MESSAGE_WITH_NONEXISTENT_ENUM_NAME, $nonExistentEnumName ),
+			$code,
+			$previous
 		);
 	}
 }

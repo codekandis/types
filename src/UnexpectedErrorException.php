@@ -16,21 +16,22 @@ class UnexpectedErrorException extends RuntimeException implements UnexpectedErr
 	public const string EXCEPTION_MESSAGE_DEFAULT = 'An unexpected error occured.';
 
 	/**
-	 * Represents the exception message with the previous catched throwable.
+	 * Represents the exception message with the previously catched throwable.
 	 */
-	public const string EXCEPTION_MESSAGE_WITH_PREVIOUS_CATCHED_THROWABLE = 'An unexpected error occured. See previous catched throwable `%1$s` for details.';
+	public const string EXCEPTION_MESSAGE_WITH_PREVIOUSLY_CATCHED_THROWABLE = 'An unexpected error occured. See previously catched throwable `%1$s` for details.';
 
 	/**
 	 * Static constructor method.
-	 * @param Throwable $previousCatchedThrowable The previous catched throwable.
+	 * @param Throwable $previouslyCatchedThrowable The previously catched throwable.
+	 * @param int $code The error code of the exception.
 	 * @return static
 	 */
-	public static function withPreviousCatchedThrowable( Throwable $previousCatchedThrowable ): static
+	public static function withPreviouslyCatchedThrowable( Throwable $previouslyCatchedThrowable, int $code = 0 ): static
 	{
 		return new static(
-			sprintf( static::EXCEPTION_MESSAGE_WITH_PREVIOUS_CATCHED_THROWABLE, $previousCatchedThrowable::class ),
-			0,
-			$previousCatchedThrowable
+			sprintf( static::EXCEPTION_MESSAGE_WITH_PREVIOUSLY_CATCHED_THROWABLE, $previouslyCatchedThrowable::class ),
+			$code,
+			$previouslyCatchedThrowable
 		);
 	}
 }

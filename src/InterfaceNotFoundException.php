@@ -1,6 +1,7 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Types;
 
+use Throwable;
 use function sprintf;
 
 /**
@@ -24,12 +25,16 @@ class InterfaceNotFoundException extends AccessErrorException implements Interfa
 	/**
 	 * Static constructor method.
 	 * @param string $nonExistentInterfaceName The nonexistent interface name.
+	 * @param int $code The error code of the exception.
+	 * @param ?Throwable $previous The previously catched throwable.
 	 * @return static
 	 */
-	public static function withNonExistentInterfaceName( string $nonExistentInterfaceName ): static
+	public static function withNonExistentInterfaceName( string $nonExistentInterfaceName, int $code = 0, ?Throwable $previous = null ): static
 	{
 		return new static(
-			sprintf( static::EXCEPTION_MESSAGE_WITH_NONEXISTENT_INTERFACE_NAME, $nonExistentInterfaceName )
+			sprintf( static::EXCEPTION_MESSAGE_WITH_NONEXISTENT_INTERFACE_NAME, $nonExistentInterfaceName ),
+			$code,
+			$previous
 		);
 	}
 }
