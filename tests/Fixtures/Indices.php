@@ -90,7 +90,7 @@ abstract class Indices
 	 * @var array
 	 */
 	public const array EXPECTED_INDICES = [
-		'null',
+		self::MASKED_NULL,
 		'false',
 		'42',
 		'42.42',

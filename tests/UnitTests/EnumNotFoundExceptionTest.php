@@ -3,7 +3,7 @@ namespace CodeKandis\Types\Tests\UnitTests;
 
 use CodeKandis\PhpUnit\TestCase;
 use CodeKandis\Types\EnumNotFoundException;
-use CodeKandis\Types\Tests\DataProviders\UnitTests\EnumNotFoundExceptionTest\ThrowableClassNamesWithNonExistentEnumNameExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider;
+use CodeKandis\Types\Tests\DataProviders\UnitTests\EnumNotFoundExceptionTest\ThrowableClassNamesWithNonexistentFqcnExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider;
 use PHPUnit\Framework\Attributes\DataProviderExternal;
 use Throwable;
 
@@ -15,7 +15,7 @@ use Throwable;
 class EnumNotFoundExceptionTest extends TestCase
 {
 	/**
-	 * Tests if {@link EnumNotFoundException::withNonExistentEnumName()} instantiates the throwable correctly.
+	 * Tests if {@link EnumNotFoundException::withNonexistentFqcn()} instantiates the throwable correctly.
 	 * @param string $throwableClassName The class name of the throwable to test.
 	 * @param string $nonExistentEnumName The nonexistent enum name to pass.
 	 * @param int $code The error code to pass.
@@ -25,13 +25,13 @@ class EnumNotFoundExceptionTest extends TestCase
 	 * @param int $expectedThrowableCode The code of the expected throwable.
 	 * @param ?Throwable $expectedThrowablePrevious The previously catched throwable of the expected throwable.
 	 */
-	#[DataProviderExternal( ThrowableClassNamesWithNonExistentEnumNameExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
+	#[DataProviderExternal( ThrowableClassNamesWithNonexistentFqcnExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
 	public function testIfMethodWithNonExistentEnumNameInstantiatesThrowableCorrectly( string $throwableClassName, string $nonExistentEnumName, int $code, ?Throwable $previous, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious ): void
 	{
 		/**
 		 * @var EnumNotFoundException $throwableClassName
 		 */
-		$resultedThrowable          = $throwableClassName::withNonExistentEnumName( $nonExistentEnumName, $code, $previous );
+		$resultedThrowable          = $throwableClassName::withNonexistentFqcn( $nonExistentEnumName, $code, $previous );
 		$resultedThrowableClassName = $resultedThrowable::class;
 		$resultedThrowableMessage   = $resultedThrowable->getMessage();
 		$resultedThrowableCode      = $resultedThrowable->getCode();

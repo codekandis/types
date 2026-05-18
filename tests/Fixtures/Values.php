@@ -22,6 +22,12 @@ use function implode;
 abstract class Values
 {
 	/**
+	 * Represents an invalid value.
+	 * @var string
+	 */
+	public const string INVALID_VALUE = 'invalidValue';
+
+	/**
 	 * Represents a `null` value.
 	 * @var null
 	 */
@@ -129,12 +135,6 @@ abstract class Values
 	public const string INTERFACE_OR_CLASS_NAME = 'InterfaceOrClassName';
 
 	/**
-	 * Represents a trait name.
-	 * @var string
-	 */
-	public const string TRAIT_NAME = 'TraitName';
-
-	/**
 	 * Represents an enum name.
 	 * @var string
 	 */
@@ -157,6 +157,12 @@ abstract class Values
 	 * @var string
 	 */
 	public const string STRING_BACKED_ENUM_NAME = 'StringBackedEnumName';
+
+	/**
+	 * Represents a trait name.
+	 * @var string
+	 */
+	public const string TRAIT_NAME = 'TraitName';
 
 	/**
 	 * Represents a constant name.

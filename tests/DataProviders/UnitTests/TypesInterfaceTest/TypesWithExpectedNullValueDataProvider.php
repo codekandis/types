@@ -38,7 +38,7 @@ class TypesWithExpectedNullValueDataProvider implements DataProviderInterface
 			3 => [
 				'types'             => new MaskedTypeHintTypes(),
 				'expectedNullValue' => Types::MASKED_TYPE_HINT_TYPE_NULL
-			],
+			]
 		];
 	}
 }

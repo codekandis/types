@@ -27,7 +27,7 @@ class ObjectsWithExpectedTypeObjectDataProvider implements DataProviderInterface
 			1 => [
 				'object'             => $object = Values::createInheritedBaseObjectFixture(),
 				'expectedTypeObject' => new Type( $object )
-			],
+			]
 		];
 	}
 }

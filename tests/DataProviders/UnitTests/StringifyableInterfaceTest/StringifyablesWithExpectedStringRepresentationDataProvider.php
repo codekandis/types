@@ -24,7 +24,7 @@ class StringifyablesWithExpectedStringRepresentationDataProvider implements Data
 				{
 				},
 				'expectedStringRepresentation' => $stringifyable::class
-			],
+			]
 		];
 	}
 }

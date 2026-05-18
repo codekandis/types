@@ -38,7 +38,7 @@ class TypesWithExpectedTypedObjectTemplateValueDataProvider implements DataProvi
 			3 => [
 				'types'                            => new MaskedTypeHintTypes(),
 				'expectedTypedObjectTemplateValue' => Types::MASKED_TYPE_HINT_TYPED_OBJECT_TEMPLATE
-			],
+			]
 		];
 	}
 }

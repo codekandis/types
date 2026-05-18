@@ -82,7 +82,7 @@ class TypesWithExpectedEqualityDeterminationDataProvider implements DataProvider
 				),
 				'object'                        => Values::createInheritedBaseObjectFixture(),
 				'expectedEqualityDetermination' => Values::BOOLEAN_FALSE
-			],
+			]
 		];
 	}
 }

@@ -3,7 +3,7 @@ namespace CodeKandis\Types\Tests\UnitTests;
 
 use CodeKandis\PhpUnit\TestCase;
 use CodeKandis\Types\InterfaceOrClassConstantValueNotFoundException;
-use CodeKandis\Types\Tests\DataProviders\UnitTests\InterfaceOrClassConstantValueNotFoundExceptionTest\ThrowableClassNamesWithInterfaceOrClassNameNonExistentConstantValueExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider;
+use CodeKandis\Types\Tests\DataProviders\UnitTests\InterfaceOrClassConstantValueNotFoundExceptionTest\ThrowableClassNamesWithFqcnNonexistentConstantValueExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider;
 use PHPUnit\Framework\Attributes\DataProviderExternal;
 use Throwable;
 
@@ -15,7 +15,7 @@ use Throwable;
 class InterfaceOrClassConstantValueNotFoundExceptionTest extends TestCase
 {
 	/**
-	 * Tests if {@link InterfaceOrClassConstantValueNotFoundException::withInterfaceOrClassNameAndNonExistentConstantValue()} instantiates the throwable correctly.
+	 * Tests if {@link InterfaceOrClassConstantValueNotFoundException::withFqcnAndNonexistentConstantValue()} instantiates the throwable correctly.
 	 * @param string $throwableClassName The class name of the throwable to test.
 	 * @param string $interfaceOrClassName The interface or class name to pass.
 	 * @param null | bool | int | float | string | array $nonExistentConstantValue The nonexistent constant value to pass.
@@ -26,13 +26,13 @@ class InterfaceOrClassConstantValueNotFoundExceptionTest extends TestCase
 	 * @param int $expectedThrowableCode The code of the expected throwable.
 	 * @param ?Throwable $expectedThrowablePrevious The previously catched throwable of the expected throwable.
 	 */
-	#[DataProviderExternal( ThrowableClassNamesWithInterfaceOrClassNameNonExistentConstantValueExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
+	#[DataProviderExternal( ThrowableClassNamesWithFqcnNonexistentConstantValueExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
 	public function testIfMethodWithInterfaceOrClassNameAndNonExistentConstantValueInstantiatesThrowableCorrectly( string $throwableClassName, string $interfaceOrClassName, null | bool | int | float | string | array $nonExistentConstantValue, int $code, ?Throwable $previous, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious ): void
 	{
 		/**
 		 * @var InterfaceOrClassConstantValueNotFoundException $throwableClassName
 		 */
-		$resultedThrowable          = $throwableClassName::withInterfaceOrClassNameAndNonExistentConstantValue( $interfaceOrClassName, $nonExistentConstantValue, $code, $previous );
+		$resultedThrowable          = $throwableClassName::withFqcnAndNonexistentConstantValue( $interfaceOrClassName, $nonExistentConstantValue, $code, $previous );
 		$resultedThrowableClassName = $resultedThrowable::class;
 		$resultedThrowableMessage   = $resultedThrowable->getMessage();
 		$resultedThrowableCode      = $resultedThrowable->getCode();

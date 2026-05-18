@@ -43,7 +43,7 @@ class TypesWithResourceTypeAndExpectedTypedResourceDataProvider implements DataP
 				'types'                 => new MaskedTypeHintTypes(),
 				'resourceType'          => $resourceType = Values::RESOURCE_TYPE,
 				'expectedTypedResource' => Types::createMaskedTypeHintTypedResourceTypeByResourceType( $resourceType )
-			],
+			]
 		];
 	}
 }

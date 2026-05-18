@@ -3,8 +3,8 @@ namespace CodeKandis\Types\Tests\UnitTests;
 
 use CodeKandis\PhpUnit\TestCase;
 use CodeKandis\Types\ObjectNotFoundException;
-use CodeKandis\Types\Tests\DataProviders\UnitTests\ObjectNotFoundExceptionTest\ThrowableClassNamesWithNonExistentObjectsClassNameExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider;
-use CodeKandis\Types\Tests\DataProviders\UnitTests\ObjectNotFoundExceptionTest\ThrowableClassNamesWithNonExistentObjectsQualifiedIdExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider;
+use CodeKandis\Types\Tests\DataProviders\UnitTests\ObjectNotFoundExceptionTest\ThrowableClassNamesWithNonexistentFqcnExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider;
+use CodeKandis\Types\Tests\DataProviders\UnitTests\ObjectNotFoundExceptionTest\ThrowableClassNamesWithNonexistentQualifiedObjectIdExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider;
 use PHPUnit\Framework\Attributes\DataProviderExternal;
 use Throwable;
 
@@ -16,7 +16,7 @@ use Throwable;
 class ObjectNotFoundExceptionTest extends TestCase
 {
 	/**
-	 * Tests if {@link ObjectNotFoundException::withNonExistentObjectsClassName()} instantiates the throwable correctly.
+	 * Tests if {@link ObjectNotFoundException::withNonexistentFqcn()} instantiates the throwable correctly.
 	 * @param string $throwableClassName The class name of the throwable to test.
 	 * @param mixed $nonExistentObjectsClassName The nonexistent object's class name to pass.
 	 * @param int $code The error code to pass.
@@ -26,13 +26,13 @@ class ObjectNotFoundExceptionTest extends TestCase
 	 * @param int $expectedThrowableCode The code of the expected throwable.
 	 * @param ?Throwable $expectedThrowablePrevious The previously catched throwable of the expected throwable.
 	 */
-	#[DataProviderExternal( ThrowableClassNamesWithNonExistentObjectsClassNameExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
+	#[DataProviderExternal( ThrowableClassNamesWithNonexistentFqcnExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
 	public function testIfMethodWithNonExistentObjectClassNameInstantiatesThrowableCorrectly( string $throwableClassName, mixed $nonExistentObjectsClassName, int $code, ?Throwable $previous, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious ): void
 	{
 		/**
 		 * @var ObjectNotFoundException $throwableClassName
 		 */
-		$resultedThrowable          = $throwableClassName::withNonExistentObjectsClassName( $nonExistentObjectsClassName, $code, $previous );
+		$resultedThrowable          = $throwableClassName::withNonexistentFqcn( $nonExistentObjectsClassName, $code, $previous );
 		$resultedThrowableClassName = $resultedThrowable::class;
 		$resultedThrowableMessage   = $resultedThrowable->getMessage();
 		$resultedThrowableCode      = $resultedThrowable->getCode();
@@ -46,7 +46,7 @@ class ObjectNotFoundExceptionTest extends TestCase
 	}
 
 	/**
-	 * Tests if {@link ObjectNotFoundException::withNonExistentObjectsQualifiedId()} instantiates the throwable correctly.
+	 * Tests if {@link ObjectNotFoundException::withNonexistentQualifiedObjectId()} instantiates the throwable correctly.
 	 * @param string $throwableClassName The class name of the throwable to test.
 	 * @param mixed $nonExistentObjectsQualifiedId The nonexistent object's qualified ID to pass.
 	 * @param int $code The error code to pass.
@@ -56,13 +56,13 @@ class ObjectNotFoundExceptionTest extends TestCase
 	 * @param int $expectedThrowableCode The code of the expected throwable.
 	 * @param ?Throwable $expectedThrowablePrevious The previously catched throwable of the expected throwable.
 	 */
-	#[DataProviderExternal( ThrowableClassNamesWithNonExistentObjectsQualifiedIdExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
+	#[DataProviderExternal( ThrowableClassNamesWithNonexistentQualifiedObjectIdExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
 	public function testIfMethodWithNonExistentObjectQualifiedIdInstantiatesThrowableCorrectly( string $throwableClassName, mixed $nonExistentObjectsQualifiedId, int $code, ?Throwable $previous, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious ): void
 	{
 		/**
 		 * @var ObjectNotFoundException $throwableClassName
 		 */
-		$resultedThrowable          = $throwableClassName::withNonExistentObjectsQualifiedId( $nonExistentObjectsQualifiedId, $code, $previous );
+		$resultedThrowable          = $throwableClassName::withNonexistentQualifiedObjectId( $nonExistentObjectsQualifiedId, $code, $previous );
 		$resultedThrowableClassName = $resultedThrowable::class;
 		$resultedThrowableMessage   = $resultedThrowable->getMessage();
 		$resultedThrowableCode      = $resultedThrowable->getCode();

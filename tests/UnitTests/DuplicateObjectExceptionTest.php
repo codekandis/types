@@ -4,8 +4,8 @@ namespace CodeKandis\Types\Tests\UnitTests;
 use CodeKandis\PhpUnit\TestCase;
 use CodeKandis\Types\DuplicateObjectException;
 use CodeKandis\Types\ObjectNotFoundException;
-use CodeKandis\Types\Tests\DataProviders\UnitTests\DuplicateObjectExceptionTest\ThrowableClassNamesWithDuplicatedObjectsClassNameExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider;
-use CodeKandis\Types\Tests\DataProviders\UnitTests\DuplicateObjectExceptionTest\ThrowableClassNamesWithDuplicatedObjectsQualifiedIdExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider;
+use CodeKandis\Types\Tests\DataProviders\UnitTests\DuplicateObjectExceptionTest\ThrowableClassNamesWithDuplicatedFqcnExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider;
+use CodeKandis\Types\Tests\DataProviders\UnitTests\DuplicateObjectExceptionTest\ThrowableClassNamesWithDuplicatedQualifiedObjectIdExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider;
 use PHPUnit\Framework\Attributes\DataProviderExternal;
 use Throwable;
 
@@ -17,7 +17,7 @@ use Throwable;
 class DuplicateObjectExceptionTest extends TestCase
 {
 	/**
-	 * Tests if {@link DuplicateObjectException::withNonExistentObjectsClassName()} instantiates the throwable correctly.
+	 * Tests if {@link DuplicateObjectException::withDuplicatedFqcn()} instantiates the throwable correctly.
 	 * @param string $throwableClassName The class name of the throwable to test.
 	 * @param mixed $duplicatedObjectsClassName The duplicated object's class name to pass.
 	 * @param int $code The error code to pass.
@@ -27,13 +27,13 @@ class DuplicateObjectExceptionTest extends TestCase
 	 * @param int $expectedThrowableCode The code of the expected throwable.
 	 * @param ?Throwable $expectedThrowablePrevious The previously catched throwable of the expected throwable.
 	 */
-	#[DataProviderExternal( ThrowableClassNamesWithDuplicatedObjectsClassNameExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
-	public function testIfMethodWithNonExistentObjectClassNameInstantiatesThrowableCorrectly( string $throwableClassName, mixed $duplicatedObjectsClassName, int $code, ?Throwable $previous, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious ): void
+	#[DataProviderExternal( ThrowableClassNamesWithDuplicatedFqcnExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
+	public function testIfMethodWithDuplicatedFqcnInstantiatesThrowableCorrectly( string $throwableClassName, mixed $duplicatedObjectsClassName, int $code, ?Throwable $previous, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious ): void
 	{
 		/**
 		 * @var DuplicateObjectException $throwableClassName
 		 */
-		$resultedThrowable          = $throwableClassName::withDuplicatedObjectsClassName( $duplicatedObjectsClassName, $code, $previous );
+		$resultedThrowable          = $throwableClassName::withDuplicatedFqcn( $duplicatedObjectsClassName, $code, $previous );
 		$resultedThrowableClassName = $resultedThrowable::class;
 		$resultedThrowableMessage   = $resultedThrowable->getMessage();
 		$resultedThrowableCode      = $resultedThrowable->getCode();
@@ -47,7 +47,7 @@ class DuplicateObjectExceptionTest extends TestCase
 	}
 
 	/**
-	 * Tests if {@link ObjectNotFoundException::withDuplicatedObjectsQualifiedId(()} instantiates the throwable correctly.
+	 * Tests if {@link DuplicateObjectException::withDuplicatedQualifiedObjectId()} instantiates the throwable correctly.
 	 * @param string $throwableClassName The class name of the throwable to test.
 	 * @param mixed $duplicatedObjectsQualifiedId The duplicated object's qualified ID to pass.
 	 * @param int $code The error code to pass.
@@ -57,13 +57,13 @@ class DuplicateObjectExceptionTest extends TestCase
 	 * @param int $expectedThrowableCode The code of the expected throwable.
 	 * @param ?Throwable $expectedThrowablePrevious The previously catched throwable of the expected throwable.
 	 */
-	#[DataProviderExternal( ThrowableClassNamesWithDuplicatedObjectsQualifiedIdExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
-	public function testIfMethodWithNonExistentObjectQualifiedIdInstantiatesThrowableCorrectly( string $throwableClassName, mixed $duplicatedObjectsQualifiedId, int $code, ?Throwable $previous, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious ): void
+	#[DataProviderExternal( ThrowableClassNamesWithDuplicatedQualifiedObjectIdExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
+	public function testIfMethodWithDuplicatedQualifiedObjectIdInstantiatesThrowableCorrectly( string $throwableClassName, mixed $duplicatedObjectsQualifiedId, int $code, ?Throwable $previous, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious ): void
 	{
 		/**
 		 * @var DuplicateObjectException $throwableClassName
 		 */
-		$resultedThrowable          = $throwableClassName::withDuplicatedObjectsQualifiedId( $duplicatedObjectsQualifiedId, $code, $previous );
+		$resultedThrowable          = $throwableClassName::withDuplicatedQualifiedObjectId( $duplicatedObjectsQualifiedId, $code, $previous );
 		$resultedThrowableClassName = $resultedThrowable::class;
 		$resultedThrowableMessage   = $resultedThrowable->getMessage();
 		$resultedThrowableCode      = $resultedThrowable->getCode();

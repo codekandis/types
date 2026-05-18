@@ -38,7 +38,7 @@ class TypesWithExpectedUnknownTypeValueDataProvider implements DataProviderInter
 			3 => [
 				'types'                    => new MaskedTypeHintTypes(),
 				'expectedUnknownTypeValue' => Types::MASKED_TYPE_HINT_TYPE_UNKNOWN_TYPE
-			],
+			]
 		];
 	}
 }

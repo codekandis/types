@@ -20,6 +20,6 @@ class InheritanceTest extends TestCase
 	#[DataProviderExternal( InterfaceOrClassNamesWithExpectedAncestorInterfaceOrClassNameDataProvider::class, 'provideData' )]
 	public function testIfInterfaceOrClassIsSubClassOfAncestorInterfaceOrClass( string $interfaceOrClassName, string $expectedAncestorInterfaceOrClassName ): void
 	{
-		static::assertSubClassOf( $expectedAncestorInterfaceOrClassName, $interfaceOrClassName );
+		static::assertIsSubClassOf( $expectedAncestorInterfaceOrClassName, $interfaceOrClassName );
 	}
 }

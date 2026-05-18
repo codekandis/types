@@ -43,7 +43,7 @@ class TypesWithClassNameAndExpectedTypedObjectDataProvider implements DataProvid
 				'types'               => new MaskedTypeHintTypes(),
 				'className'           => $className = Values::CLASS_NAME,
 				'expectedTypedObject' => Types::createMaskedTypeHintTypedObjectTypeByClassName( $className )
-			],
+			]
 		];
 	}
 }

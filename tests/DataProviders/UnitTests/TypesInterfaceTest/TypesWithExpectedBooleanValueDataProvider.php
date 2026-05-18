@@ -38,7 +38,7 @@ class TypesWithExpectedBooleanValueDataProvider implements DataProviderInterface
 			3 => [
 				'types'                => new MaskedTypeHintTypes(),
 				'expectedBooleanValue' => Types::MASKED_TYPE_HINT_TYPE_BOOLEAN
-			],
+			]
 		];
 	}
 }

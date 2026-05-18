@@ -63,7 +63,7 @@ class TypesWithValueAndExpectedTypedBooleanDataProvider implements DataProviderI
 				'types'                => new MaskedTypeHintTypes(),
 				'value'                => $value = Values::BOOLEAN_TRUE,
 				'expectedTypedBoolean' => Types::createMaskedTypeHintTypedBooleanTypeByValue( $value )
-			],
+			]
 		];
 	}
 }

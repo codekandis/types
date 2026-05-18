@@ -3,7 +3,7 @@ namespace CodeKandis\Types\Tests\UnitTests;
 
 use CodeKandis\PhpUnit\TestCase;
 use CodeKandis\Types\ExceptionInterface;
-use CodeKandis\Types\Tests\DataProviders\UnitTests\ExceptionTraitTest\ThrowableClassNamesWithArgumentsExpectedThrowableClassNameExpectedThrowableClassCodeAndExpectedThrowablePrevious;
+use CodeKandis\Types\Tests\DataProviders\UnitTests\ExceptionTraitTest\ThrowableClassNamesWithArgumentsExpectedThrowableClassNameExpectedThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider;
 use PHPUnit\Framework\Attributes\DataProviderExternal;
 use Throwable;
 
@@ -16,14 +16,14 @@ class ExceptionTraitTest extends TestCase
 {
 	/**
 	 * Tests if {@link ExceptionTrait::__construct()} instantiates the throwable correctly.
-	 * @param string $throwableClassName The class name of the throwable to test.
-	 * @param array $arguments The arguments to pass.
-	 * @param string $expectedThrowableClassName The class name of the expected throwable.
+	 * @param class-string<ExceptionInterface> $throwableClassName The class name of the throwable to test.
+	 * @param array{message?: string, code?: int, previous?: ?Throwable} $arguments The arguments to pass.
+	 * @param class-string<ExceptionInterface> $expectedThrowableClassName The class name of the expected throwable.
 	 * @param string $expectedThrowableMessage The message of the expected throwable.
 	 * @param int $expectedThrowableCode The code of the expected throwable.
 	 * @param ?Throwable $expectedThrowablePrevious The previous of the expected throwable.
 	 */
-	#[DataProviderExternal( ThrowableClassNamesWithArgumentsExpectedThrowableClassNameExpectedThrowableClassCodeAndExpectedThrowablePrevious::class, 'provideData' )]
+	#[DataProviderExternal( ThrowableClassNamesWithArgumentsExpectedThrowableClassNameExpectedThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
 	public function testIfConstructorInstantiatesThrowableCorrectly( string $throwableClassName, array $arguments, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious ): void
 	{
 		$resultedThrowable          = new $throwableClassName( ...$arguments );

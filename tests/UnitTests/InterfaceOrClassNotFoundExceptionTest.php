@@ -3,7 +3,7 @@ namespace CodeKandis\Types\Tests\UnitTests;
 
 use CodeKandis\PhpUnit\TestCase;
 use CodeKandis\Types\InterfaceOrClassNotFoundException;
-use CodeKandis\Types\Tests\DataProviders\UnitTests\InterfaceOrClassNotFoundExceptionTest\ThrowableClassNamesWithNonExistentInterfaceOrClassNameExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider;
+use CodeKandis\Types\Tests\DataProviders\UnitTests\InterfaceOrClassNotFoundExceptionTest\ThrowableClassNamesWithNonexistentFqcnExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider;
 use PHPUnit\Framework\Attributes\DataProviderExternal;
 use Throwable;
 
@@ -15,7 +15,7 @@ use Throwable;
 class InterfaceOrClassNotFoundExceptionTest extends TestCase
 {
 	/**
-	 * Tests if {@link InterfaceOrClassNotFoundException::withNonExistentInterfaceOrClassName()} instantiates the throwable correctly.
+	 * Tests if {@link InterfaceOrClassNotFoundException::withNonexistentFqcn()} instantiates the throwable correctly.
 	 * @param string $throwableClassName The class name of the throwable to test.
 	 * @param string $nonExistentInterfaceOrClassName The nonexistent interface or class name to pass.
 	 * @param int $code The error code to pass.
@@ -25,13 +25,13 @@ class InterfaceOrClassNotFoundExceptionTest extends TestCase
 	 * @param int $expectedThrowableCode The code of the expected throwable.
 	 * @param ?Throwable $expectedThrowablePrevious The previously catched throwable of the expected throwable.
 	 */
-	#[DataProviderExternal( ThrowableClassNamesWithNonExistentInterfaceOrClassNameExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
+	#[DataProviderExternal( ThrowableClassNamesWithNonexistentFqcnExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
 	public function testIfMethodWithNonExistentInterfaceOrClassNameInstantiatesThrowableCorrectly( string $throwableClassName, string $nonExistentInterfaceOrClassName, int $code, ?Throwable $previous, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious ): void
 	{
 		/**
 		 * @var InterfaceOrClassNotFoundException $throwableClassName
 		 */
-		$resultedThrowable          = $throwableClassName::withNonExistentInterfaceOrClassName( $nonExistentInterfaceOrClassName, $code, $previous );
+		$resultedThrowable          = $throwableClassName::withNonexistentFqcn( $nonExistentInterfaceOrClassName, $code, $previous );
 		$resultedThrowableClassName = $resultedThrowable::class;
 		$resultedThrowableMessage   = $resultedThrowable->getMessage();
 		$resultedThrowableCode      = $resultedThrowable->getCode();

@@ -3,8 +3,8 @@ namespace CodeKandis\Types\Tests\UnitTests;
 
 use CodeKandis\PhpUnit\TestCase;
 use CodeKandis\Types\IndexNotFoundException;
-use CodeKandis\Types\Tests\DataProviders\UnitTests\IndexNotFoundExceptionTest\ThrowableClassNamesWithNonExistentIndexExpectedIndicesExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider;
-use CodeKandis\Types\Tests\DataProviders\UnitTests\IndexNotFoundExceptionTest\ThrowableClassNamesWithNonExistentIndexExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider;
+use CodeKandis\Types\Tests\DataProviders\UnitTests\IndexNotFoundExceptionTest\ThrowableClassNamesWithNonexistentIndexExpectedIndicesExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider;
+use CodeKandis\Types\Tests\DataProviders\UnitTests\IndexNotFoundExceptionTest\ThrowableClassNamesWithNonexistentIndexExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider;
 use PHPUnit\Framework\Attributes\DataProviderExternal;
 use Throwable;
 
@@ -16,7 +16,7 @@ use Throwable;
 class IndexNotFoundExceptionTest extends TestCase
 {
 	/**
-	 * Tests if {@link IndexNotFoundException::withNonExistentIndex()} instantiates the throwable correctly.
+	 * Tests if {@link IndexNotFoundException::withNonexistentIndex()} instantiates the throwable correctly.
 	 * @param string $throwableClassName The class name of the throwable to test.
 	 * @param mixed $nonExistentIndex The nonexistent index to pass.
 	 * @param int $code The error code to pass.
@@ -26,13 +26,13 @@ class IndexNotFoundExceptionTest extends TestCase
 	 * @param int $expectedThrowableCode The code of the expected throwable.
 	 * @param ?Throwable $expectedThrowablePrevious The previously catched throwable of the expected throwable.
 	 */
-	#[DataProviderExternal( ThrowableClassNamesWithNonExistentIndexExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
+	#[DataProviderExternal( ThrowableClassNamesWithNonexistentIndexExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
 	public function testIfMethodWithNonExistentIndexInstantiatesThrowableCorrectly( string $throwableClassName, mixed $nonExistentIndex, int $code, ?Throwable $previous, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious ): void
 	{
 		/**
 		 * @var IndexNotFoundException $throwableClassName
 		 */
-		$resultedThrowable          = $throwableClassName::withNonExistentIndex( $nonExistentIndex, $code, $previous );
+		$resultedThrowable          = $throwableClassName::withNonexistentIndex( $nonExistentIndex, $code, $previous );
 		$resultedThrowableClassName = $resultedThrowable::class;
 		$resultedThrowableMessage   = $resultedThrowable->getMessage();
 		$resultedThrowableCode      = $resultedThrowable->getCode();
@@ -46,7 +46,7 @@ class IndexNotFoundExceptionTest extends TestCase
 	}
 
 	/**
-	 * Tests if {@link IndexNotFoundException::withNonExistentIndexAndExpectedIndices()} instantiates the throwable correctly.
+	 * Tests if {@link IndexNotFoundException::withNonexistentIndexAndExpectedIndices()} instantiates the throwable correctly.
 	 * @param string $throwableClassName The class name of the throwable to test.
 	 * @param mixed $nonExistentIndex The nonexistent index to pass.
 	 * @param string[] $expectedIndices The expected indices to pass.
@@ -57,13 +57,13 @@ class IndexNotFoundExceptionTest extends TestCase
 	 * @param int $expectedThrowableCode The code of the expected throwable.
 	 * @param ?Throwable $expectedThrowablePrevious The previously catched throwable of the expected throwable.
 	 */
-	#[DataProviderExternal( ThrowableClassNamesWithNonExistentIndexExpectedIndicesExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
+	#[DataProviderExternal( ThrowableClassNamesWithNonexistentIndexExpectedIndicesExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
 	public function testIfMethodWithNonExistentIndexAndExpectedIndicesInstantiatesThrowableCorrectly( string $throwableClassName, mixed $nonExistentIndex, array $expectedIndices, int $code, ?Throwable $previous, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious ): void
 	{
 		/**
 		 * @var IndexNotFoundException $throwableClassName
 		 */
-		$resultedThrowable          = $throwableClassName::withNonExistentIndexAndExpectedIndices( $nonExistentIndex, $expectedIndices, $code, $previous );
+		$resultedThrowable          = $throwableClassName::withNonexistentIndexAndExpectedIndices( $nonExistentIndex, $expectedIndices, $code, $previous );
 		$resultedThrowableClassName = $resultedThrowable::class;
 		$resultedThrowableMessage   = $resultedThrowable->getMessage();
 		$resultedThrowableCode      = $resultedThrowable->getCode();

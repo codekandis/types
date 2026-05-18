@@ -3,7 +3,7 @@ namespace CodeKandis\Types\Tests\UnitTests;
 
 use CodeKandis\PhpUnit\TestCase;
 use CodeKandis\Types\PublicMethodNotFoundException;
-use CodeKandis\Types\Tests\DataProviders\UnitTests\PublicMethodNotFoundExceptionTest\ThrowableClassNamesWithInterfaceOrClassNameNonExistentMethodNameExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider;
+use CodeKandis\Types\Tests\DataProviders\UnitTests\PublicMethodNotFoundExceptionTest\ThrowableClassNamesWithFqcnNonexistentMethodNameExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider;
 use PHPUnit\Framework\Attributes\DataProviderExternal;
 use Throwable;
 
@@ -15,7 +15,7 @@ use Throwable;
 class PublicMethodNotFoundExceptionTest extends TestCase
 {
 	/**
-	 * Tests if {@link PublicMethodNotFoundException::withInterfaceOrClassNameAndNonExistentMethodName()} instantiates the throwable correctly.
+	 * Tests if {@link PublicMethodNotFoundException::withFqcnAndNonexistentMethodName()} instantiates the throwable correctly.
 	 * @param string $throwableClassName The class name of the throwable to test.
 	 * @param string $interfaceOrClassName The interface or class name to pass.
 	 * @param string $nonExistentMethodName The nonexistent method name to pass.
@@ -26,13 +26,13 @@ class PublicMethodNotFoundExceptionTest extends TestCase
 	 * @param int $expectedThrowableCode The code of the expected throwable.
 	 * @param ?Throwable $expectedThrowablePrevious The previously catched throwable of the expected throwable.
 	 */
-	#[DataProviderExternal( ThrowableClassNamesWithInterfaceOrClassNameNonExistentMethodNameExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
+	#[DataProviderExternal( ThrowableClassNamesWithFqcnNonexistentMethodNameExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
 	public function testIfMethodWithInterfaceOrClassNameAndNonExistentMethodNameInstantiatesThrowableCorrectly( string $throwableClassName, string $interfaceOrClassName, string $nonExistentMethodName, int $code, ?Throwable $previous, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious ): void
 	{
 		/**
 		 * @var PublicMethodNotFoundException $throwableClassName
 		 */
-		$resultedThrowable          = $throwableClassName::withInterfaceOrClassNameAndNonExistentMethodName( $interfaceOrClassName, $nonExistentMethodName, $code, $previous );
+		$resultedThrowable          = $throwableClassName::withFqcnAndNonexistentMethodName( $interfaceOrClassName, $nonExistentMethodName, $code, $previous );
 		$resultedThrowableClassName = $resultedThrowable::class;
 		$resultedThrowableMessage   = $resultedThrowable->getMessage();
 		$resultedThrowableCode      = $resultedThrowable->getCode();

@@ -55,7 +55,7 @@ class TypesWithExpectedInstanceDataProvider implements DataProviderInterface
 					$instance = Values::createInheritedBaseObjectFixture()
 				),
 				'expectedInstance' => $instance
-			],
+			]
 		];
 	}
 }

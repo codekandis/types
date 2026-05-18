@@ -38,7 +38,7 @@ class TypesWithExpectedTypedResourceTemplateValueDataProvider implements DataPro
 			3 => [
 				'types'                              => new MaskedTypeHintTypes(),
 				'expectedTypedResourceTemplateValue' => Types::MASKED_TYPE_HINT_TYPED_RESOUCRE_TEMPLATE
-			],
+			]
 		];
 	}
 }

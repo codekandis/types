@@ -38,7 +38,7 @@ class TypesWithExpectedIntegerValueDataProvider implements DataProviderInterface
 			3 => [
 				'types'                => new MaskedTypeHintTypes(),
 				'expectedIntegerValue' => Types::MASKED_TYPE_HINT_TYPE_INTEGER
-			],
+			]
 		];
 	}
 }

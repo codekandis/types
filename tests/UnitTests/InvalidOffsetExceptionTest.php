@@ -3,8 +3,10 @@ namespace CodeKandis\Types\Tests\UnitTests;
 
 use CodeKandis\PhpUnit\TestCase;
 use CodeKandis\Types\InvalidOffsetException;
-use CodeKandis\Types\Tests\DataProviders\UnitTests\InvalidOffsetExceptionTest\ThrowableClassNamesWithInvalidOffsetExpectedOffsetsExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider;
-use CodeKandis\Types\Tests\DataProviders\UnitTests\InvalidOffsetExceptionTest\ThrowableClassNamesWithInvalidOffsetExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider;
+use CodeKandis\Types\InvalidTypeExceptionInterface;
+use CodeKandis\Types\Tests\DataProviders\UnitTests\InvalidOffsetExceptionTest\ThrowableClassNamesWithInvalidOffsetExpectedOffsetsExpectedThrowableClassNameExpectedThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider;
+use CodeKandis\Types\Tests\DataProviders\UnitTests\InvalidOffsetExceptionTest\ThrowableClassNamesWithInvalidOffsetExpectedThrowableClassNameExpectedThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider;
+use CodeKandis\Types\Tests\DataProviders\UnitTests\InvalidOffsetExceptionTest\ThrowableClassNamesWithInvalidOffsetInvalidExpectedOffsetsExpectedThrowableClassNameAndExpectedThrowableMessageDataProvider;
 use PHPUnit\Framework\Attributes\DataProviderExternal;
 use Throwable;
 
@@ -26,7 +28,7 @@ class InvalidOffsetExceptionTest extends TestCase
 	 * @param int $expectedThrowableCode The code of the expected throwable.
 	 * @param ?Throwable $expectedThrowablePrevious The previously catched throwable of the expected throwable.
 	 */
-	#[DataProviderExternal( ThrowableClassNamesWithInvalidOffsetExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
+	#[DataProviderExternal( ThrowableClassNamesWithInvalidOffsetExpectedThrowableClassNameExpectedThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
 	public function testIfMethodWithInvalidOffsetInstantiatesThrowableCorrectly( string $throwableClassName, int $invalidOffset, int $code, ?Throwable $previous, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious ): void
 	{
 		/**
@@ -46,10 +48,40 @@ class InvalidOffsetExceptionTest extends TestCase
 	}
 
 	/**
+	 * Tests if {@link InvalidOffsetException::withInvalidOffsetAndExpectedOffsets()} throws {@link InvalidTypeExceptionInterface} on invalid expected offset type.
+	 * @param string $throwableClassName The class name of the throwable to test.
+	 * @param int $invalidOffset The invalid offset to pass.
+	 * @param int[] $invalidExpectedOffsets The invalid expected offsets to pass.
+	 * @param int $code The error code to pass.
+	 * @param ?Throwable $previous The previous throwable to pass.
+	 * @param string $expectedThrowableClassName The class name of the expected throwable.
+	 * @param string $expectedThrowableMessage The message of the expected throwable.
+	 */
+	#[DataProviderExternal( ThrowableClassNamesWithInvalidOffsetInvalidExpectedOffsetsExpectedThrowableClassNameAndExpectedThrowableMessageDataProvider::class, 'provideData' )]
+	public function testIfMethodWithValidOffsetAndInvalidExpectedOffsetsThrowsInvalidTypeExceptionInterfaceOnInvalidExpectedOffsetType( string $throwableClassName, int $invalidOffset, array $invalidExpectedOffsets, int $code, ?Throwable $previous, string $expectedThrowableClassName, string $expectedThrowableMessage ): void
+	{
+		try
+		{
+			/**
+			 * @var InvalidOffsetException $throwableClassName
+			 */
+			$throwableClassName::withInvalidOffsetAndExpectedOffsets( $invalidOffset, $invalidExpectedOffsets, $code, $previous );
+		}
+		catch ( Throwable $throwable )
+		{
+			$resultedThrowableMessage = $throwable->getMessage();
+
+			static::assertInstanceOf( InvalidTypeExceptionInterface::class, $throwable );
+			static::assertInstanceOf( $expectedThrowableClassName, $throwable );
+			static::assertSame( $expectedThrowableMessage, $resultedThrowableMessage );
+		}
+	}
+
+	/**
 	 * Tests if {@link InvalidOffsetException::withInvalidOffsetAndExpectedOffsets()} instantiates the throwable correctly.
 	 * @param string $throwableClassName The class name of the throwable to test.
 	 * @param int $invalidOffset The invalid offset to pass.
-	 * @param mixed[] $expectedOffsets The expected offsets to pass.
+	 * @param int[] $expectedOffsets The expected offsets to pass.
 	 * @param int $code The error code to pass.
 	 * @param ?Throwable $previous The previous throwable to pass.
 	 * @param string $expectedThrowableClassName The class name of the expected throwable.
@@ -57,7 +89,7 @@ class InvalidOffsetExceptionTest extends TestCase
 	 * @param int $expectedThrowableCode The code of the expected throwable.
 	 * @param ?Throwable $expectedThrowablePrevious The previously catched throwable of the expected throwable.
 	 */
-	#[DataProviderExternal( ThrowableClassNamesWithInvalidOffsetExpectedOffsetsExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
+	#[DataProviderExternal( ThrowableClassNamesWithInvalidOffsetExpectedOffsetsExpectedThrowableClassNameExpectedThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
 	public function testIfMethodWithInvalidOffsetAndExpectedOffsetsInstantiatesThrowableCorrectly( string $throwableClassName, int $invalidOffset, array $expectedOffsets, int $code, ?Throwable $previous, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious ): void
 	{
 		/**

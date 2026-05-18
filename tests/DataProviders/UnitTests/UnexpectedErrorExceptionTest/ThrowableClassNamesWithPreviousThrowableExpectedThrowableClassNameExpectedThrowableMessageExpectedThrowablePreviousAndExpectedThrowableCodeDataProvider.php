@@ -39,7 +39,7 @@ class ThrowableClassNamesWithPreviousThrowableExpectedThrowableClassNameExpected
 				'expectedThrowableMessage'   => sprintf( $throwableClassName::EXCEPTION_MESSAGE_WITH_PREVIOUSLY_CATCHED_THROWABLE, $previousThrowable::class ),
 				'expectedThrowableCode'      => $code,
 				'expectedThrowablePrevious'  => $previousThrowable
-			],
+			]
 		];
 	}
 }

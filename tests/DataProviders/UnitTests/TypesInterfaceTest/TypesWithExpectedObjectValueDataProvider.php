@@ -38,7 +38,7 @@ class TypesWithExpectedObjectValueDataProvider implements DataProviderInterface
 			3 => [
 				'types'               => new MaskedTypeHintTypes(),
 				'expectedObjectValue' => Types::MASKED_TYPE_HINT_TYPE_OBJECT
-			],
+			]
 		];
 	}
 }

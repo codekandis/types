@@ -38,7 +38,7 @@ class TypesWithExpectedClosedResourceValueDataProvider implements DataProviderIn
 			3 => [
 				'types'                       => new MaskedTypeHintTypes(),
 				'expectedClosedResourceValue' => Types::MASKED_TYPE_HINT_TYPE_CLOSED_RESOURCE
-			],
+			]
 		];
 	}
 }

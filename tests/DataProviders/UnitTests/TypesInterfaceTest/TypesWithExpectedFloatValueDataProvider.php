@@ -38,7 +38,7 @@ class TypesWithExpectedFloatValueDataProvider implements DataProviderInterface
 			3 => [
 				'types'              => new MaskedTypeHintTypes(),
 				'expectedFloatValue' => Types::MASKED_TYPE_HINT_TYPE_FLOAT
-			],
+			]
 		];
 	}
 }

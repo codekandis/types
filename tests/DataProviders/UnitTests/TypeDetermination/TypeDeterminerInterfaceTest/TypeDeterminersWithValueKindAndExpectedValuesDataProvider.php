@@ -357,7 +357,7 @@ class TypeDeterminersWithValueKindAndExpectedValuesDataProvider implements DataP
 				'value'          => Values::STRING,
 				'kind'           => TypeDeterminationKind::TypeHintDetailed,
 				'expectedType'   => Types::TYPE_HINT_TYPE_STRING
-			],
+			]
 		];
 	}
 }

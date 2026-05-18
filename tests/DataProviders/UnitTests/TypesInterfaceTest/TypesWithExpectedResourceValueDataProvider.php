@@ -38,7 +38,7 @@ class TypesWithExpectedResourceValueDataProvider implements DataProviderInterfac
 			3 => [
 				'types'                 => new MaskedTypeHintTypes(),
 				'expectedResourceValue' => Types::MASKED_TYPE_HINT_TYPE_RESOURCE
-			],
+			]
 		];
 	}
 }

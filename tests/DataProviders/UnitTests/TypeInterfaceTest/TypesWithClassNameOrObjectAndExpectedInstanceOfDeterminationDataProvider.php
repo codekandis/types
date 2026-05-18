@@ -203,7 +203,7 @@ class TypesWithClassNameOrObjectAndExpectedInstanceOfDeterminationDataProvider i
 				),
 				'classNameOrObject'               => Values::createBaseObjectFixture(),
 				'expectedInstanceOfDetermination' => Values::BOOLEAN_TRUE
-			],
+			]
 		];
 	}
 }

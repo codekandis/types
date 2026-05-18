@@ -38,7 +38,7 @@ class TypesWithExpectedTypedBooleanTemplateValueDataProvider implements DataProv
 			3 => [
 				'types'                             => new MaskedTypeHintTypes(),
 				'expectedTypedBooleanTemplateValue' => Types::MASKED_TYPE_HINT_TYPED_BOOLEAN_TEMPLATE
-			],
+			]
 		];
 	}
 }

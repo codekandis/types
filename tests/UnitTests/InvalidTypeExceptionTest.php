@@ -2,9 +2,12 @@
 namespace CodeKandis\Types\Tests\UnitTests;
 
 use CodeKandis\PhpUnit\TestCase;
+use CodeKandis\Types\InvalidOffsetException;
 use CodeKandis\Types\InvalidTypeException;
-use CodeKandis\Types\Tests\DataProviders\UnitTests\InvalidTypeExceptionTest\ThrowableClassNamesWithInvalidTypeExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider;
-use CodeKandis\Types\Tests\DataProviders\UnitTests\InvalidTypeExceptionTest\ThrowableClassNamesWithInvalidTypeExpectedTypesExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider;
+use CodeKandis\Types\InvalidTypeExceptionInterface;
+use CodeKandis\Types\Tests\DataProviders\UnitTests\InvalidTypeExceptionTest\ThrowableClassNamesWithValidTypeInvalidExpectedTypesExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider;
+use CodeKandis\Types\Tests\DataProviders\UnitTests\InvalidTypeExceptionTest\ThrowableClassNamesWithInvalidTypeExpectedThrowableClassNameExpectedThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider;
+use CodeKandis\Types\Tests\DataProviders\UnitTests\InvalidTypeExceptionTest\ThrowableClassNamesWithInvalidTypeExpectedTypesExpectedThrowableClassNameExpectedThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider;
 use PHPUnit\Framework\Attributes\DataProviderExternal;
 use Throwable;
 
@@ -26,7 +29,7 @@ class InvalidTypeExceptionTest extends TestCase
 	 * @param int $expectedThrowableCode The code of the expected throwable.
 	 * @param ?Throwable $expectedThrowablePrevious The previously catched throwable of the expected throwable.
 	 */
-	#[DataProviderExternal( ThrowableClassNamesWithInvalidTypeExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
+	#[DataProviderExternal( ThrowableClassNamesWithInvalidTypeExpectedThrowableClassNameExpectedThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
 	public function testIfMethodWithInvalidTypeInstantiatesThrowableCorrectly( string $throwableClassName, string $invalidType, int $code, ?Throwable $previous, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious ): void
 	{
 		/**
@@ -46,6 +49,36 @@ class InvalidTypeExceptionTest extends TestCase
 	}
 
 	/**
+	 * Tests if {@link InvalidTypeException::withInvalidTypeAndExpectedTypes()} throws {@link InvalidTypeExceptionInterface} on invalid expected type type.
+	 * @param string $throwableClassName The class name of the throwable to test.
+	 * @param string $invalidType The invalid type to pass.
+	 * @param string[] $invalidExpectedTypes The invalid expected types to pass.
+	 * @param int $code The error code to pass.
+	 * @param ?Throwable $previous The previous throwable to pass.
+	 * @param string $expectedThrowableClassName The class name of the expected throwable.
+	 * @param string $expectedThrowableMessage The message of the expected throwable.
+	 */
+	#[DataProviderExternal( ThrowableClassNamesWithValidTypeInvalidExpectedTypesExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
+	public function testIfMethodWithValidTypeAndInvalidExpectedTypesThrowsInvalidTypeExceptionInterfaceOnInvalidExpectedTypeType( string $throwableClassName, string $invalidType, array $invalidExpectedTypes, int $code, ?Throwable $previous, string $expectedThrowableClassName, string $expectedThrowableMessage ): void
+	{
+		try
+		{
+			/**
+			 * @var InvalidTypeException $throwableClassName
+			 */
+			$throwableClassName::withInvalidTypeAndExpectedTypes( $invalidType, $invalidExpectedTypes, $code, $previous );
+		}
+		catch ( Throwable $throwable )
+		{
+			$resultedThrowableMessage = $throwable->getMessage();
+
+			static::assertInstanceOf( InvalidTypeExceptionInterface::class, $throwable );
+			static::assertInstanceOf( $expectedThrowableClassName, $throwable );
+			static::assertSame( $expectedThrowableMessage, $resultedThrowableMessage );
+		}
+	}
+
+	/**
 	 * Tests if {@link InvalidTypeException::withInvalidTypeAndExpectedTypes()} instantiates the throwable correctly.
 	 * @param string $throwableClassName The class name of the throwable to test.
 	 * @param string $invalidType The invalid type to pass.
@@ -57,7 +90,7 @@ class InvalidTypeExceptionTest extends TestCase
 	 * @param int $expectedThrowableCode The code of the expected throwable.
 	 * @param ?Throwable $expectedThrowablePrevious The previously catched throwable of the expected throwable.
 	 */
-	#[DataProviderExternal( ThrowableClassNamesWithInvalidTypeExpectedTypesExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
+	#[DataProviderExternal( ThrowableClassNamesWithInvalidTypeExpectedTypesExpectedThrowableClassNameExpectedThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
 	public function testIfMethodWithInvalidTypeAndExpectedTypesInstantiatesThrowableCorrectly( string $throwableClassName, string $invalidType, array $expectedTypes, int $code, ?Throwable $previous, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious ): void
 	{
 		/**

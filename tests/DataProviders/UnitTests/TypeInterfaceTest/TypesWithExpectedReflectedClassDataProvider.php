@@ -55,7 +55,7 @@ class TypesWithExpectedReflectedClassDataProvider implements DataProviderInterfa
 					$instance = Values::createInheritedBaseObjectFixture()
 				),
 				'expectedReflectedClass' => Values::createReflectionClass( $instance )
-			],
+			]
 		];
 	}
 }

@@ -3,7 +3,7 @@ namespace CodeKandis\Types\Tests\UnitTests;
 
 use CodeKandis\PhpUnit\TestCase;
 use CodeKandis\Types\PrivatePropertyNotFoundException;
-use CodeKandis\Types\Tests\DataProviders\UnitTests\PrivatePropertyNotFoundExceptionTest\ThrowableClassNamesWithInterfaceOrClassNameNonExistentPropertyNameExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider;
+use CodeKandis\Types\Tests\DataProviders\UnitTests\PrivatePropertyNotFoundExceptionTest\ThrowableClassNamesWithFqcnNonexistentPropertyNameExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider;
 use PHPUnit\Framework\Attributes\DataProviderExternal;
 use Throwable;
 
@@ -15,7 +15,7 @@ use Throwable;
 class PrivatePropertyNotFoundExceptionTest extends TestCase
 {
 	/**
-	 * Tests if {@link PrivatePropertyNotFoundException::withInterfaceOrClassNameAndNonExistentPropertyName()} instantiates the throwable correctly.
+	 * Tests if {@link PrivatePropertyNotFoundException::withFqcnAndNonexistentPropertyName()} instantiates the throwable correctly.
 	 * @param string $throwableClassName The class name of the throwable to test.
 	 * @param string $interfaceOrClassName The interface or class name to pass.
 	 * @param string $nonExistentPropertyName The nonexistent property name to pass.
@@ -26,13 +26,13 @@ class PrivatePropertyNotFoundExceptionTest extends TestCase
 	 * @param int $expectedThrowableCode The code of the expected throwable.
 	 * @param ?Throwable $expectedThrowablePrevious The previously catched throwable of the expected throwable.
 	 */
-	#[DataProviderExternal( ThrowableClassNamesWithInterfaceOrClassNameNonExistentPropertyNameExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
+	#[DataProviderExternal( ThrowableClassNamesWithFqcnNonexistentPropertyNameExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
 	public function testIfPropertyWithInterfaceOrClassNameAndNonExistentPropertyNameInstantiatesThrowableCorrectly( string $throwableClassName, string $interfaceOrClassName, string $nonExistentPropertyName, int $code, ?Throwable $previous, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious ): void
 	{
 		/**
 		 * @var PrivatePropertyNotFoundException $throwableClassName
 		 */
-		$resultedThrowable          = $throwableClassName::withInterfaceOrClassNameAndNonExistentPropertyName( $interfaceOrClassName, $nonExistentPropertyName, $code, $previous );
+		$resultedThrowable          = $throwableClassName::withFqcnAndNonexistentPropertyName( $interfaceOrClassName, $nonExistentPropertyName, $code, $previous );
 		$resultedThrowableClassName = $resultedThrowable::class;
 		$resultedThrowableMessage   = $resultedThrowable->getMessage();
 		$resultedThrowableCode      = $resultedThrowable->getCode();
