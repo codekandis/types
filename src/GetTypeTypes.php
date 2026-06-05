@@ -128,7 +128,7 @@ class GetTypeTypes extends BaseObject implements GetTypeTypesInterface
 	{
 		return sprintf(
 			$this->typedBooleanTemplate,
-			false === $value
+			$value === false
 				? 'false'
 				: 'true'
 		);

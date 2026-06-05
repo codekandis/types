@@ -128,7 +128,7 @@ class MaskedGetTypeTypes extends BaseObject implements MaskedGetTypeTypesInterfa
 	{
 		return sprintf(
 			$this->typedBooleanTemplate,
-			false === $value
+			$value === false
 				? 'false'
 				: 'true'
 		);

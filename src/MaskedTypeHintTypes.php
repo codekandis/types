@@ -128,7 +128,7 @@ class MaskedTypeHintTypes extends BaseObject implements MaskedTypeHintTypesInter
 	{
 		return sprintf(
 			$this->typedBooleanTemplate,
-			false === $value
+			$value === false
 				? 'false'
 				: 'true'
 		);

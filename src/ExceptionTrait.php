@@ -19,7 +19,7 @@ trait ExceptionTrait
 	public function __construct( string $message = '', int $code = 0, ?Throwable $previous = null )
 	{
 		parent::__construct(
-			'' === $message
+			$message === ''
 				? static::EXCEPTION_MESSAGE_DEFAULT
 				: $message,
 			$code,

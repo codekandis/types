@@ -128,7 +128,7 @@ class TypeHintTypes extends BaseObject implements TypeHintTypesInterface
 	{
 		return sprintf(
 			$this->typedBooleanTemplate,
-			false === $value
+			$value === false
 				? 'false'
 				: 'true'
 		);

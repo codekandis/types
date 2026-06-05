@@ -84,7 +84,7 @@ class Type extends BaseObject implements TypeInterface
 	#[Override]
 	public function isEqual( object $object ): bool
 	{
-		return $object == $this->instance;
+		return $this->instance == $object;
 	}
 
 	/**
@@ -93,6 +93,6 @@ class Type extends BaseObject implements TypeInterface
 	#[Override]
 	public function isIdentical( object $object ): bool
 	{
-		return $object === $this->instance;
+		return $this->instance === $object;
 	}
 }

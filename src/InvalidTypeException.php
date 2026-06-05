@@ -61,17 +61,17 @@ class InvalidTypeException extends RuntimeException implements InvalidTypeExcept
 	 */
 	public static function withInvalidTypeAndExpectedTypes( string $invalidType, array $expectedTypes, int $code = 0, ?Throwable $previous = null ): static
 	{
-		if ( [] === $expectedTypes )
+		if ( $expectedTypes === [] )
 		{
 			throw new ValueIsEmptyException();
 		}
 
 		$invalidExpectedTypes = array_filter(
 			$expectedTypes,
-			static fn( mixed $expectedType ): bool => false === is_string( $expectedType )
+			static fn( mixed $expectedType ): bool => is_string( $expectedType ) === false
 		);
 
-		if ( [] !== $invalidExpectedTypes )
+		if ( $invalidExpectedTypes !== [] )
 		{
 			$determinedExpectedTypeType = new TypeDeterminer()
 				->determine(
