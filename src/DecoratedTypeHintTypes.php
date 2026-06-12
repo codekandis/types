@@ -5,12 +5,12 @@ use Override;
 use function sprintf;
 
 /**
- * Represents a provider of masked type names like PHP's type hints.
- * It provides angle-bracket masked names for type-hint style output.
+ * Represents a provider of decorated type names like PHP's type hints.
+ * It provides angle-bracket decorated names for type-hint style output.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-class MaskedTypeHintTypes extends BaseObject implements MaskedTypeHintTypesInterface
+class DecoratedTypeHintTypes extends BaseObject implements TypesInterface
 {
 	/**
 	 * {@inheritDoc}

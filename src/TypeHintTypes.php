@@ -10,7 +10,7 @@ use function sprintf;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-class TypeHintTypes extends BaseObject implements TypeHintTypesInterface
+class TypeHintTypes extends BaseObject implements TypesInterface
 {
 	/**
 	 * {@inheritDoc}

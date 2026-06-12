@@ -5,12 +5,12 @@ use Override;
 use function sprintf;
 
 /**
- * Represents a provider of masked type names like PHP's `gettype()` function.
- * It provides angle-bracket masked names for `gettype()` style output.
+ * Represents a provider of decorated type names like PHP's `gettype()` function.
+ * It provides angle-bracket decorated names for `gettype()` style output.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-class MaskedGetTypeTypes extends BaseObject implements MaskedGetTypeTypesInterface
+class DecoratedGetTypeTypes extends BaseObject implements TypesInterface
 {
 	/**
 	 * {@inheritDoc}

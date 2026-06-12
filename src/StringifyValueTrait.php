@@ -23,21 +23,21 @@ trait StringifyValueTrait
 	{
 		$valueType = new TypeDeterminer()->determine( $value, TypeDeterminationMode::GetType );
 
-		$getTypeTypes        = new GetTypeTypes();
-		$maskedTypeHintTypes = new MaskedTypeHintTypes();
+		$getTypeTypes           = new GetTypeTypes();
+		$decoratedTypeHintTypes = new DecoratedTypeHintTypes();
 
 		return match ( $valueType )
 		{
-			$getTypeTypes->null           => $maskedTypeHintTypes->null,
-			$getTypeTypes->resource       => $maskedTypeHintTypes->createTypedResource(
+			$getTypeTypes->null           => $decoratedTypeHintTypes->null,
+			$getTypeTypes->resource       => $decoratedTypeHintTypes->createTypedResource(
 				get_resource_type( $value )
 			),
-			$getTypeTypes->closedResource => $maskedTypeHintTypes->closedResource,
-			$getTypeTypes->array          => $maskedTypeHintTypes->array,
+			$getTypeTypes->closedResource => $decoratedTypeHintTypes->closedResource,
+			$getTypeTypes->array          => $decoratedTypeHintTypes->array,
 			$getTypeTypes->object         => $value instanceof Stringable
 				? $value->__toString()
-				: $maskedTypeHintTypes->createTypedObject( $value::class ),
-			$getTypeTypes->boolean        => $maskedTypeHintTypes->createTypedBoolean( $value ),
+				: $decoratedTypeHintTypes->createTypedObject( $value::class ),
+			$getTypeTypes->boolean        => $decoratedTypeHintTypes->createTypedBoolean( $value ),
 			default                       => (string) $value
 		};
 	}
