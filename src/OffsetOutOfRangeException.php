@@ -6,6 +6,7 @@ use function sprintf;
 
 /**
  * Represents an exception if an offset is out of range.
+ * It describes offsets outside accepted ranges.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
@@ -25,7 +26,8 @@ class OffsetOutOfRangeException extends RuntimeException implements OffsetOutOfR
 	public const string EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_OFFSET = 'The offset `%1$s` is out of range.';
 
 	/**
-	 * Represents the exception message with the out of range offset, an expected minimum offset and an expected maximum offset.
+	 * Represents the exception message with the out of range offset, an expected minimum offset and an expected maximum
+	 * offset.
 	 * @var string
 	 */
 	public const string EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_OFFSET_EXPECTED_MIN_OFFSET_AND_EXPECTED_MAX_OFFSET = 'The offset `%1$s` is out of range. Expected `%2$s <= offset <= %3$s`.';

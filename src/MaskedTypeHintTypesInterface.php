@@ -4,7 +4,8 @@ namespace CodeKandis\Types;
 use Override;
 
 /**
- * Represents the interface of any enumeration of masked types like PHP's type hints.
+ * Represents the interface of any provider of masked type names like PHP's type hints.
+ * It provides masked names for type-hint style output.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
@@ -132,7 +133,7 @@ interface MaskedTypeHintTypesInterface extends TypesInterface
 
 	/**
 	 * Creates a masked type-hinted `bool` from a boolean value.
-	 * @param bool $value The value.
+	 * @param bool $value The boolean value to encode.
 	 * @return string The masked type-hinted `bool`.
 	 */
 	#[Override]

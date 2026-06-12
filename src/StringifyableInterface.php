@@ -5,20 +5,21 @@ use Stringable;
 
 /**
  * Represents the interface of any class able to return its `string` representation.
+ * The implementing class defines the shape and meaning of the returned string.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
 interface StringifyableInterface extends Stringable
 {
 	/**
-	 * Gets the `string` representation of the object.
-	 * @return string The `string` representation of the object.
+	 * Gets the string representation of the object.
+	 * @return string The string representation of the object.
 	 */
 	public function __toString(): string;
 
 	/**
-	 * Gets the `string` representation of the object.
-	 * @return string The `string` representation of the object.
+	 * Gets the string representation of the object.
+	 * @return string The string representation of the object.
 	 */
 	public function toString(): string;
 }

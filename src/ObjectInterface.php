@@ -3,6 +3,7 @@ namespace CodeKandis\Types;
 
 /**
  * Represents the interface of any object.
+ * It defines reusable object behavior for implementing classes.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */

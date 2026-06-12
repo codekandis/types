@@ -5,7 +5,8 @@ use Override;
 use function sprintf;
 
 /**
- * Represents an enumeration of masked types like PHP's type hints.
+ * Represents a provider of masked type names like PHP's type hints.
+ * It provides angle-bracket masked names for type-hint style output.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */

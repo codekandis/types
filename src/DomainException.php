@@ -4,7 +4,7 @@ namespace CodeKandis\Types;
 use DomainException as OriginDomainException;
 
 /**
- * Represents an exception if a domain error occurred.
+ * Represents an exception if a value is outside its defined domain.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */

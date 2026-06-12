@@ -11,6 +11,7 @@ use function gettype;
 
 /**
  * Represents a type determiner.
+ * It returns stable type strings for runtime values in the requested format.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */

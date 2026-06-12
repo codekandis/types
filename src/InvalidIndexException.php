@@ -8,6 +8,7 @@ use function sprintf;
 
 /**
  * Represents an exception if an index is invalid.
+ * It describes an index rejected by the validation context.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */

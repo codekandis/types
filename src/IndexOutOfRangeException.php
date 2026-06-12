@@ -6,6 +6,7 @@ use function sprintf;
 
 /**
  * Represents an exception if an index is out of range.
+ * It describes ordered indices outside accepted ranges.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
@@ -25,7 +26,8 @@ class IndexOutOfRangeException extends RuntimeException implements IndexOutOfRan
 	public const string EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX = 'The index `%1$s` is out of range.';
 
 	/**
-	 * Represents the exception message with the out of range index, an expected minimum index and an expected maximum index.
+	 * Represents the exception message with the out of range index, an expected minimum index and an expected maximum
+	 * index.
 	 * @var string
 	 */
 	public const string EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX = 'The index `%1$s` is out of range. Expected `%2$s <= index <= %3$s`.';

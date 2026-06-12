@@ -8,6 +8,7 @@ use function sprintf;
 
 /**
  * Represents an exception if an offset is invalid.
+ * It describes an offset rejected by the validation context.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */

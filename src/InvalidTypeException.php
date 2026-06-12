@@ -11,6 +11,7 @@ use function sprintf;
 
 /**
  * Represents an exception if a type is invalid.
+ * It describes values failing a type check.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */

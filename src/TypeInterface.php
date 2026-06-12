@@ -6,6 +6,7 @@ use ReflectionObject;
 
 /**
  * Represents the interface of any type describing an object.
+ * It defines metadata and comparison behavior for the represented object.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
@@ -67,14 +68,14 @@ interface TypeInterface extends ObjectInterface
 	public function isInstanceOf( string | object $classNameOrObject ): bool;
 
 	/**
-	 * Determines if the represented object equals a specified object by class, attributes and values.
+	 * Determines the equality of the represented object and a specified object.
 	 * @param object $object The object to compare with.
 	 * @return bool `true` if the represented object is equal to the specified object, otherwise `false`.
 	 */
 	public function isEqual( object $object ): bool;
 
 	/**
-	 * Determines if the represented object is the same instance as a specified object.
+	 * Determines the identity of the represented object and a specified object.
 	 * @param object $object The object to compare with.
 	 * @return bool `true` if the represented object refers to the same instance, otherwise `false`.
 	 */

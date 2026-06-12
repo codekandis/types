@@ -5,6 +5,7 @@ use RuntimeException as OriginRuntimeException;
 
 /**
  * Represents an exception if a runtime error occurred.
+ * It describes failures caused by runtime values or runtime state.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */

@@ -4,7 +4,8 @@ namespace CodeKandis\Types;
 use Override;
 
 /**
- * Represents the interface of any enumeration of types like PHP's `gettype()` function.
+ * Represents the interface of any provider of type names like PHP's `gettype()` function.
+ * It provides plain and detailed names for `gettype()` style output.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
@@ -132,7 +133,7 @@ interface GetTypeTypesInterface extends TypesInterface
 
 	/**
 	 * Creates a typed `gettype()` `boolean` from a boolean value.
-	 * @param bool $value The value.
+	 * @param bool $value The boolean value to encode.
 	 * @return string The `gettype()` typed `boolean`.
 	 */
 	#[Override]

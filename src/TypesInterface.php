@@ -2,7 +2,8 @@
 namespace CodeKandis\Types;
 
 /**
- * Represents the interface of any enumeration of types.
+ * Represents the interface of any provider of type names.
+ * It provides plain and detailed type names.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
@@ -128,7 +129,7 @@ interface TypesInterface
 
 	/**
 	 * Creates a typed `bool` from a boolean value.
-	 * @param bool $value The value.
+	 * @param bool $value The boolean value to encode.
 	 * @return string The typed `bool`.
 	 */
 	public function createTypedBoolean( bool $value ): string;

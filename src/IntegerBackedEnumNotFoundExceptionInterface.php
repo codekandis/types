@@ -2,7 +2,7 @@
 namespace CodeKandis\Types;
 
 /**
- * Represents the interface of any exception if a backed enum does not exist.
+ * Represents the interface of any exception if an integer backed enum does not exist.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */

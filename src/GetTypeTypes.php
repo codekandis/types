@@ -5,7 +5,8 @@ use Override;
 use function sprintf;
 
 /**
- * Represents an enumeration of types like PHP's `gettype()` function.
+ * Represents a provider of type names like PHP's `gettype()` function.
+ * It provides plain and detailed names for `gettype()` style output.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */

@@ -3,6 +3,7 @@ namespace CodeKandis\Types;
 
 /**
  * Represents the interface of any class able to be converted into its `array` representation.
+ * The implementing class defines the shape and meaning of the returned array.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */

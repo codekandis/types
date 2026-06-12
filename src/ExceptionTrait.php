@@ -5,6 +5,7 @@ use Throwable;
 
 /**
  * Represents the trait of any exception.
+ * It provides reusable behavior for exception implementations.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
@@ -12,7 +13,7 @@ trait ExceptionTrait
 {
 	/**
 	 * Constructor method.
-	 * @param string $message The message of the exception.
+	 * @param string $message The message of the exception, or an empty string to use the default message.
 	 * @param int $code The error code of the exception.
 	 * @param ?Throwable $previous The previous throwable.
 	 */

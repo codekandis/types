@@ -4,7 +4,8 @@ namespace CodeKandis\Types;
 use Override;
 
 /**
- * Represents the interface of any enumeration of types like PHP's type hints.
+ * Represents the interface of any provider of type names like PHP's type hints.
+ * It provides plain and detailed names for type-hint style output.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
@@ -132,7 +133,7 @@ interface TypeHintTypesInterface extends TypesInterface
 
 	/**
 	 * Creates a type-hinted `bool` from a boolean value.
-	 * @param bool $value The value.
+	 * @param bool $value The boolean value to encode.
 	 * @return string The type-hinted `bool`.
 	 */
 	#[Override]

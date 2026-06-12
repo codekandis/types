@@ -3,6 +3,7 @@ namespace CodeKandis\Types;
 
 /**
  * Represents an exception if an error occurred.
+ * It describes runtime failures categorized as error-like.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */

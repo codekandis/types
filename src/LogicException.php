@@ -5,6 +5,7 @@ use LogicException as OriginLogicException;
 
 /**
  * Represents an exception if a logic error occurred.
+ * It describes errors caused by invalid logic or invalid API usage.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */

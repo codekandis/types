@@ -2,7 +2,7 @@
 namespace CodeKandis\Types;
 
 /**
- * Represents the interface of any exception if a domain error occurred.
+ * Represents the interface of any exception if a value is outside its defined domain.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */

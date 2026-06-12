@@ -5,6 +5,7 @@ use Override;
 
 /**
  * Represents the base class of any object.
+ * It provides reusable object behavior for classes extending it.
  * @package codekandis/types
  * @author Christian Ramelow
  */

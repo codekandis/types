@@ -5,6 +5,7 @@ use Throwable;
 
 /**
  * Represents the interface of any exception.
+ * It describes catchable and throwable exceptions.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */

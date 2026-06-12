@@ -8,6 +8,7 @@ use function get_resource_type;
 
 /**
  * Represents the trait of any class able to stringify a value.
+ * It provides reusable value stringification behavior.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
@@ -16,7 +17,7 @@ trait StringifyValueTrait
 	/**
 	 * Stringifies a specified value.
 	 * @param mixed $value The value to stringify.
-	 * @return string The stringified value.
+	 * @return string The value as a readable string fragment.
 	 */
 	protected static function stringifyValue( mixed $value ): string
 	{

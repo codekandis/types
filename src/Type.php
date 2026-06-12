@@ -8,7 +8,8 @@ use function spl_object_id;
 use function sprintf;
 
 /**
- * Represents a type representing an object.
+ * Represents a type describing an object.
+ * It provides metadata and comparison behavior for one object instance.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
@@ -22,14 +23,18 @@ class Type extends BaseObject implements TypeInterface
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * Gets the represented object's PHP object ID.
+	 * The value is the result of `spl_object_id()`.
+	 * @var int
 	 */
 	public int $objectId {
 		get => spl_object_id( $this->instance );
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * Gets the represented object's qualified PHP object ID.
+	 * The value uses the format `object(FQCN)#id`.
+	 * @var string
 	 */
 	public string $qualifiedObjectId {
 		get => sprintf(
@@ -62,7 +67,7 @@ class Type extends BaseObject implements TypeInterface
 
 	/**
 	 * Constructor method.
-	 * @param object $instance The object the type represents.
+	 * @param object $instance The object instance represented by the type.
 	 */
 	public function __construct( object $instance )
 	{
@@ -79,7 +84,10 @@ class Type extends BaseObject implements TypeInterface
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * Determines the equality of the represented object and a specified object.
+	 * The comparison uses PHP's object equality operator `==`.
+	 * @param object $object The object to compare with.
+	 * @return bool `true` if the represented object is equal to the specified object, otherwise `false`.
 	 */
 	#[Override]
 	public function isEqual( object $object ): bool
@@ -88,7 +96,10 @@ class Type extends BaseObject implements TypeInterface
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * Determines the identity of the represented object and a specified object.
+	 * The comparison uses PHP's object identity operator `===`.
+	 * @param object $object The object to compare with.
+	 * @return bool `true` if the represented object refers to the same instance, otherwise `false`.
 	 */
 	#[Override]
 	public function isIdentical( object $object ): bool

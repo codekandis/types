@@ -2,7 +2,7 @@
 namespace CodeKandis\Types;
 
 /**
- * Represents an exception if an access error occurred.
+ * Represents an exception if access to a target failed.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
