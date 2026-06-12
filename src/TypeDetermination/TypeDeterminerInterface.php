@@ -11,8 +11,8 @@ interface TypeDeterminerInterface
 	/**
 	 * Determines the type of a value.
 	 * @param mixed $value The value to inspect.
-	 * @param TypeDeterminationKind $kind The type determination mode.
+	 * @param TypeDeterminationMode $mode The type determination mode.
 	 * @return string The determined type.
 	 */
-	public function determine( mixed $value, TypeDeterminationKind $kind ): string;
+	public function determine( mixed $value, TypeDeterminationMode $mode ): string;
 }

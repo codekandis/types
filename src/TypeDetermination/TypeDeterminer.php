@@ -116,14 +116,14 @@ class TypeDeterminer extends BaseObject implements TypeDeterminerInterface
 	 * {@inheritDoc}
 	 */
 	#[Override]
-	public function determine( mixed $value, TypeDeterminationKind $kind ): string
+	public function determine( mixed $value, TypeDeterminationMode $mode ): string
 	{
-		return match ( $kind )
+		return match ( $mode )
 		{
-			TypeDeterminationKind::GetType          => $this->determineGetTyped( $value ),
-			TypeDeterminationKind::GetTypeDetailed  => $this->determineGetTypedDetailed( $value ),
-			TypeDeterminationKind::TypeHint         => $this->determineTypeHinted( $value ),
-			TypeDeterminationKind::TypeHintDetailed => $this->determineTypeHintedDetailed( $value )
+			TypeDeterminationMode::GetType          => $this->determineGetTyped( $value ),
+			TypeDeterminationMode::GetTypeDetailed  => $this->determineGetTypedDetailed( $value ),
+			TypeDeterminationMode::TypeHint         => $this->determineTypeHinted( $value ),
+			TypeDeterminationMode::TypeHintDetailed => $this->determineTypeHintedDetailed( $value )
 		};
 	}
 }

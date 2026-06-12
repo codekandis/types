@@ -1,7 +1,7 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Types;
 
-use CodeKandis\Types\TypeDetermination\TypeDeterminationKind;
+use CodeKandis\Types\TypeDetermination\TypeDeterminationMode;
 use CodeKandis\Types\TypeDetermination\TypeDeterminer;
 use Throwable;
 use function implode;
@@ -76,7 +76,7 @@ class InvalidTypeException extends RuntimeException implements InvalidTypeExcept
 			$determinedExpectedTypeType = new TypeDeterminer()
 				->determine(
 					reset( $invalidExpectedTypes ),
-					TypeDeterminationKind::GetType
+					TypeDeterminationMode::GetType
 				);
 
 			throw new InvalidTypeException(

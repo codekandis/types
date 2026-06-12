@@ -1,7 +1,7 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Types;
 
-use CodeKandis\Types\TypeDetermination\TypeDeterminationKind;
+use CodeKandis\Types\TypeDetermination\TypeDeterminationMode;
 use CodeKandis\Types\TypeDetermination\TypeDeterminer;
 use Stringable;
 use function get_resource_type;
@@ -20,7 +20,7 @@ trait StringifyValueTrait
 	 */
 	protected static function stringifyValue( mixed $value ): string
 	{
-		$valueType = new TypeDeterminer()->determine( $value, TypeDeterminationKind::GetType );
+		$valueType = new TypeDeterminer()->determine( $value, TypeDeterminationMode::GetType );
 
 		$getTypeTypes        = new GetTypeTypes();
 		$maskedTypeHintTypes = new MaskedTypeHintTypes();

@@ -2,11 +2,11 @@
 namespace CodeKandis\Types\TypeDetermination;
 
 /**
- * Represents an enumeration of type determination kinds how a determined type has to be returned.
+ * Represents an enumeration of type determination modes how a determined type has to be returned.
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-enum TypeDeterminationKind
+enum TypeDeterminationMode
 {
 	/**
 	 * The returned type has to be identical to the returned value of PHP's function `gettype()`.
