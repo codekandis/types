@@ -12,7 +12,7 @@ use PHPUnit\Framework\Attributes\DataProviderExternal;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-class TypeDeterminerInterfaceTest extends TestCase
+final class TypeDeterminerInterfaceTest extends TestCase
 {
 	/**
 	 * Tests if {@link TypeDeterminerInterface::determine()} determines a type correctly.

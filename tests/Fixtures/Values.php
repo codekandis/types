@@ -12,7 +12,6 @@ use stdClass;
 use Throwable;
 use function fclose;
 use function fopen;
-use function implode;
 use function spl_object_id;
 use function sprintf;
 
@@ -33,7 +32,7 @@ abstract class Values
 	 * Represents a `null` value.
 	 * @var null
 	 */
-	public const null NULL = null;
+	public const null NULL   = null;
 
 	/**
 	 * Represents an `array` value.
@@ -167,22 +166,16 @@ abstract class Values
 	public const string METHOD_NAME = 'methodName';
 
 	/**
-	 * Represents a throwable message.
-	 * @var string
-	 */
-	public const string THROWABLE_MESSAGE = 'throwableMessage';
-
-	/**
 	 * Represents a throwable message default.
 	 * @var string
 	 */
 	public const string THROWABLE_MESSAGE_DEFAULT = '';
 
 	/**
-	 * Represents a throwable code.
-	 * @var int
+	 * Represents a throwable message.
+	 * @var string
 	 */
-	public const int THROWABLE_CODE = 42;
+	public const string THROWABLE_MESSAGE = 'throwableMessage';
 
 	/**
 	 * Represents a throwable code default.
@@ -191,10 +184,31 @@ abstract class Values
 	public const int THROWABLE_CODE_DEFAULT = 0;
 
 	/**
-	 * Represents a throwable previous default.
-	 * @var ?Throwable
+	 * Represents a throwable code.
+	 * @var int
 	 */
-	public const ?Throwable THROWABLE_PREVIOUS_DEFAULT = null;
+	public const int THROWABLE_CODE = 42;
+
+	/**
+	 * Represents a throwable previous default.
+	 * @var null
+	 */
+	public const null THROWABLE_PREVIOUS_DEFAULT = null;
+
+	/**
+	 * Represents a throwable context default.
+	 * @var null
+	 */
+	public const null THROWABLE_CONTEXT_DEFAULT = null;
+
+	/**
+	 * Represents a throwable context.
+	 * @var array<string,mixed>
+	 */
+	public const array THROWABLE_CONTEXT = [
+		'foo' => 'bar',
+		'baz' => 'bat'
+	];
 
 	/**
 	 * Represents a qualified object ID.
@@ -292,24 +306,6 @@ abstract class Values
 				return Values::STRING;
 			}
 		};
-	}
-
-	/**
-	 * Creates a `string` value of an expected single value.
-	 * @return string The created `string` value of an expected single value.
-	 */
-	public static function createConcatinatedExpectedSingleValue(): string
-	{
-		return implode( ' | ', static::EXPECTED_SINGLE_VALUE );
-	}
-
-	/**
-	 * Creates a `string` value of expected values.
-	 * @return string The created `string` value of expected values.
-	 */
-	public static function createConcatinatedExpectedValues(): string
-	{
-		return implode( ' | ', static::EXPECTED_VALUES );
 	}
 
 	/**

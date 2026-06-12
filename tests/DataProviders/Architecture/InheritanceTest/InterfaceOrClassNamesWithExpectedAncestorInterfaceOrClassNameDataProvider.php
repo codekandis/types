@@ -115,7 +115,7 @@ use Throwable;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-class InterfaceOrClassNamesWithExpectedAncestorInterfaceOrClassNameDataProvider implements DataProviderInterface
+final class InterfaceOrClassNamesWithExpectedAncestorInterfaceOrClassNameDataProvider implements DataProviderInterface
 {
 	/**
 	 * {@inheritDoc}

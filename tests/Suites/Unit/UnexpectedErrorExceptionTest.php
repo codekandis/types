@@ -12,7 +12,7 @@ use Throwable;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-class UnexpectedErrorExceptionTest extends TestCase
+final class UnexpectedErrorExceptionTest extends TestCase
 {
 	/**
 	 * Tests if {@link UnexpectedErrorException::withPreviouslyCatchedThrowable()} instantiates the throwable correctly.
@@ -27,16 +27,20 @@ class UnexpectedErrorExceptionTest extends TestCase
 	#[DataProviderExternal( ThrowableClassNamesWithPreviousThrowableExpectedThrowableClassNameExpectedThrowableMessageExpectedThrowablePreviousAndExpectedThrowableCodeDataProvider::class, 'provideData' )]
 	public function testIfMethodWithPreviousThrowableInstantiatesThrowableCorrectly( string $throwableClassName, Throwable $previousThrowable, int $code, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, Throwable $expectedThrowablePrevious ): void
 	{
-		$resultedThrowable          = $throwableClassName::withPreviouslyCatchedThrowable( $previousThrowable, $code );
-		$resultedThrowableClassName = $resultedThrowable::class;
-		$resultedThrowableMessage   = $resultedThrowable->getMessage();
-		$resultedThrowableCode      = $resultedThrowable->getCode();
-		$resultedThrowablePrevious  = $resultedThrowable->getPrevious();
+		$resultedThrowable = $throwableClassName::withPreviouslyCatchedThrowable( $previousThrowable, $code );
 
 		static::assertInstanceOf( UnexpectedErrorException::class, $resultedThrowable );
+
+		$resultedThrowableClassName = $resultedThrowable::class;
 		static::assertSame( $expectedThrowableClassName, $resultedThrowableClassName );
+
+		$resultedThrowableMessage = $resultedThrowable->getMessage();
 		static::assertSame( $expectedThrowableMessage, $resultedThrowableMessage );
+
+		$resultedThrowableCode = $resultedThrowable->getCode();
 		static::assertSame( $expectedThrowableCode, $resultedThrowableCode );
+
+		$resultedThrowablePrevious = $resultedThrowable->getPrevious();
 		static::assertSame( $expectedThrowablePrevious, $resultedThrowablePrevious );
 	}
 }

@@ -12,7 +12,7 @@ use function sprintf;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowableClassNameExpectedThrowableCodeAndExpectedThrowablePrevious implements DataProviderInterface
+final class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowableClassNameExpectedThrowableCodeAndExpectedThrowablePrevious implements DataProviderInterface
 {
 	/**
 	 * {@inheritdoc}
@@ -30,7 +30,13 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
 			1  => [
 				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
@@ -43,7 +49,13 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
 			2  => [
 				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
@@ -56,7 +68,13 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
 			3  => [
 				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
@@ -69,7 +87,13 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
 			4  => [
 				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
@@ -82,7 +106,13 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
 			5  => [
 				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
@@ -90,13 +120,18 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 					'nonexistentFqcn' => $nonexistentFqcn = Values::BACKED_ENUM_NAME
 				],
 				'additionalArguments'        => [
-					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
-					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
 				],
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
-				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
 			],
 			6  => [
 				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
@@ -104,13 +139,18 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 					'nonexistentFqcn' => $nonexistentFqcn = Values::BACKED_ENUM_NAME
 				],
 				'additionalArguments'        => [
-					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
-					'previous' => $throwablePrevious = Values::createThrowable()
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
 				],
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
-				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
 			],
 			7  => [
 				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
@@ -118,15 +158,61 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 					'nonexistentFqcn' => $nonexistentFqcn = Values::BACKED_ENUM_NAME
 				],
 				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			8  => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable()
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			9  => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE,
 					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
 				],
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			8  => [
+			10 => [
 				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
 				'mainArguments'              => [
 					'nonexistentFqcn' => $nonexistentFqcn = Values::BACKED_ENUM_NAME
@@ -138,35 +224,381 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
-			],
-			9  => [
-				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
-				'mainArguments'              => [
-					'nonexistentFqcn' => $nonexistentFqcn = Values::INTEGER_BACKED_ENUM_NAME
-				],
-				'additionalArguments'        => [],
-				'expectedThrowableClassName' => $throwableClassName,
-				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
-				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
-			],
-			10 => [
-				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
-				'mainArguments'              => [
-					'nonexistentFqcn' => $nonexistentFqcn = Values::INTEGER_BACKED_ENUM_NAME
-				],
-				'additionalArguments'        => [
-					'code' => $throwableCode = Values::THROWABLE_CODE_DEFAULT
-				],
-				'expectedThrowableClassName' => $throwableClassName,
-				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
-				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
 			11 => [
 				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
 				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			12 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			13 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			14 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			15 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			16 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			17 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			18 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			19 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			20 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			21 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			22 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			23 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			24 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			25 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			26 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			27 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTEGER_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			28 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTEGER_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code' => $throwableCode = Values::THROWABLE_CODE_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			29 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
 					'nonexistentFqcn' => $nonexistentFqcn = Values::INTEGER_BACKED_ENUM_NAME
 				],
 				'additionalArguments'        => [
@@ -175,9 +607,15 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			12 => [
+			30 => [
 				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
 				'mainArguments'              => [
 					'nonexistentFqcn' => $nonexistentFqcn = Values::INTEGER_BACKED_ENUM_NAME
@@ -188,9 +626,15 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			13 => [
+			31 => [
 				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
 				'mainArguments'              => [
 					'nonexistentFqcn' => $nonexistentFqcn = Values::INTEGER_BACKED_ENUM_NAME
@@ -201,9 +645,53 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			14 => [
+			32 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTEGER_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			33 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTEGER_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			34 => [
 				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
 				'mainArguments'              => [
 					'nonexistentFqcn' => $nonexistentFqcn = Values::INTEGER_BACKED_ENUM_NAME
@@ -215,9 +703,15 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			15 => [
+			35 => [
 				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
 				'mainArguments'              => [
 					'nonexistentFqcn' => $nonexistentFqcn = Values::INTEGER_BACKED_ENUM_NAME
@@ -229,9 +723,15 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			16 => [
+			36 => [
 				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
 				'mainArguments'              => [
 					'nonexistentFqcn' => $nonexistentFqcn = Values::INTEGER_BACKED_ENUM_NAME
@@ -243,9 +743,15 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			17 => [
+			37 => [
 				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
 				'mainArguments'              => [
 					'nonexistentFqcn' => $nonexistentFqcn = Values::INTEGER_BACKED_ENUM_NAME
@@ -257,9 +763,343 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			18 => [
+			38 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTEGER_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			39 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTEGER_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			40 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTEGER_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			41 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTEGER_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			42 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTEGER_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			43 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTEGER_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			44 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTEGER_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			45 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTEGER_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			46 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTEGER_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			47 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTEGER_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			48 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTEGER_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			49 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTEGER_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			50 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTEGER_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			51 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTEGER_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			52 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTEGER_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			53 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTEGER_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			54 => [
 				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
 				'mainArguments'              => [
 					'nonexistentFqcn' => $nonexistentFqcn = Values::STRING_BACKED_ENUM_NAME
@@ -268,9 +1108,15 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			19 => [
+			55 => [
 				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
 				'mainArguments'              => [
 					'nonexistentFqcn' => $nonexistentFqcn = Values::STRING_BACKED_ENUM_NAME
@@ -281,9 +1127,15 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			20 => [
+			56 => [
 				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
 				'mainArguments'              => [
 					'nonexistentFqcn' => $nonexistentFqcn = Values::STRING_BACKED_ENUM_NAME
@@ -294,9 +1146,15 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			21 => [
+			57 => [
 				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
 				'mainArguments'              => [
 					'nonexistentFqcn' => $nonexistentFqcn = Values::STRING_BACKED_ENUM_NAME
@@ -307,9 +1165,15 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			22 => [
+			58 => [
 				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
 				'mainArguments'              => [
 					'nonexistentFqcn' => $nonexistentFqcn = Values::STRING_BACKED_ENUM_NAME
@@ -320,9 +1184,53 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			23 => [
+			59 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::STRING_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			60 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::STRING_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			61 => [
 				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
 				'mainArguments'              => [
 					'nonexistentFqcn' => $nonexistentFqcn = Values::STRING_BACKED_ENUM_NAME
@@ -334,9 +1242,15 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			24 => [
+			62 => [
 				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
 				'mainArguments'              => [
 					'nonexistentFqcn' => $nonexistentFqcn = Values::STRING_BACKED_ENUM_NAME
@@ -348,9 +1262,15 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			25 => [
+			63 => [
 				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
 				'mainArguments'              => [
 					'nonexistentFqcn' => $nonexistentFqcn = Values::STRING_BACKED_ENUM_NAME
@@ -362,9 +1282,15 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			26 => [
+			64 => [
 				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
 				'mainArguments'              => [
 					'nonexistentFqcn' => $nonexistentFqcn = Values::STRING_BACKED_ENUM_NAME
@@ -376,7 +1302,341 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			65 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::STRING_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			66 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::STRING_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			67 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::STRING_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			68 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::STRING_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			69 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::STRING_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			70 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::STRING_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			71 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::STRING_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			72 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::STRING_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			73 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::STRING_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			74 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::STRING_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			75 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::STRING_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			76 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::STRING_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			77 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::STRING_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			78 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::STRING_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			79 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::STRING_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			80 => [
+				'throwableClassName'         => $throwableClassName = BackedEnumNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::STRING_BACKED_ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( BackedEnumNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
 			]
 		];
 	}

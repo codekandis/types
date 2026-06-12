@@ -13,57 +13,85 @@ use Throwable;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-class OffsetOutOfRangeExceptionTest extends TestCase
+final class OffsetOutOfRangeExceptionTest extends TestCase
 {
 	/**
 	 * Tests if {@link OffsetOutOfRangeException::withOutOfRangeOffset()} instantiates the throwable correctly.
 	 * @param class-string<OffsetOutOfRangeException> $throwableClassName The class name of the throwable to test.
 	 * @param array<string, mixed> $mainArguments The main arguments to pass.
-	 * @param array{code?: int, previous?: ?Throwable} $additionalArguments The additional arguments to pass.
+	 * @param array{
+	 *     code?: int,
+	 *     previous?: ?Throwable
+	 * } $additionalArguments The additional arguments to pass.
 	 * @param class-string<OffsetOutOfRangeException> $expectedThrowableClassName The class name of the expected throwable.
 	 * @param string $expectedThrowableMessage The message of the expected throwable.
 	 * @param int $expectedThrowableCode The code of the expected throwable.
 	 * @param ?Throwable $expectedThrowablePrevious The previously catched throwable of the expected throwable.
+	 * @param array{
+	 *     exception: ?array<string, mixed>,
+	 *     additional: ?array<string, mixed>
+	 * } $expectedThrowableContext The context of the expected throwable.
 	 */
 	#[DataProviderExternal( ThrowableClassNamesWithOutOfRangeOffsetAdditionalArgumentsExpectedThrowableClassNameExpectedThrowableCodeAndExpectedThrowablePrevious::class, 'provideData' )]
-	public function testIfMethodWithOutOfRangeOffsetInstantiatesThrowableCorrectly( string $throwableClassName, array $mainArguments, array $additionalArguments, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious ): void
+	public function testIfMethodWithOutOfRangeOffsetInstantiatesThrowableCorrectly( string $throwableClassName, array $mainArguments, array $additionalArguments, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious, array $expectedThrowableContext ): void
 	{
-		$resultedThrowable          = $throwableClassName::withOutOfRangeOffset( ...$mainArguments, ...$additionalArguments );
-		$resultedThrowableClassName = $resultedThrowable::class;
-		$resultedThrowableMessage   = $resultedThrowable->getMessage();
-		$resultedThrowableCode      = $resultedThrowable->getCode();
-		$resultedThrowablePrevious  = $resultedThrowable->getPrevious();
+		$resultedThrowable = $throwableClassName::withOutOfRangeOffset( ...$mainArguments, ...$additionalArguments );
 
 		static::assertInstanceOf( OffsetOutOfRangeException::class, $resultedThrowable );
+
+		$resultedThrowableClassName = $resultedThrowable::class;
 		static::assertSame( $expectedThrowableClassName, $resultedThrowableClassName );
+
+		$resultedThrowableMessage = $resultedThrowable->getMessage();
 		static::assertSame( $expectedThrowableMessage, $resultedThrowableMessage );
+
+		$resultedThrowableCode = $resultedThrowable->getCode();
 		static::assertSame( $expectedThrowableCode, $resultedThrowableCode );
+
+		$resultedThrowablePrevious = $resultedThrowable->getPrevious();
 		static::assertSame( $expectedThrowablePrevious, $resultedThrowablePrevious );
+
+		$resultedThrowableContext = $resultedThrowable->context;
+		static::assertSame( $expectedThrowableContext, $resultedThrowableContext );
 	}
 
 	/**
 	 * Tests if {@link OffsetOutOfRangeException::withOutOfRangeOffsetExpectedMinOffsetAndExpectedMaxOffset()} instantiates the throwable correctly.
 	 * @param class-string<OffsetOutOfRangeException> $throwableClassName The class name of the throwable to test.
 	 * @param array<string, mixed> $mainArguments The main arguments to pass.
-	 * @param array{code?: int, previous?: ?Throwable} $additionalArguments The additional arguments to pass.
+	 * @param array{
+	 *     code?: int,
+	 *     previous?: ?Throwable
+	 * } $additionalArguments The additional arguments to pass.
 	 * @param class-string<OffsetOutOfRangeException> $expectedThrowableClassName The class name of the expected throwable.
 	 * @param string $expectedThrowableMessage The message of the expected throwable.
 	 * @param int $expectedThrowableCode The code of the expected throwable.
 	 * @param ?Throwable $expectedThrowablePrevious The previously catched throwable of the expected throwable.
+	 * @param array{
+	 *     exception: ?array<string, mixed>,
+	 *     additional: ?array<string, mixed>
+	 * } $expectedThrowableContext The context of the expected throwable.
 	 */
 	#[DataProviderExternal( ThrowableClassNamesWithOutOfRangeOffsetExpectedMinOffsetExpectedMaxOffsetAdditionalArgumentsExpectedThrowableClassNameExpectedThrowableCodeAndExpectedThrowablePrevious::class, 'provideData' )]
-	public function testIfMethodWithOutOfRangeOffsetExpectedMinOffsetAndExpectedMaxOffsetInstantiatesThrowableCorrectly( string $throwableClassName, array $mainArguments, array $additionalArguments, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious ): void
+	public function testIfMethodWithOutOfRangeOffsetExpectedMinOffsetAndExpectedMaxOffsetInstantiatesThrowableCorrectly( string $throwableClassName, array $mainArguments, array $additionalArguments, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious, array $expectedThrowableContext ): void
 	{
-		$resultedThrowable          = $throwableClassName::withOutOfRangeOffsetExpectedMinOffsetAndExpectedMaxOffset( ...$mainArguments, ...$additionalArguments );
-		$resultedThrowableClassName = $resultedThrowable::class;
-		$resultedThrowableMessage   = $resultedThrowable->getMessage();
-		$resultedThrowableCode      = $resultedThrowable->getCode();
-		$resultedThrowablePrevious  = $resultedThrowable->getPrevious();
+		$resultedThrowable = $throwableClassName::withOutOfRangeOffsetExpectedMinOffsetAndExpectedMaxOffset( ...$mainArguments, ...$additionalArguments );
 
 		static::assertInstanceOf( OffsetOutOfRangeException::class, $resultedThrowable );
+
+		$resultedThrowableClassName = $resultedThrowable::class;
 		static::assertSame( $expectedThrowableClassName, $resultedThrowableClassName );
+
+		$resultedThrowableMessage = $resultedThrowable->getMessage();
 		static::assertSame( $expectedThrowableMessage, $resultedThrowableMessage );
+
+		$resultedThrowableCode = $resultedThrowable->getCode();
 		static::assertSame( $expectedThrowableCode, $resultedThrowableCode );
+
+		$resultedThrowablePrevious = $resultedThrowable->getPrevious();
 		static::assertSame( $expectedThrowablePrevious, $resultedThrowablePrevious );
+
+		$resultedThrowableContext = $resultedThrowable->context;
+		static::assertSame( $expectedThrowableContext, $resultedThrowableContext );
 	}
 }

@@ -12,7 +12,7 @@ use function sprintf;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-class ThrowableClassNamesWithDuplicatedQualifiedObjectIdAdditionalArgumentsExpectedThrowableClassNameExpectedThrowableCodeAndExpectedThrowablePrevious implements DataProviderInterface
+final class ThrowableClassNamesWithDuplicatedQualifiedObjectIdAdditionalArgumentsExpectedThrowableClassNameExpectedThrowableCodeAndExpectedThrowablePrevious implements DataProviderInterface
 {
 	/**
 	 * {@inheritdoc}
@@ -21,7 +21,7 @@ class ThrowableClassNamesWithDuplicatedQualifiedObjectIdAdditionalArgumentsExpec
 	public static function provideData(): iterable
 	{
 		return [
-			0 => [
+			0  => [
 				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
 				'mainArguments'              => [
 					'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId = Values::QUALIFIED_OBJECT_ID
@@ -30,9 +30,15 @@ class ThrowableClassNamesWithDuplicatedQualifiedObjectIdAdditionalArgumentsExpec
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_QUALIFIED_OBJECT_ID, $duplicatedQualifiedObjectId ),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			1 => [
+			1  => [
 				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
 				'mainArguments'              => [
 					'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId = Values::QUALIFIED_OBJECT_ID
@@ -43,9 +49,15 @@ class ThrowableClassNamesWithDuplicatedQualifiedObjectIdAdditionalArgumentsExpec
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_QUALIFIED_OBJECT_ID, $duplicatedQualifiedObjectId ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			2 => [
+			2  => [
 				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
 				'mainArguments'              => [
 					'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId = Values::QUALIFIED_OBJECT_ID
@@ -56,9 +68,15 @@ class ThrowableClassNamesWithDuplicatedQualifiedObjectIdAdditionalArgumentsExpec
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_QUALIFIED_OBJECT_ID, $duplicatedQualifiedObjectId ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			3 => [
+			3  => [
 				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
 				'mainArguments'              => [
 					'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId = Values::QUALIFIED_OBJECT_ID
@@ -69,9 +87,15 @@ class ThrowableClassNamesWithDuplicatedQualifiedObjectIdAdditionalArgumentsExpec
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_QUALIFIED_OBJECT_ID, $duplicatedQualifiedObjectId ),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			4 => [
+			4  => [
 				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
 				'mainArguments'              => [
 					'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId = Values::QUALIFIED_OBJECT_ID
@@ -82,9 +106,53 @@ class ThrowableClassNamesWithDuplicatedQualifiedObjectIdAdditionalArgumentsExpec
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_QUALIFIED_OBJECT_ID, $duplicatedQualifiedObjectId ),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			5 => [
+			5  => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId = Values::QUALIFIED_OBJECT_ID
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_QUALIFIED_OBJECT_ID, $duplicatedQualifiedObjectId ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId
+					],
+					'additional' => $throwableContext
+				]
+			],
+			6  => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId = Values::QUALIFIED_OBJECT_ID
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_QUALIFIED_OBJECT_ID, $duplicatedQualifiedObjectId ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId
+					],
+					'additional' => $throwableContext
+				]
+			],
+			7  => [
 				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
 				'mainArguments'              => [
 					'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId = Values::QUALIFIED_OBJECT_ID
@@ -96,9 +164,15 @@ class ThrowableClassNamesWithDuplicatedQualifiedObjectIdAdditionalArgumentsExpec
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_QUALIFIED_OBJECT_ID, $duplicatedQualifiedObjectId ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			6 => [
+			8  => [
 				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
 				'mainArguments'              => [
 					'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId = Values::QUALIFIED_OBJECT_ID
@@ -110,9 +184,15 @@ class ThrowableClassNamesWithDuplicatedQualifiedObjectIdAdditionalArgumentsExpec
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_QUALIFIED_OBJECT_ID, $duplicatedQualifiedObjectId ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			7 => [
+			9  => [
 				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
 				'mainArguments'              => [
 					'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId = Values::QUALIFIED_OBJECT_ID
@@ -124,9 +204,15 @@ class ThrowableClassNamesWithDuplicatedQualifiedObjectIdAdditionalArgumentsExpec
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_QUALIFIED_OBJECT_ID, $duplicatedQualifiedObjectId ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			8 => [
+			10 => [
 				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
 				'mainArguments'              => [
 					'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId = Values::QUALIFIED_OBJECT_ID
@@ -138,7 +224,341 @@ class ThrowableClassNamesWithDuplicatedQualifiedObjectIdAdditionalArgumentsExpec
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_QUALIFIED_OBJECT_ID, $duplicatedQualifiedObjectId ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			11 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId = Values::QUALIFIED_OBJECT_ID
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_QUALIFIED_OBJECT_ID, $duplicatedQualifiedObjectId ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId
+					],
+					'additional' => $throwableContext
+				]
+			],
+			12 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId = Values::QUALIFIED_OBJECT_ID
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_QUALIFIED_OBJECT_ID, $duplicatedQualifiedObjectId ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId
+					],
+					'additional' => $throwableContext
+				]
+			],
+			13 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId = Values::QUALIFIED_OBJECT_ID
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_QUALIFIED_OBJECT_ID, $duplicatedQualifiedObjectId ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId
+					],
+					'additional' => $throwableContext
+				]
+			],
+			14 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId = Values::QUALIFIED_OBJECT_ID
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_QUALIFIED_OBJECT_ID, $duplicatedQualifiedObjectId ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId
+					],
+					'additional' => $throwableContext
+				]
+			],
+			15 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId = Values::QUALIFIED_OBJECT_ID
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_QUALIFIED_OBJECT_ID, $duplicatedQualifiedObjectId ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId
+					],
+					'additional' => $throwableContext
+				]
+			],
+			16 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId = Values::QUALIFIED_OBJECT_ID
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_QUALIFIED_OBJECT_ID, $duplicatedQualifiedObjectId ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId
+					],
+					'additional' => $throwableContext
+				]
+			],
+			17 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId = Values::QUALIFIED_OBJECT_ID
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_QUALIFIED_OBJECT_ID, $duplicatedQualifiedObjectId ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId
+					],
+					'additional' => $throwableContext
+				]
+			],
+			18 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId = Values::QUALIFIED_OBJECT_ID
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_QUALIFIED_OBJECT_ID, $duplicatedQualifiedObjectId ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId
+					],
+					'additional' => $throwableContext
+				]
+			],
+			19 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId = Values::QUALIFIED_OBJECT_ID
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_QUALIFIED_OBJECT_ID, $duplicatedQualifiedObjectId ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId
+					],
+					'additional' => $throwableContext
+				]
+			],
+			20 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId = Values::QUALIFIED_OBJECT_ID
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_QUALIFIED_OBJECT_ID, $duplicatedQualifiedObjectId ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId
+					],
+					'additional' => $throwableContext
+				]
+			],
+			21 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId = Values::QUALIFIED_OBJECT_ID
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_QUALIFIED_OBJECT_ID, $duplicatedQualifiedObjectId ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId
+					],
+					'additional' => $throwableContext
+				]
+			],
+			22 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId = Values::QUALIFIED_OBJECT_ID
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_QUALIFIED_OBJECT_ID, $duplicatedQualifiedObjectId ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId
+					],
+					'additional' => $throwableContext
+				]
+			],
+			23 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId = Values::QUALIFIED_OBJECT_ID
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_QUALIFIED_OBJECT_ID, $duplicatedQualifiedObjectId ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId
+					],
+					'additional' => $throwableContext
+				]
+			],
+			24 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId = Values::QUALIFIED_OBJECT_ID
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_QUALIFIED_OBJECT_ID, $duplicatedQualifiedObjectId ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId
+					],
+					'additional' => $throwableContext
+				]
+			],
+			25 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId = Values::QUALIFIED_OBJECT_ID
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_QUALIFIED_OBJECT_ID, $duplicatedQualifiedObjectId ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId
+					],
+					'additional' => $throwableContext
+				]
+			],
+			26 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId = Values::QUALIFIED_OBJECT_ID
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_QUALIFIED_OBJECT_ID, $duplicatedQualifiedObjectId ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId
+					],
+					'additional' => $throwableContext
+				]
 			]
 		];
 	}

@@ -12,31 +12,45 @@ use Throwable;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-class ProtectedPropertyNotFoundExceptionTest extends TestCase
+final class ProtectedPropertyNotFoundExceptionTest extends TestCase
 {
 	/**
 	 * Tests if {@link ProtectedPropertyNotFoundException::withFqcnAndNonexistentPropertyName()} instantiates the throwable correctly.
 	 * @param class-string<ProtectedPropertyNotFoundException> $throwableClassName The class name of the throwable to test.
 	 * @param array<string, mixed> $mainArguments The main arguments to pass.
-	 * @param array{code?: int, previous?: ?Throwable} $additionalArguments The additional arguments to pass.
+	 * @param array{
+	 *     code?: int,
+	 *     previous?: ?Throwable
+	 * } $additionalArguments The additional arguments to pass.
 	 * @param class-string<ProtectedPropertyNotFoundException> $expectedThrowableClassName The class name of the expected throwable.
 	 * @param string $expectedThrowableMessage The message of the expected throwable.
 	 * @param int $expectedThrowableCode The code of the expected throwable.
 	 * @param ?Throwable $expectedThrowablePrevious The previously catched throwable of the expected throwable.
+	 * @param array{
+	 *     exception: ?array<string, mixed>,
+	 *     additional: ?array<string, mixed>
+	 * } $expectedThrowableContext The context of the expected throwable.
 	 */
 	#[DataProviderExternal( ThrowableClassNamesWithFqcnNonexistentPropertyNameAdditionalArgumentsExpectedThrowableClassNameExpectedThrowableCodeAndExpectedThrowablePrevious::class, 'provideData' )]
-	public function testIfPropertyWithInterfaceOrClassNameAndNonExistentPropertyNameInstantiatesThrowableCorrectly( string $throwableClassName, array $mainArguments, array $additionalArguments, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious ): void
+	public function testIfPropertyWithInterfaceOrClassNameAndNonExistentPropertyNameInstantiatesThrowableCorrectly( string $throwableClassName, array $mainArguments, array $additionalArguments, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious, array $expectedThrowableContext ): void
 	{
-		$resultedThrowable          = $throwableClassName::withFqcnAndNonexistentPropertyName( ...$mainArguments, ...$additionalArguments );
-		$resultedThrowableClassName = $resultedThrowable::class;
-		$resultedThrowableMessage   = $resultedThrowable->getMessage();
-		$resultedThrowableCode      = $resultedThrowable->getCode();
-		$resultedThrowablePrevious  = $resultedThrowable->getPrevious();
+		$resultedThrowable = $throwableClassName::withFqcnAndNonexistentPropertyName( ...$mainArguments, ...$additionalArguments );
 
 		static::assertInstanceOf( ProtectedPropertyNotFoundException::class, $resultedThrowable );
+
+		$resultedThrowableClassName = $resultedThrowable::class;
 		static::assertSame( $expectedThrowableClassName, $resultedThrowableClassName );
+
+		$resultedThrowableMessage = $resultedThrowable->getMessage();
 		static::assertSame( $expectedThrowableMessage, $resultedThrowableMessage );
+
+		$resultedThrowableCode = $resultedThrowable->getCode();
 		static::assertSame( $expectedThrowableCode, $resultedThrowableCode );
+
+		$resultedThrowablePrevious = $resultedThrowable->getPrevious();
 		static::assertSame( $expectedThrowablePrevious, $resultedThrowablePrevious );
+
+		$resultedThrowableContext = $resultedThrowable->context;
+		static::assertSame( $expectedThrowableContext, $resultedThrowableContext );
 	}
 }

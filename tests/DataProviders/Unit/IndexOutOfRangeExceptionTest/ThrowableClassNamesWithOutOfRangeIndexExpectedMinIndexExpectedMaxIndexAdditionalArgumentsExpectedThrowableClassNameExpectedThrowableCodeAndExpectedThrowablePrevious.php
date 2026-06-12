@@ -14,7 +14,7 @@ use function sprintf;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAdditionalArgumentsExpectedThrowableClassNameExpectedThrowableCodeAndExpectedThrowablePrevious implements DataProviderInterface
+final class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAdditionalArgumentsExpectedThrowableClassNameExpectedThrowableCodeAndExpectedThrowablePrevious implements DataProviderInterface
 {
 	/**
 	 * {@inheritdoc}
@@ -26,9 +26,9 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 			0   => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::NULL,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::NULL,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [],
 				'expectedThrowableClassName' => $throwableClassName,
@@ -39,14 +39,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
 			1   => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::NULL,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::NULL,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code' => $throwableCode = Values::THROWABLE_CODE_DEFAULT
@@ -59,14 +67,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
 			2   => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::NULL,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::NULL,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code' => $throwableCode = Values::THROWABLE_CODE
@@ -79,14 +95,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
 			3   => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::NULL,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::NULL,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
@@ -99,14 +123,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
 			4   => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::NULL,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::NULL,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'previous' => $throwablePrevious = Values::createThrowable()
@@ -119,18 +151,25 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
 			5   => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::NULL,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::NULL,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
-					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
-					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
 				],
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
@@ -139,19 +178,26 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_0,
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
-				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
 			],
 			6   => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::NULL,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::NULL,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
-					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
-					'previous' => $throwablePrevious = Values::createThrowable()
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
 				],
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
@@ -160,18 +206,26 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_0,
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
-				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
 			],
 			7   => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::NULL,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::NULL,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
-					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
 					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
 				],
 				'expectedThrowableClassName' => $throwableClassName,
@@ -182,14 +236,80 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
 			8   => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::NULL,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::NULL,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable()
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::NULL,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			9   => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::NULL,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::NULL,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			10  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::NULL,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE,
@@ -203,175 +323,775 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
-			],
-			9   => [
-				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
-				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::ARRAY,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
-				],
-				'additionalArguments'        => [],
-				'expectedThrowableClassName' => $throwableClassName,
-				'expectedThrowableMessage'   => sprintf(
-					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::ARRAY,
-					StringifiedIndicesAndOffsets::INTEGER_0,
-					StringifiedIndicesAndOffsets::INTEGER_1
-				),
-				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
-			],
-			10  => [
-				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
-				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::ARRAY,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
-				],
-				'additionalArguments'        => [
-					'code' => $throwableCode = Values::THROWABLE_CODE_DEFAULT
-				],
-				'expectedThrowableClassName' => $throwableClassName,
-				'expectedThrowableMessage'   => sprintf(
-					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::ARRAY,
-					StringifiedIndicesAndOffsets::INTEGER_0,
-					StringifiedIndicesAndOffsets::INTEGER_1
-				),
-				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
 			11  => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::ARRAY,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::NULL,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
-					'code' => $throwableCode = Values::THROWABLE_CODE
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
 				],
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
 					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::ARRAY,
+					StringifiedIndicesAndOffsets::NULL,
 					StringifiedIndicesAndOffsets::INTEGER_0,
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
 			],
 			12  => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::ARRAY,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::NULL,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
-					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
 				],
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
 					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::ARRAY,
+					StringifiedIndicesAndOffsets::NULL,
 					StringifiedIndicesAndOffsets::INTEGER_0,
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
-				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
 			],
 			13  => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::ARRAY,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::NULL,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
-					'previous' => $throwablePrevious = Values::createThrowable()
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
 				],
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
 					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::ARRAY,
+					StringifiedIndicesAndOffsets::NULL,
 					StringifiedIndicesAndOffsets::INTEGER_0,
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
-				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
 			],
 			14  => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::ARRAY,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::NULL,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
-					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
-					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
 				],
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
 					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::ARRAY,
+					StringifiedIndicesAndOffsets::NULL,
 					StringifiedIndicesAndOffsets::INTEGER_0,
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
 			],
 			15  => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::ARRAY,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::NULL,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
-					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
-					'previous' => $throwablePrevious = Values::createThrowable()
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
 				],
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
 					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::ARRAY,
+					StringifiedIndicesAndOffsets::NULL,
 					StringifiedIndicesAndOffsets::INTEGER_0,
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
-				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
 			],
 			16  => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::ARRAY,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::NULL,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
-					'code'     => $throwableCode = Values::THROWABLE_CODE,
-					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
 				],
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
 					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::ARRAY,
+					StringifiedIndicesAndOffsets::NULL,
 					StringifiedIndicesAndOffsets::INTEGER_0,
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
-				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
 			],
 			17  => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::ARRAY,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::NULL,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::NULL,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			18  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::NULL,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::NULL,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			19  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::NULL,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::NULL,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			20  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::NULL,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::NULL,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			21  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::NULL,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::NULL,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			22  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::NULL,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::NULL,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			23  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::NULL,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::NULL,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			24  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::NULL,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::NULL,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			25  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::NULL,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::NULL,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			26  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::NULL,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::NULL,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			27  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::ARRAY,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::ARRAY,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			28  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::ARRAY,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code' => $throwableCode = Values::THROWABLE_CODE_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::ARRAY,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			29  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::ARRAY,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code' => $throwableCode = Values::THROWABLE_CODE
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::ARRAY,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			30  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::ARRAY,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::ARRAY,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			31  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::ARRAY,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable()
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::ARRAY,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			32  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::ARRAY,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::ARRAY,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			33  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::ARRAY,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::ARRAY,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			34  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::ARRAY,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::ARRAY,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			35  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::ARRAY,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable()
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::ARRAY,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			36  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::ARRAY,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::ARRAY,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			37  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::ARRAY,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE,
@@ -385,721 +1105,3121 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
-			],
-			18  => [
-				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
-				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::BOOLEAN_FALSE,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
-				],
-				'additionalArguments'        => [],
-				'expectedThrowableClassName' => $throwableClassName,
-				'expectedThrowableMessage'   => sprintf(
-					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
-					StringifiedIndicesAndOffsets::INTEGER_0,
-					StringifiedIndicesAndOffsets::INTEGER_1
-				),
-				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
-			],
-			19  => [
-				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
-				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::BOOLEAN_FALSE,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
-				],
-				'additionalArguments'        => [
-					'code' => $throwableCode = Values::THROWABLE_CODE_DEFAULT
-				],
-				'expectedThrowableClassName' => $throwableClassName,
-				'expectedThrowableMessage'   => sprintf(
-					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
-					StringifiedIndicesAndOffsets::INTEGER_0,
-					StringifiedIndicesAndOffsets::INTEGER_1
-				),
-				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
-			],
-			20  => [
-				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
-				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::BOOLEAN_FALSE,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
-				],
-				'additionalArguments'        => [
-					'code' => $throwableCode = Values::THROWABLE_CODE
-				],
-				'expectedThrowableClassName' => $throwableClassName,
-				'expectedThrowableMessage'   => sprintf(
-					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
-					StringifiedIndicesAndOffsets::INTEGER_0,
-					StringifiedIndicesAndOffsets::INTEGER_1
-				),
-				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
-			],
-			21  => [
-				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
-				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::BOOLEAN_FALSE,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
-				],
-				'additionalArguments'        => [
-					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
-				],
-				'expectedThrowableClassName' => $throwableClassName,
-				'expectedThrowableMessage'   => sprintf(
-					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
-					StringifiedIndicesAndOffsets::INTEGER_0,
-					StringifiedIndicesAndOffsets::INTEGER_1
-				),
-				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
-			],
-			22  => [
-				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
-				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::BOOLEAN_FALSE,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
-				],
-				'additionalArguments'        => [
-					'previous' => $throwablePrevious = Values::createThrowable()
-				],
-				'expectedThrowableClassName' => $throwableClassName,
-				'expectedThrowableMessage'   => sprintf(
-					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
-					StringifiedIndicesAndOffsets::INTEGER_0,
-					StringifiedIndicesAndOffsets::INTEGER_1
-				),
-				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
-			],
-			23  => [
-				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
-				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::BOOLEAN_FALSE,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
-				],
-				'additionalArguments'        => [
-					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
-					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
-				],
-				'expectedThrowableClassName' => $throwableClassName,
-				'expectedThrowableMessage'   => sprintf(
-					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
-					StringifiedIndicesAndOffsets::INTEGER_0,
-					StringifiedIndicesAndOffsets::INTEGER_1
-				),
-				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
-			],
-			24  => [
-				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
-				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::BOOLEAN_FALSE,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
-				],
-				'additionalArguments'        => [
-					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
-					'previous' => $throwablePrevious = Values::createThrowable()
-				],
-				'expectedThrowableClassName' => $throwableClassName,
-				'expectedThrowableMessage'   => sprintf(
-					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
-					StringifiedIndicesAndOffsets::INTEGER_0,
-					StringifiedIndicesAndOffsets::INTEGER_1
-				),
-				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
-			],
-			25  => [
-				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
-				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::BOOLEAN_FALSE,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
-				],
-				'additionalArguments'        => [
-					'code'     => $throwableCode = Values::THROWABLE_CODE,
-					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
-				],
-				'expectedThrowableClassName' => $throwableClassName,
-				'expectedThrowableMessage'   => sprintf(
-					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
-					StringifiedIndicesAndOffsets::INTEGER_0,
-					StringifiedIndicesAndOffsets::INTEGER_1
-				),
-				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
-			],
-			26  => [
-				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
-				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::BOOLEAN_FALSE,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
-				],
-				'additionalArguments'        => [
-					'code'     => $throwableCode = Values::THROWABLE_CODE,
-					'previous' => $throwablePrevious = Values::createThrowable()
-				],
-				'expectedThrowableClassName' => $throwableClassName,
-				'expectedThrowableMessage'   => sprintf(
-					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
-					StringifiedIndicesAndOffsets::INTEGER_0,
-					StringifiedIndicesAndOffsets::INTEGER_1
-				),
-				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
-			],
-			27  => [
-				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
-				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::BOOLEAN_TRUE,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
-				],
-				'additionalArguments'        => [],
-				'expectedThrowableClassName' => $throwableClassName,
-				'expectedThrowableMessage'   => sprintf(
-					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
-					StringifiedIndicesAndOffsets::INTEGER_0,
-					StringifiedIndicesAndOffsets::INTEGER_1
-				),
-				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
-			],
-			28  => [
-				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
-				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::BOOLEAN_TRUE,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
-				],
-				'additionalArguments'        => [
-					'code' => $throwableCode = Values::THROWABLE_CODE_DEFAULT
-				],
-				'expectedThrowableClassName' => $throwableClassName,
-				'expectedThrowableMessage'   => sprintf(
-					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
-					StringifiedIndicesAndOffsets::INTEGER_0,
-					StringifiedIndicesAndOffsets::INTEGER_1
-				),
-				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
-			],
-			29  => [
-				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
-				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::BOOLEAN_TRUE,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
-				],
-				'additionalArguments'        => [
-					'code' => $throwableCode = Values::THROWABLE_CODE
-				],
-				'expectedThrowableClassName' => $throwableClassName,
-				'expectedThrowableMessage'   => sprintf(
-					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
-					StringifiedIndicesAndOffsets::INTEGER_0,
-					StringifiedIndicesAndOffsets::INTEGER_1
-				),
-				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
-			],
-			30  => [
-				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
-				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::BOOLEAN_TRUE,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
-				],
-				'additionalArguments'        => [
-					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
-				],
-				'expectedThrowableClassName' => $throwableClassName,
-				'expectedThrowableMessage'   => sprintf(
-					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
-					StringifiedIndicesAndOffsets::INTEGER_0,
-					StringifiedIndicesAndOffsets::INTEGER_1
-				),
-				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
-			],
-			31  => [
-				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
-				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::BOOLEAN_TRUE,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
-				],
-				'additionalArguments'        => [
-					'previous' => $throwablePrevious = Values::createThrowable()
-				],
-				'expectedThrowableClassName' => $throwableClassName,
-				'expectedThrowableMessage'   => sprintf(
-					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
-					StringifiedIndicesAndOffsets::INTEGER_0,
-					StringifiedIndicesAndOffsets::INTEGER_1
-				),
-				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
-			],
-			32  => [
-				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
-				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::BOOLEAN_TRUE,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
-				],
-				'additionalArguments'        => [
-					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
-					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
-				],
-				'expectedThrowableClassName' => $throwableClassName,
-				'expectedThrowableMessage'   => sprintf(
-					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
-					StringifiedIndicesAndOffsets::INTEGER_0,
-					StringifiedIndicesAndOffsets::INTEGER_1
-				),
-				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
-			],
-			33  => [
-				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
-				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::BOOLEAN_TRUE,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
-				],
-				'additionalArguments'        => [
-					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
-					'previous' => $throwablePrevious = Values::createThrowable()
-				],
-				'expectedThrowableClassName' => $throwableClassName,
-				'expectedThrowableMessage'   => sprintf(
-					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
-					StringifiedIndicesAndOffsets::INTEGER_0,
-					StringifiedIndicesAndOffsets::INTEGER_1
-				),
-				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
-			],
-			34  => [
-				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
-				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::BOOLEAN_TRUE,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
-				],
-				'additionalArguments'        => [
-					'code'     => $throwableCode = Values::THROWABLE_CODE,
-					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
-				],
-				'expectedThrowableClassName' => $throwableClassName,
-				'expectedThrowableMessage'   => sprintf(
-					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
-					StringifiedIndicesAndOffsets::INTEGER_0,
-					StringifiedIndicesAndOffsets::INTEGER_1
-				),
-				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
-			],
-			35  => [
-				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
-				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::BOOLEAN_TRUE,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
-				],
-				'additionalArguments'        => [
-					'code'     => $throwableCode = Values::THROWABLE_CODE,
-					'previous' => $throwablePrevious = Values::createThrowable()
-				],
-				'expectedThrowableClassName' => $throwableClassName,
-				'expectedThrowableMessage'   => sprintf(
-					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
-					StringifiedIndicesAndOffsets::INTEGER_0,
-					StringifiedIndicesAndOffsets::INTEGER_1
-				),
-				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
-			],
-			36  => [
-				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
-				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::INTEGER_0,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
-				],
-				'additionalArguments'        => [],
-				'expectedThrowableClassName' => $throwableClassName,
-				'expectedThrowableMessage'   => sprintf(
-					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::INTEGER_0,
-					StringifiedIndicesAndOffsets::INTEGER_0,
-					StringifiedIndicesAndOffsets::INTEGER_1
-				),
-				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
-			],
-			37  => [
-				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
-				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::INTEGER_0,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
-				],
-				'additionalArguments'        => [
-					'code' => $throwableCode = Values::THROWABLE_CODE_DEFAULT
-				],
-				'expectedThrowableClassName' => $throwableClassName,
-				'expectedThrowableMessage'   => sprintf(
-					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::INTEGER_0,
-					StringifiedIndicesAndOffsets::INTEGER_0,
-					StringifiedIndicesAndOffsets::INTEGER_1
-				),
-				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
 			38  => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::INTEGER_0,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::ARRAY,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
-					'code' => $throwableCode = Values::THROWABLE_CODE
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
 				],
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
 					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::ARRAY,
 					StringifiedIndicesAndOffsets::INTEGER_0,
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
 			],
 			39  => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::INTEGER_0,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::ARRAY,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
-					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
 				],
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
 					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::ARRAY,
 					StringifiedIndicesAndOffsets::INTEGER_0,
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
-				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
 			],
 			40  => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::INTEGER_0,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::ARRAY,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
-					'previous' => $throwablePrevious = Values::createThrowable()
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
 				],
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
 					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::ARRAY,
 					StringifiedIndicesAndOffsets::INTEGER_0,
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
-				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
 			],
 			41  => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::INTEGER_0,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::ARRAY,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
-					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
-					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
 				],
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
 					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::ARRAY,
 					StringifiedIndicesAndOffsets::INTEGER_0,
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
 			],
 			42  => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::INTEGER_0,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::ARRAY,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
-					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
-					'previous' => $throwablePrevious = Values::createThrowable()
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
 				],
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
 					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::ARRAY,
 					StringifiedIndicesAndOffsets::INTEGER_0,
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
-				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
 			],
 			43  => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::INTEGER_0,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::ARRAY,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
-					'code'     => $throwableCode = Values::THROWABLE_CODE,
-					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
 				],
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
 					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::ARRAY,
 					StringifiedIndicesAndOffsets::INTEGER_0,
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
-				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
 			],
 			44  => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::INTEGER_0,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::ARRAY,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
-					'code'     => $throwableCode = Values::THROWABLE_CODE,
-					'previous' => $throwablePrevious = Values::createThrowable()
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
 				],
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
 					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::ARRAY,
 					StringifiedIndicesAndOffsets::INTEGER_0,
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
-				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
 			],
 			45  => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::INTEGER_1,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::ARRAY,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
-				'additionalArguments'        => [],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
 					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::ARRAY,
 					StringifiedIndicesAndOffsets::INTEGER_0,
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
 			],
 			46  => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::INTEGER_1,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::ARRAY,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
-					'code' => $throwableCode = Values::THROWABLE_CODE_DEFAULT
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
 				],
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
 					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::ARRAY,
 					StringifiedIndicesAndOffsets::INTEGER_0,
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
 			],
 			47  => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::INTEGER_1,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::ARRAY,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
-					'code' => $throwableCode = Values::THROWABLE_CODE
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
 				],
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
 					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::ARRAY,
 					StringifiedIndicesAndOffsets::INTEGER_0,
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
 			],
 			48  => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::INTEGER_1,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::ARRAY,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
-					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
 				],
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
 					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::ARRAY,
 					StringifiedIndicesAndOffsets::INTEGER_0,
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
-				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
 			],
 			49  => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::INTEGER_1,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::ARRAY,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
-					'previous' => $throwablePrevious = Values::createThrowable()
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
 				],
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
 					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::ARRAY,
 					StringifiedIndicesAndOffsets::INTEGER_0,
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
-				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
 			],
 			50  => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::INTEGER_1,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::ARRAY,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
-					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
-					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
 				],
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
 					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::ARRAY,
 					StringifiedIndicesAndOffsets::INTEGER_0,
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
 			],
 			51  => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::INTEGER_1,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::ARRAY,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
-					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
-					'previous' => $throwablePrevious = Values::createThrowable()
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
 				],
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
 					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::ARRAY,
 					StringifiedIndicesAndOffsets::INTEGER_0,
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
 			],
 			52  => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::INTEGER_1,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::ARRAY,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE,
-					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
 				],
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
 					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
-					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::ARRAY,
 					StringifiedIndicesAndOffsets::INTEGER_0,
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
 			],
 			53  => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::INTEGER_1,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::ARRAY,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::ARRAY,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			54  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_FALSE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			55  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_FALSE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code' => $throwableCode = Values::THROWABLE_CODE_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			56  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_FALSE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code' => $throwableCode = Values::THROWABLE_CODE
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			57  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_FALSE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			58  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_FALSE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable()
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			59  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_FALSE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			60  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_FALSE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			61  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_FALSE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			62  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_FALSE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable()
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			63  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_FALSE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			64  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_FALSE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable()
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			65  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_FALSE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			66  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_FALSE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			67  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_FALSE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			68  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_FALSE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			69  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_FALSE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			70  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_FALSE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			71  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_FALSE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			72  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_FALSE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			73  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_FALSE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			74  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_FALSE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			75  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_FALSE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			76  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_FALSE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			77  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_FALSE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			78  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_FALSE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			79  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_FALSE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			80  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_FALSE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_FALSE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			81  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_TRUE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			82  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_TRUE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code' => $throwableCode = Values::THROWABLE_CODE_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			83  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_TRUE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code' => $throwableCode = Values::THROWABLE_CODE
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			84  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_TRUE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			85  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_TRUE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable()
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			86  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_TRUE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			87  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_TRUE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			88  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_TRUE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			89  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_TRUE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable()
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			90  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_TRUE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			91  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_TRUE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable()
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			92  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_TRUE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			93  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_TRUE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			94  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_TRUE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			95  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_TRUE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			96  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_TRUE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			97  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_TRUE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			98  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_TRUE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			99  => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_TRUE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			100 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_TRUE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			101 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_TRUE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			102 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_TRUE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			103 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_TRUE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			104 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_TRUE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			105 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_TRUE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			106 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_TRUE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			107 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::BOOLEAN_TRUE,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::BOOLEAN_TRUE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			108 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			109 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code' => $throwableCode = Values::THROWABLE_CODE_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			110 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code' => $throwableCode = Values::THROWABLE_CODE
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			111 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			112 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable()
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			113 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			114 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			115 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			116 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable()
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			117 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			118 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable()
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			119 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			120 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			121 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			122 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			123 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			124 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			125 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			126 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			127 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			128 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			129 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			130 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			131 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			132 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			133 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			134 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			135 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			136 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code' => $throwableCode = Values::THROWABLE_CODE_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			137 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code' => $throwableCode = Values::THROWABLE_CODE
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			138 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			139 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable()
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			140 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			141 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			142 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			143 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable()
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			144 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			145 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE,
@@ -1113,14 +4233,494 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			54  => [
+			146 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::FLOAT_0,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			147 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			148 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			149 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			150 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			151 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			152 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			153 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			154 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			155 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			156 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			157 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			158 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			159 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			160 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			161 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::INTEGER_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INTEGER_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			162 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [],
 				'expectedThrowableClassName' => $throwableClassName,
@@ -1131,14 +4731,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			55  => [
+			163 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::FLOAT_0,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code' => $throwableCode = Values::THROWABLE_CODE_DEFAULT
@@ -1151,14 +4759,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			56  => [
+			164 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::FLOAT_0,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code' => $throwableCode = Values::THROWABLE_CODE
@@ -1171,14 +4787,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			57  => [
+			165 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::FLOAT_0,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
@@ -1191,14 +4815,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			58  => [
+			166 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::FLOAT_0,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'previous' => $throwablePrevious = Values::createThrowable()
@@ -1211,14 +4843,78 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			59  => [
+			167 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::FLOAT_0,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			168 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			169 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
@@ -1232,14 +4928,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			60  => [
+			170 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::FLOAT_0,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
@@ -1253,14 +4957,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			61  => [
+			171 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::FLOAT_0,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE,
@@ -1274,14 +4986,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			62  => [
+			172 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::FLOAT_0,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE,
@@ -1295,14 +5015,494 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			63  => [
+			173 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::FLOAT_1,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			174 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			175 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			176 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			177 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			178 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			179 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			180 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			181 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			182 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			183 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			184 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			185 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			186 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			187 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			188 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			189 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [],
 				'expectedThrowableClassName' => $throwableClassName,
@@ -1313,14 +5513,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			64  => [
+			190 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::FLOAT_1,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code' => $throwableCode = Values::THROWABLE_CODE_DEFAULT
@@ -1333,14 +5541,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			65  => [
+			191 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::FLOAT_1,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code' => $throwableCode = Values::THROWABLE_CODE
@@ -1353,14 +5569,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			66  => [
+			192 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::FLOAT_1,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
@@ -1373,14 +5597,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			67  => [
+			193 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::FLOAT_1,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'previous' => $throwablePrevious = Values::createThrowable()
@@ -1393,14 +5625,78 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			68  => [
+			194 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::FLOAT_1,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			195 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			196 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
@@ -1414,14 +5710,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			69  => [
+			197 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::FLOAT_1,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
@@ -1435,14 +5739,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			70  => [
+			198 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::FLOAT_1,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE,
@@ -1456,14 +5768,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			71  => [
+			199 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::FLOAT_1,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE,
@@ -1477,14 +5797,494 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			72  => [
+			200 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::STRING_0,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			201 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			202 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			203 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			204 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			205 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			206 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			207 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			208 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			209 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			210 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			211 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			212 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			213 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			214 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			215 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::FLOAT_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::FLOAT_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			216 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [],
 				'expectedThrowableClassName' => $throwableClassName,
@@ -1495,14 +6295,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			73  => [
+			217 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::STRING_0,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code' => $throwableCode = Values::THROWABLE_CODE_DEFAULT
@@ -1515,14 +6323,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			74  => [
+			218 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::STRING_0,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code' => $throwableCode = Values::THROWABLE_CODE
@@ -1535,14 +6351,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			75  => [
+			219 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::STRING_0,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
@@ -1555,14 +6379,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			76  => [
+			220 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::STRING_0,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'previous' => $throwablePrevious = Values::createThrowable()
@@ -1575,14 +6407,78 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			77  => [
+			221 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::STRING_0,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			222 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			223 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
@@ -1596,14 +6492,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			78  => [
+			224 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::STRING_0,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
@@ -1617,14 +6521,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			79  => [
+			225 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::STRING_0,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE,
@@ -1638,14 +6550,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			80  => [
+			226 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::STRING_0,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE,
@@ -1659,14 +6579,494 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			81  => [
+			227 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::STRING_1,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			228 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			229 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			230 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			231 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			232 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			233 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			234 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			235 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			236 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			237 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			238 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			239 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			240 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			241 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			242 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_0,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			243 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [],
 				'expectedThrowableClassName' => $throwableClassName,
@@ -1677,14 +7077,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			82  => [
+			244 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::STRING_1,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code' => $throwableCode = Values::THROWABLE_CODE_DEFAULT
@@ -1697,14 +7105,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			83  => [
+			245 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::STRING_1,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code' => $throwableCode = Values::THROWABLE_CODE
@@ -1717,14 +7133,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			84  => [
+			246 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::STRING_1,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
@@ -1737,14 +7161,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			85  => [
+			247 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::STRING_1,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'previous' => $throwablePrevious = Values::createThrowable()
@@ -1757,14 +7189,78 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			86  => [
+			248 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::STRING_1,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			249 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			250 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
@@ -1778,14 +7274,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			87  => [
+			251 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::STRING_1,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
@@ -1799,14 +7303,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			88  => [
+			252 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::STRING_1,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE,
@@ -1820,14 +7332,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			89  => [
+			253 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::STRING_1,
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE,
@@ -1841,14 +7361,494 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			90  => [
+			254 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createResource(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			255 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			256 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			257 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			258 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			259 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			260 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			261 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			262 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			263 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			264 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			265 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			266 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			267 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			268 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			269 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::STRING_1,
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_1,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			270 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [],
 				'expectedThrowableClassName' => $throwableClassName,
@@ -1859,14 +7859,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			91  => [
+			271 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createResource(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code' => $throwableCode = Values::THROWABLE_CODE_DEFAULT
@@ -1879,14 +7887,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			92  => [
+			272 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createResource(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code' => $throwableCode = Values::THROWABLE_CODE
@@ -1899,14 +7915,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			93  => [
+			273 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createResource(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
@@ -1919,14 +7943,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			94  => [
+			274 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createResource(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'previous' => $throwablePrevious = Values::createThrowable()
@@ -1939,14 +7971,78 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			95  => [
+			275 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createResource(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			276 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			277 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
@@ -1960,14 +8056,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			96  => [
+			278 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createResource(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
@@ -1981,14 +8085,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			97  => [
+			279 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createResource(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE,
@@ -2002,14 +8114,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			98  => [
+			280 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createResource(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE,
@@ -2023,14 +8143,494 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			99  => [
+			281 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createClosedResource(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			282 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			283 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			284 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			285 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			286 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			287 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			288 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			289 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			290 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			291 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			292 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			293 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			294 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			295 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			296 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			297 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createClosedResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [],
 				'expectedThrowableClassName' => $throwableClassName,
@@ -2041,14 +8641,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			100 => [
+			298 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createClosedResource(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createClosedResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code' => $throwableCode = Values::THROWABLE_CODE_DEFAULT
@@ -2061,14 +8669,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			101 => [
+			299 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createClosedResource(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createClosedResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code' => $throwableCode = Values::THROWABLE_CODE
@@ -2081,14 +8697,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			102 => [
+			300 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createClosedResource(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createClosedResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
@@ -2101,14 +8725,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			103 => [
+			301 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createClosedResource(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createClosedResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'previous' => $throwablePrevious = Values::createThrowable()
@@ -2121,14 +8753,78 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			104 => [
+			302 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createClosedResource(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createClosedResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::CLOSED_RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			303 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createClosedResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::CLOSED_RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			304 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createClosedResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
@@ -2142,14 +8838,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			105 => [
+			305 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createClosedResource(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createClosedResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
@@ -2163,14 +8867,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			106 => [
+			306 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createClosedResource(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createClosedResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE,
@@ -2184,14 +8896,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			107 => [
+			307 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createClosedResource(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createClosedResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE,
@@ -2205,14 +8925,494 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			108 => [
+			308 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createStandardObject(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createClosedResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::CLOSED_RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			309 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createClosedResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::CLOSED_RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			310 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createClosedResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::CLOSED_RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			311 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createClosedResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::CLOSED_RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			312 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createClosedResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::CLOSED_RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			313 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createClosedResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::CLOSED_RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			314 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createClosedResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::CLOSED_RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			315 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createClosedResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::CLOSED_RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			316 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createClosedResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::CLOSED_RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			317 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createClosedResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::CLOSED_RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			318 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createClosedResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::CLOSED_RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			319 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createClosedResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::CLOSED_RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			320 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createClosedResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::CLOSED_RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			321 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createClosedResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::CLOSED_RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			322 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createClosedResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::CLOSED_RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			323 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createClosedResource(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::CLOSED_RESOURCE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			324 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [],
 				'expectedThrowableClassName' => $throwableClassName,
@@ -2223,14 +9423,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			109 => [
+			325 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createStandardObject(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code' => $throwableCode = Values::THROWABLE_CODE_DEFAULT
@@ -2243,14 +9451,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			110 => [
+			326 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createStandardObject(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code' => $throwableCode = Values::THROWABLE_CODE
@@ -2263,14 +9479,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			111 => [
+			327 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createStandardObject(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
@@ -2283,14 +9507,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			112 => [
+			328 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createStandardObject(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'previous' => $throwablePrevious = Values::createThrowable()
@@ -2303,14 +9535,78 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			113 => [
+			329 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createStandardObject(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			330 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			331 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
@@ -2324,14 +9620,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			114 => [
+			332 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createStandardObject(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
@@ -2345,14 +9649,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			115 => [
+			333 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createStandardObject(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE,
@@ -2366,14 +9678,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			116 => [
+			334 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createStandardObject(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE,
@@ -2387,14 +9707,494 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			117 => [
+			335 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createInheritedStandardObject(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			336 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			337 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			338 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			339 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			340 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			341 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			342 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			343 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			344 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			345 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			346 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			347 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			348 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			349 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			350 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			351 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createInheritedStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [],
 				'expectedThrowableClassName' => $throwableClassName,
@@ -2405,14 +10205,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			118 => [
+			352 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createInheritedStandardObject(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createInheritedStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code' => $throwableCode = Values::THROWABLE_CODE_DEFAULT
@@ -2425,14 +10233,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			119 => [
+			353 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createInheritedStandardObject(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createInheritedStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code' => $throwableCode = Values::THROWABLE_CODE
@@ -2445,14 +10261,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			120 => [
+			354 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createInheritedStandardObject(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createInheritedStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
@@ -2465,14 +10289,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			121 => [
+			355 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createInheritedStandardObject(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createInheritedStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'previous' => $throwablePrevious = Values::createThrowable()
@@ -2485,14 +10317,78 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			122 => [
+			356 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createInheritedStandardObject(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createInheritedStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INHERITED_STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			357 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createInheritedStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INHERITED_STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			358 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createInheritedStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
@@ -2506,14 +10402,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			123 => [
+			359 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createInheritedStandardObject(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createInheritedStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
@@ -2527,14 +10431,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			124 => [
+			360 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createInheritedStandardObject(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createInheritedStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE,
@@ -2548,14 +10460,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			125 => [
+			361 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createInheritedStandardObject(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createInheritedStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE,
@@ -2569,14 +10489,494 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			126 => [
+			362 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createStringableObject(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createInheritedStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INHERITED_STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			363 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createInheritedStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INHERITED_STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			364 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createInheritedStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INHERITED_STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			365 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createInheritedStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INHERITED_STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			366 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createInheritedStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INHERITED_STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			367 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createInheritedStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INHERITED_STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			368 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createInheritedStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INHERITED_STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			369 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createInheritedStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INHERITED_STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			370 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createInheritedStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INHERITED_STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			371 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createInheritedStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INHERITED_STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			372 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createInheritedStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INHERITED_STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			373 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createInheritedStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INHERITED_STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			374 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createInheritedStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INHERITED_STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			375 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createInheritedStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INHERITED_STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			376 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createInheritedStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INHERITED_STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			377 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createInheritedStandardObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::INHERITED_STANDARD_OBJECT_FIXTURE,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			378 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStringableObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [],
 				'expectedThrowableClassName' => $throwableClassName,
@@ -2587,14 +10987,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			127 => [
+			379 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createStringableObject(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStringableObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code' => $throwableCode = Values::THROWABLE_CODE_DEFAULT
@@ -2607,14 +11015,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			128 => [
+			380 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createStringableObject(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStringableObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code' => $throwableCode = Values::THROWABLE_CODE
@@ -2627,14 +11043,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			129 => [
+			381 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createStringableObject(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStringableObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
@@ -2647,14 +11071,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			130 => [
+			382 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createStringableObject(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStringableObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'previous' => $throwablePrevious = Values::createThrowable()
@@ -2667,14 +11099,78 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			131 => [
+			383 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createStringableObject(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStringableObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			384 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStringableObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			385 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStringableObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
@@ -2688,14 +11184,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			132 => [
+			386 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createStringableObject(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStringableObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
@@ -2709,14 +11213,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			133 => [
+			387 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createStringableObject(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStringableObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE,
@@ -2730,14 +11242,22 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			134 => [
+			388 => [
 				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
 				'mainArguments'              => [
-					'outOfRangeIndex'  => IndicesAndOffsets::createStringableObject(),
-					'expectedMinIndex' => IndicesAndOffsets::INTEGER_0,
-					'expectedMaxIndex' => IndicesAndOffsets::INTEGER_1
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStringableObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
 				],
 				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE,
@@ -2751,7 +11271,487 @@ class ThrowableClassNamesWithOutOfRangeIndexExpectedMinIndexExpectedMaxIndexAddi
 					StringifiedIndicesAndOffsets::INTEGER_1
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			389 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStringableObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			390 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStringableObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			391 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStringableObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			392 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStringableObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			393 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStringableObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			394 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStringableObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			395 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStringableObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			396 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStringableObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			397 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStringableObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			398 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStringableObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			399 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStringableObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			400 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStringableObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			401 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStringableObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			402 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStringableObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			403 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStringableObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
+			],
+			404 => [
+				'throwableClassName'         => $throwableClassName = IndexOutOfRangeException::class,
+				'mainArguments'              => [
+					'outOfRangeIndex'  => $outOfRangeIndex = IndicesAndOffsets::createStringableObject(),
+					'expectedMinIndex' => $expectedMinIndex = IndicesAndOffsets::INTEGER_0,
+					'expectedMaxIndex' => $expectedMaxIndex = IndicesAndOffsets::INTEGER_1
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					IndexOutOfRangeException::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX,
+					StringifiedIndicesAndOffsets::STRING_0,
+					StringifiedIndicesAndOffsets::INTEGER_0,
+					StringifiedIndicesAndOffsets::INTEGER_1
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'outOfRangeIndex'  => $outOfRangeIndex,
+						'expectedMinIndex' => $expectedMinIndex,
+						'expectedMaxIndex' => $expectedMaxIndex
+					],
+					'additional' => $throwableContext
+				]
 			]
 		];
 	}

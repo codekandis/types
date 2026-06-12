@@ -14,7 +14,7 @@ use function sprintf;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-class ThrowableClassNamesWithInvalidValueExpectedValuesAdditionalArgumentsExpectedThrowableClassNameExpectedThrowableCodeAndExpectedThrowablePrevious implements DataProviderInterface
+final class ThrowableClassNamesWithInvalidValueExpectedValuesAdditionalArgumentsExpectedThrowableClassNameExpectedThrowableCodeAndExpectedThrowablePrevious implements DataProviderInterface
 {
 	/**
 	 * {@inheritdoc}
@@ -26,7 +26,7 @@ class ThrowableClassNamesWithInvalidValueExpectedValuesAdditionalArgumentsExpect
 			0  => [
 				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
 				'mainArguments'              => [
-					'invalidValue'   => Values::INVALID_VALUE,
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
 					'expectedValues' => $expectedValues = Values::EXPECTED_SINGLE_VALUE
 				],
 				'additionalArguments'        => [],
@@ -37,12 +37,19 @@ class ThrowableClassNamesWithInvalidValueExpectedValuesAdditionalArgumentsExpect
 					implode( ' | ', $expectedValues )
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
 			1  => [
 				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
 				'mainArguments'              => [
-					'invalidValue'   => Values::INVALID_VALUE,
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
 					'expectedValues' => $expectedValues = Values::EXPECTED_SINGLE_VALUE
 				],
 				'additionalArguments'        => [
@@ -55,12 +62,19 @@ class ThrowableClassNamesWithInvalidValueExpectedValuesAdditionalArgumentsExpect
 					implode( ' | ', $expectedValues )
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
 			2  => [
 				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
 				'mainArguments'              => [
-					'invalidValue'   => Values::INVALID_VALUE,
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
 					'expectedValues' => $expectedValues = Values::EXPECTED_SINGLE_VALUE
 				],
 				'additionalArguments'        => [
@@ -73,12 +87,19 @@ class ThrowableClassNamesWithInvalidValueExpectedValuesAdditionalArgumentsExpect
 					implode( ' | ', $expectedValues )
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
 			3  => [
 				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
 				'mainArguments'              => [
-					'invalidValue'   => Values::INVALID_VALUE,
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
 					'expectedValues' => $expectedValues = Values::EXPECTED_SINGLE_VALUE
 				],
 				'additionalArguments'        => [
@@ -91,12 +112,19 @@ class ThrowableClassNamesWithInvalidValueExpectedValuesAdditionalArgumentsExpect
 					implode( ' | ', $expectedValues )
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
 			4  => [
 				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
 				'mainArguments'              => [
-					'invalidValue'   => Values::INVALID_VALUE,
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
 					'expectedValues' => $expectedValues = Values::EXPECTED_SINGLE_VALUE
 				],
 				'additionalArguments'        => [
@@ -109,17 +137,23 @@ class ThrowableClassNamesWithInvalidValueExpectedValuesAdditionalArgumentsExpect
 					implode( ' | ', $expectedValues )
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
 			5  => [
 				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
 				'mainArguments'              => [
-					'invalidValue'   => Values::INVALID_VALUE,
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
 					'expectedValues' => $expectedValues = Values::EXPECTED_SINGLE_VALUE
 				],
 				'additionalArguments'        => [
-					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
-					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
 				],
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
@@ -127,13 +161,71 @@ class ThrowableClassNamesWithInvalidValueExpectedValuesAdditionalArgumentsExpect
 					StringifiedValues::INVALID_VALUE,
 					implode( ' | ', $expectedValues )
 				),
-				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
 			],
 			6  => [
 				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
 				'mainArguments'              => [
-					'invalidValue'   => Values::INVALID_VALUE,
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_SINGLE_VALUE
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			7  => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_SINGLE_VALUE
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			8  => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
 					'expectedValues' => $expectedValues = Values::EXPECTED_SINGLE_VALUE
 				],
 				'additionalArguments'        => [
@@ -147,12 +239,19 @@ class ThrowableClassNamesWithInvalidValueExpectedValuesAdditionalArgumentsExpect
 					implode( ' | ', $expectedValues )
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			7  => [
+			9  => [
 				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
 				'mainArguments'              => [
-					'invalidValue'   => Values::INVALID_VALUE,
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
 					'expectedValues' => $expectedValues = Values::EXPECTED_SINGLE_VALUE
 				],
 				'additionalArguments'        => [
@@ -166,12 +265,19 @@ class ThrowableClassNamesWithInvalidValueExpectedValuesAdditionalArgumentsExpect
 					implode( ' | ', $expectedValues )
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			8  => [
+			10 => [
 				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
 				'mainArguments'              => [
-					'invalidValue'   => Values::INVALID_VALUE,
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
 					'expectedValues' => $expectedValues = Values::EXPECTED_SINGLE_VALUE
 				],
 				'additionalArguments'        => [
@@ -185,12 +291,443 @@ class ThrowableClassNamesWithInvalidValueExpectedValuesAdditionalArgumentsExpect
 					implode( ' | ', $expectedValues )
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			9  => [
+			11 => [
 				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
 				'mainArguments'              => [
-					'invalidValue'   => Values::INVALID_VALUE,
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_SINGLE_VALUE
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			12 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_SINGLE_VALUE
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			13 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_SINGLE_VALUE
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			14 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_SINGLE_VALUE
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			15 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_SINGLE_VALUE
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			16 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_SINGLE_VALUE
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			17 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_SINGLE_VALUE
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			18 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_SINGLE_VALUE
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			19 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_SINGLE_VALUE
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			20 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_SINGLE_VALUE
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			21 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_SINGLE_VALUE
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			22 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_SINGLE_VALUE
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			23 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_SINGLE_VALUE
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			24 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_SINGLE_VALUE
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			25 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_SINGLE_VALUE
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			26 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_SINGLE_VALUE
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			27 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
 					'expectedValues' => $expectedValues = Values::EXPECTED_VALUES
 				],
 				'additionalArguments'        => [],
@@ -201,12 +738,19 @@ class ThrowableClassNamesWithInvalidValueExpectedValuesAdditionalArgumentsExpect
 					implode( ' | ', $expectedValues )
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			10 => [
+			28 => [
 				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
 				'mainArguments'              => [
-					'invalidValue'   => Values::INVALID_VALUE,
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
 					'expectedValues' => $expectedValues = Values::EXPECTED_VALUES
 				],
 				'additionalArguments'        => [
@@ -219,12 +763,19 @@ class ThrowableClassNamesWithInvalidValueExpectedValuesAdditionalArgumentsExpect
 					implode( ' | ', $expectedValues )
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			11 => [
+			29 => [
 				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
 				'mainArguments'              => [
-					'invalidValue'   => Values::INVALID_VALUE,
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
 					'expectedValues' => $expectedValues = Values::EXPECTED_VALUES
 				],
 				'additionalArguments'        => [
@@ -237,12 +788,19 @@ class ThrowableClassNamesWithInvalidValueExpectedValuesAdditionalArgumentsExpect
 					implode( ' | ', $expectedValues )
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			12 => [
+			30 => [
 				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
 				'mainArguments'              => [
-					'invalidValue'   => Values::INVALID_VALUE,
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
 					'expectedValues' => $expectedValues = Values::EXPECTED_VALUES
 				],
 				'additionalArguments'        => [
@@ -255,12 +813,19 @@ class ThrowableClassNamesWithInvalidValueExpectedValuesAdditionalArgumentsExpect
 					implode( ' | ', $expectedValues )
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			13 => [
+			31 => [
 				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
 				'mainArguments'              => [
-					'invalidValue'   => Values::INVALID_VALUE,
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
 					'expectedValues' => $expectedValues = Values::EXPECTED_VALUES
 				],
 				'additionalArguments'        => [
@@ -273,12 +838,69 @@ class ThrowableClassNamesWithInvalidValueExpectedValuesAdditionalArgumentsExpect
 					implode( ' | ', $expectedValues )
 				),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			14 => [
+			32 => [
 				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
 				'mainArguments'              => [
-					'invalidValue'   => Values::INVALID_VALUE,
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_VALUES
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			33 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_VALUES
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			34 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
 					'expectedValues' => $expectedValues = Values::EXPECTED_VALUES
 				],
 				'additionalArguments'        => [
@@ -292,12 +914,19 @@ class ThrowableClassNamesWithInvalidValueExpectedValuesAdditionalArgumentsExpect
 					implode( ' | ', $expectedValues )
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			15 => [
+			35 => [
 				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
 				'mainArguments'              => [
-					'invalidValue'   => Values::INVALID_VALUE,
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
 					'expectedValues' => $expectedValues = Values::EXPECTED_VALUES
 				],
 				'additionalArguments'        => [
@@ -311,12 +940,19 @@ class ThrowableClassNamesWithInvalidValueExpectedValuesAdditionalArgumentsExpect
 					implode( ' | ', $expectedValues )
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			16 => [
+			36 => [
 				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
 				'mainArguments'              => [
-					'invalidValue'   => Values::INVALID_VALUE,
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
 					'expectedValues' => $expectedValues = Values::EXPECTED_VALUES
 				],
 				'additionalArguments'        => [
@@ -330,12 +966,19 @@ class ThrowableClassNamesWithInvalidValueExpectedValuesAdditionalArgumentsExpect
 					implode( ' | ', $expectedValues )
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			17 => [
+			37 => [
 				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
 				'mainArguments'              => [
-					'invalidValue'   => Values::INVALID_VALUE,
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
 					'expectedValues' => $expectedValues = Values::EXPECTED_VALUES
 				],
 				'additionalArguments'        => [
@@ -349,7 +992,438 @@ class ThrowableClassNamesWithInvalidValueExpectedValuesAdditionalArgumentsExpect
 					implode( ' | ', $expectedValues )
 				),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			38 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_VALUES
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			39 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_VALUES
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			40 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_VALUES
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			41 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_VALUES
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			42 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_VALUES
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			43 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_VALUES
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			44 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_VALUES
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			45 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_VALUES
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			46 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_VALUES
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			47 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_VALUES
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			48 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_VALUES
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			49 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_VALUES
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			50 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_VALUES
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			51 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_VALUES
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			52 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_VALUES
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
+			],
+			53 => [
+				'throwableClassName'         => $throwableClassName = InvalidValueException::class,
+				'mainArguments'              => [
+					'invalidValue'   => $invalidValue = Values::INVALID_VALUE,
+					'expectedValues' => $expectedValues = Values::EXPECTED_VALUES
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf(
+					InvalidValueException::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES,
+					StringifiedValues::INVALID_VALUE,
+					implode( ' | ', $expectedValues )
+				),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'invalidValue'   => $invalidValue,
+						'expectedValues' => $expectedValues
+					],
+					'additional' => $throwableContext
+				]
 			]
 		];
 	}

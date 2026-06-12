@@ -26,7 +26,7 @@ use PHPUnit\Framework\Attributes\DataProviderExternal;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-class TypesInterfaceTest extends TestCase
+final class TypesInterfaceTest extends TestCase
 {
 	/**
 	 * Tests if {@link TypesInterface::$unknownType} returns the value correctly.

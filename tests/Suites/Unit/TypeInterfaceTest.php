@@ -21,7 +21,7 @@ use ReflectionObject;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-class TypeInterfaceTest extends TestCase
+final class TypeInterfaceTest extends TestCase
 {
 	/**
 	 * Tests if {@link TypeInterface::$instance} returns the instance, the type depends on, correctly.

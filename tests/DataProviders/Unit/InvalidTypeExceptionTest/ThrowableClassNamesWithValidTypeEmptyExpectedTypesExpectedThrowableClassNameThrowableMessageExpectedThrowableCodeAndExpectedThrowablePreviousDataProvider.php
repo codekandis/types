@@ -13,7 +13,7 @@ use Override;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-class ThrowableClassNamesWithValidTypeEmptyExpectedTypesExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider implements DataProviderInterface
+final class ThrowableClassNamesWithValidTypeEmptyExpectedTypesExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider implements DataProviderInterface
 {
 	/**
 	 * {@inheritdoc}
@@ -26,12 +26,12 @@ class ThrowableClassNamesWithValidTypeEmptyExpectedTypesExpectedThrowableClassNa
 				'throwableClassName'         => InvalidTypeException::class,
 				'invalidType'                => Types::INVALID_TYPE,
 				'emptyExpectedTypes'         => Types::EXPECTED_TYPES_WITH_NO_TYPES,
-				'code'                       => $expectedThrowableCode = Values::THROWABLE_CODE_DEFAULT,
-				'previous'                   => $expectedPreviousThrowable = Values::THROWABLE_PREVIOUS_DEFAULT,
+				'code'                       => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+				'previous'                   => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
 				'expectedThrowableClassName' => ValueIsEmptyException::class,
 				'expectedThrowableMessage'   => ValueIsEmptyException::EXCEPTION_MESSAGE_DEFAULT,
-				'expectedThrowableCode'      => $expectedThrowableCode,
-				'expectedPreviousThrowable'  => $expectedPreviousThrowable
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious
 			]
 		];
 	}

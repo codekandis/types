@@ -10,7 +10,7 @@ use PHPUnit\Framework\Attributes\DataProviderExternal;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-class InheritanceTest extends TestCase
+final class InheritanceTest extends TestCase
 {
 	/**
 	 * Tests if an interface or class is a subclass of a specific ancestor interface or class.

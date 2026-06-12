@@ -13,7 +13,7 @@ use Override;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-class TypeDeterminersWithValueModeAndExpectedValuesDataProvider implements DataProviderInterface
+final class TypeDeterminersWithValueModeAndExpectedValuesDataProvider implements DataProviderInterface
 {
 	/**
 	 * @inheritdoc

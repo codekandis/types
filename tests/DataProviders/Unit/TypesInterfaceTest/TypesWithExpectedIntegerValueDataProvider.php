@@ -2,9 +2,9 @@
 namespace CodeKandis\Types\Tests\DataProviders\Unit\TypesInterfaceTest;
 
 use CodeKandis\PhpUnit\DataProviderInterface;
-use CodeKandis\Types\GetTypeTypes;
 use CodeKandis\Types\DecoratedGetTypeTypes;
 use CodeKandis\Types\DecoratedTypeHintTypes;
+use CodeKandis\Types\GetTypeTypes;
 use CodeKandis\Types\Tests\Fixtures\Types;
 use CodeKandis\Types\TypeHintTypes;
 use Override;
@@ -14,7 +14,7 @@ use Override;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-class TypesWithExpectedIntegerValueDataProvider implements DataProviderInterface
+final class TypesWithExpectedIntegerValueDataProvider implements DataProviderInterface
 {
 	/**
 	 * @inheritdoc

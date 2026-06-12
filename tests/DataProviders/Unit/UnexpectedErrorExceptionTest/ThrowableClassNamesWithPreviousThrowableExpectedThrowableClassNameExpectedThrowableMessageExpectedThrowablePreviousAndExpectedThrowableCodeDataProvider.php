@@ -13,7 +13,7 @@ use function sprintf;
  * @author Christian Ramelow <info@codekandis.net>
  */
 
-class ThrowableClassNamesWithPreviousThrowableExpectedThrowableClassNameExpectedThrowableMessageExpectedThrowablePreviousAndExpectedThrowableCodeDataProvider implements DataProviderInterface
+final class ThrowableClassNamesWithPreviousThrowableExpectedThrowableClassNameExpectedThrowableMessageExpectedThrowablePreviousAndExpectedThrowableCodeDataProvider implements DataProviderInterface
 {
 	/**
 	 * @inheritdoc

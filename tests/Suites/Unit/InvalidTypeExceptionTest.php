@@ -17,32 +17,46 @@ use Throwable;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-class InvalidTypeExceptionTest extends TestCase
+final class InvalidTypeExceptionTest extends TestCase
 {
 	/**
 	 * Tests if {@link InvalidTypeException::withInvalidType()} instantiates the throwable correctly.
 	 * @param class-string<InvalidTypeException> $throwableClassName The class name of the throwable to test.
 	 * @param array<string, mixed> $mainArguments The main arguments to pass.
-	 * @param array{code?: int, previous?: ?Throwable} $additionalArguments The additional arguments to pass.
+	 * @param array{
+	 *     code?: int,
+	 *     previous?: ?Throwable
+	 * } $additionalArguments The additional arguments to pass.
 	 * @param class-string<InvalidTypeException> $expectedThrowableClassName The class name of the expected throwable.
 	 * @param string $expectedThrowableMessage The message of the expected throwable.
 	 * @param int $expectedThrowableCode The code of the expected throwable.
 	 * @param ?Throwable $expectedThrowablePrevious The previously catched throwable of the expected throwable.
+	 * @param array{
+	 *     exception: ?array<string, mixed>,
+	 *     additional: ?array<string, mixed>
+	 * } $expectedThrowableContext The context of the expected throwable.
 	 */
 	#[DataProviderExternal( ThrowableClassNamesWithInvalidTypeAdditionalArgumentsExpectedThrowableClassNameExpectedThrowableCodeAndExpectedThrowablePrevious::class, 'provideData' )]
-	public function testIfMethodWithInvalidTypeInstantiatesThrowableCorrectly( string $throwableClassName, array $mainArguments, array $additionalArguments, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious ): void
+	public function testIfMethodWithInvalidTypeInstantiatesThrowableCorrectly( string $throwableClassName, array $mainArguments, array $additionalArguments, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious, array $expectedThrowableContext ): void
 	{
-		$resultedThrowable          = $throwableClassName::withInvalidType( ...$mainArguments, ...$additionalArguments );
-		$resultedThrowableClassName = $resultedThrowable::class;
-		$resultedThrowableMessage   = $resultedThrowable->getMessage();
-		$resultedThrowableCode      = $resultedThrowable->getCode();
-		$resultedThrowablePrevious  = $resultedThrowable->getPrevious();
+		$resultedThrowable = $throwableClassName::withInvalidType( ...$mainArguments, ...$additionalArguments );
 
 		static::assertInstanceOf( InvalidTypeException::class, $resultedThrowable );
+
+		$resultedThrowableClassName = $resultedThrowable::class;
 		static::assertSame( $expectedThrowableClassName, $resultedThrowableClassName );
+
+		$resultedThrowableMessage = $resultedThrowable->getMessage();
 		static::assertSame( $expectedThrowableMessage, $resultedThrowableMessage );
+
+		$resultedThrowableCode = $resultedThrowable->getCode();
 		static::assertSame( $expectedThrowableCode, $resultedThrowableCode );
+
+		$resultedThrowablePrevious = $resultedThrowable->getPrevious();
 		static::assertSame( $expectedThrowablePrevious, $resultedThrowablePrevious );
+
+		$resultedThrowableContext = $resultedThrowable->context;
+		static::assertSame( $expectedThrowableContext, $resultedThrowableContext );
 	}
 
 	/**
@@ -55,10 +69,14 @@ class InvalidTypeExceptionTest extends TestCase
 	 * @param class-string<ValueIsEmptyExceptionInterface> $expectedThrowableClassName The expected throwable class name.
 	 * @param string $expectedThrowableMessage The expected throwable message.
 	 * @param int $expectedThrowableCode The expected throwable code.
-	 * @param ?Throwable $expectedPreviousThrowable The expected previous throwable.
+	 * @param ?Throwable $expectedThrowablePrevious The expected previous throwable.
+	 * @param array{
+	 *     exception: ?array<string, mixed>,
+	 *     additional: ?array<string, mixed>
+	 * } $expectedThrowableContext The context of the expected throwable.
 	 */
 	#[DataProviderExternal( ThrowableClassNamesWithValidTypeEmptyExpectedTypesExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
-	public function testIfMethodWithValidTypeAndEmptyExpectedTypesThrowsValueIsEmptyExceptionInterfaceOnEmptyExpectedTypes( string $throwableClassName, string $invalidType, array $emptyExpectedTypes, int $code, ?Throwable $previous, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedPreviousThrowable ): void
+	public function testIfMethodWithInvalidTypeAndExpectedTypesThrowsValueIsEmptyExceptionInterfaceOnEmptyExpectedTypes( string $throwableClassName, string $invalidType, array $emptyExpectedTypes, int $code, ?Throwable $previous, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious, array $expectedThrowableContext ): void
 	{
 		try
 		{
@@ -66,20 +84,27 @@ class InvalidTypeExceptionTest extends TestCase
 		}
 		catch ( Throwable $throwable )
 		{
-			$resultedThrowableMessage  = $throwable->getMessage();
-			$resultedThrowableCode     = $throwable->getCode();
-			$resultedPreviousThrowable = $throwable->getPrevious();
-
 			static::assertInstanceOf( ValueIsEmptyExceptionInterface::class, $throwable );
-			static::assertInstanceOf( $expectedThrowableClassName, $throwable );
+
+			$resultedThrowableClassName = $throwable::class;
+			static::assertInstanceOf( $expectedThrowableClassName, $resultedThrowableClassName );
+
+			$resultedThrowableMessage = $throwable->getMessage();
 			static::assertSame( $expectedThrowableMessage, $resultedThrowableMessage );
+
+			$resultedThrowableCode = $throwable->getCode();
 			static::assertSame( $expectedThrowableCode, $resultedThrowableCode );
-			static::assertSame( $expectedPreviousThrowable, $resultedPreviousThrowable );
+
+			$resultedThrowablePrevious = $throwable->getPrevious();
+			static::assertSame( $expectedThrowablePrevious, $resultedThrowablePrevious );
+
+			$resultedThrowableContext = $throwable->context;
+			static::assertSame( $expectedThrowableContext, $resultedThrowableContext );
 
 			return;
 		}
 
-		static::failExpectedThrowableHasNotBeenThrown();
+		static::failExpectedThrowableHasNotBeenThrown( $expectedThrowableClassName );
 	}
 
 	/**
@@ -92,10 +117,14 @@ class InvalidTypeExceptionTest extends TestCase
 	 * @param class-string<InvalidTypeExceptionInterface> $expectedThrowableClassName The expected throwable class name.
 	 * @param string $expectedThrowableMessage The expected throwable message.
 	 * @param int $expectedThrowableCode The expected throwable code.
-	 * @param ?Throwable $expectedPreviousThrowable The expected previous throwable.
+	 * @param ?Throwable $expectedThrowablePrevious The expected previous throwable.
+	 * @param array{
+	 *     exception: ?array<string, mixed>,
+	 *     additional: ?array<string, mixed>
+	 * } $expectedThrowableContext The context of the expected throwable.
 	 */
 	#[DataProviderExternal( ThrowableClassNamesWithValidTypeInvalidExpectedTypesExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider::class, 'provideData' )]
-	public function testIfMethodWithValidTypeAndInvalidExpectedTypesThrowsInvalidTypeExceptionInterfaceOnInvalidExpectedTypeType( string $throwableClassName, string $invalidType, array $invalidExpectedTypes, int $code, ?Throwable $previous, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedPreviousThrowable ): void
+	public function testIfMethodWithInvalidTypeAndExpectedTypesThrowsInvalidTypeExceptionInterfaceOnInvalidExpectedTypeType( string $throwableClassName, string $invalidType, array $invalidExpectedTypes, int $code, ?Throwable $previous, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious, array $expectedThrowableContext ): void
 	{
 		try
 		{
@@ -103,45 +132,73 @@ class InvalidTypeExceptionTest extends TestCase
 		}
 		catch ( Throwable $throwable )
 		{
-			$resultedThrowableMessage  = $throwable->getMessage();
-			$resultedThrowableCode     = $throwable->getCode();
-			$resultedPreviousThrowable = $throwable->getPrevious();
-
 			static::assertInstanceOf( InvalidTypeExceptionInterface::class, $throwable );
-			static::assertInstanceOf( $expectedThrowableClassName, $throwable );
+
+			$resultedThrowableClassName = $throwable::class;
+			static::assertInstanceOf( $expectedThrowableClassName, $resultedThrowableClassName );
+
+			$resultedThrowableMessage = $throwable->getMessage();
 			static::assertSame( $expectedThrowableMessage, $resultedThrowableMessage );
+
+			$resultedThrowableCode = $throwable->getCode();
 			static::assertSame( $expectedThrowableCode, $resultedThrowableCode );
-			static::assertSame( $expectedPreviousThrowable, $resultedPreviousThrowable );
+
+			$resultedThrowablePrevious = $throwable->getPrevious();
+			static::assertSame( $expectedThrowablePrevious, $resultedThrowablePrevious );
+
+			$resultedThrowableContext = $throwable->context;
+			static::assertSame( $expectedThrowableContext, $resultedThrowableContext );
 
 			return;
 		}
 
-		static::failExpectedThrowableHasNotBeenThrown();
+		static::failExpectedThrowableHasNotBeenThrown( $expectedThrowableClassName );
 	}
 
 	/**
 	 * Tests if {@link InvalidTypeException::withInvalidTypeAndExpectedTypes()} instantiates the throwable correctly.
 	 * @param class-string<InvalidTypeException> $throwableClassName The class name of the throwable to test.
 	 * @param array<string, mixed> $mainArguments The main arguments to pass.
-	 * @param array{code?: int, previous?: ?Throwable} $additionalArguments The additional arguments to pass.
+	 * @param array{
+	 *     code?: int,
+	 *     previous?: ?Throwable
+	 * } $additionalArguments The additional arguments to pass.
 	 * @param class-string<InvalidTypeException> $expectedThrowableClassName The class name of the expected throwable.
 	 * @param string $expectedThrowableMessage The message of the expected throwable.
 	 * @param int $expectedThrowableCode The code of the expected throwable.
 	 * @param ?Throwable $expectedThrowablePrevious The previously catched throwable of the expected throwable.
+	 * @param array{
+	 *     exception: ?array<string, mixed>,
+	 *     additional: ?array<string, mixed>
+	 * } $expectedThrowableContext The context of the expected throwable.
 	 */
 	#[DataProviderExternal( ThrowableClassNamesWithInvalidTypeExpectedTypesAdditionalArgumentsExpectedThrowableClassNameExpectedThrowableCodeAndExpectedThrowablePrevious::class, 'provideData' )]
-	public function testIfMethodWithInvalidTypeAndExpectedTypesInstantiatesThrowableCorrectly( string $throwableClassName, array $mainArguments, array $additionalArguments, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious ): void
+	public function testIfMethodWithInvalidTypeAndExpectedTypesInstantiatesThrowableCorrectly( string $throwableClassName, array $mainArguments, array $additionalArguments, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious, array $expectedThrowableContext ): void
 	{
-		$resultedThrowable          = $throwableClassName::withInvalidTypeAndExpectedTypes( ...$mainArguments, ...$additionalArguments );
-		$resultedThrowableClassName = $resultedThrowable::class;
-		$resultedThrowableMessage   = $resultedThrowable->getMessage();
-		$resultedThrowableCode      = $resultedThrowable->getCode();
-		$resultedThrowablePrevious  = $resultedThrowable->getPrevious();
+		try
+		{
+			$resultedThrowable = $throwableClassName::withInvalidTypeAndExpectedTypes( ...$mainArguments, ...$additionalArguments );
+		}
+		catch ( Throwable $throwable )
+		{
+			static::failUnexpectedThrowableHasBeenThrown( $throwable::class );
+		}
 
 		static::assertInstanceOf( InvalidTypeException::class, $resultedThrowable );
+
+		$resultedThrowableClassName = $resultedThrowable::class;
 		static::assertSame( $expectedThrowableClassName, $resultedThrowableClassName );
+
+		$resultedThrowableMessage = $resultedThrowable->getMessage();
 		static::assertSame( $expectedThrowableMessage, $resultedThrowableMessage );
+
+		$resultedThrowableCode = $resultedThrowable->getCode();
 		static::assertSame( $expectedThrowableCode, $resultedThrowableCode );
+
+		$resultedThrowablePrevious = $resultedThrowable->getPrevious();
 		static::assertSame( $expectedThrowablePrevious, $resultedThrowablePrevious );
+
+		$resultedThrowableContext = $resultedThrowable->context;
+		static::assertSame( $expectedThrowableContext, $resultedThrowableContext );
 	}
 }

@@ -11,7 +11,7 @@ use Override;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-class TypesWithExpectedInstanceDataProvider implements DataProviderInterface
+final class TypesWithExpectedInstanceDataProvider implements DataProviderInterface
 {
 	/**
 	 * @inheritdoc

@@ -11,7 +11,7 @@ use PHPUnit\Framework\Attributes\DataProviderExternal;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-class StringifyableInterfaceTest extends TestCase
+final class StringifyableInterfaceTest extends TestCase
 {
 	/**
 	 * Tests if {@link StringifyableInterface::__toString()} returns the string representation correctly.

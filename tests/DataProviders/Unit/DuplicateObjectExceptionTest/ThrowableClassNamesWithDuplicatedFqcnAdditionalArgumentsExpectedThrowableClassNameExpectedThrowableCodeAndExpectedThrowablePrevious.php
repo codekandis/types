@@ -12,7 +12,7 @@ use function sprintf;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-class ThrowableClassNamesWithDuplicatedFqcnAdditionalArgumentsExpectedThrowableClassNameExpectedThrowableCodeAndExpectedThrowablePrevious implements DataProviderInterface
+final class ThrowableClassNamesWithDuplicatedFqcnAdditionalArgumentsExpectedThrowableClassNameExpectedThrowableCodeAndExpectedThrowablePrevious implements DataProviderInterface
 {
 	/**
 	 * {@inheritdoc}
@@ -30,7 +30,13 @@ class ThrowableClassNamesWithDuplicatedFqcnAdditionalArgumentsExpectedThrowableC
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
 			1  => [
 				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
@@ -43,7 +49,13 @@ class ThrowableClassNamesWithDuplicatedFqcnAdditionalArgumentsExpectedThrowableC
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
 			2  => [
 				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
@@ -56,7 +68,13 @@ class ThrowableClassNamesWithDuplicatedFqcnAdditionalArgumentsExpectedThrowableC
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
 			3  => [
 				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
@@ -69,7 +87,13 @@ class ThrowableClassNamesWithDuplicatedFqcnAdditionalArgumentsExpectedThrowableC
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
 			4  => [
 				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
@@ -82,7 +106,13 @@ class ThrowableClassNamesWithDuplicatedFqcnAdditionalArgumentsExpectedThrowableC
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
 			5  => [
 				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
@@ -90,13 +120,18 @@ class ThrowableClassNamesWithDuplicatedFqcnAdditionalArgumentsExpectedThrowableC
 					'duplicatedFqcn' => $duplicatedFqcn = Values::CLASS_NAME
 				],
 				'additionalArguments'        => [
-					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
-					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
 				],
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
-				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
 			],
 			6  => [
 				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
@@ -104,15 +139,60 @@ class ThrowableClassNamesWithDuplicatedFqcnAdditionalArgumentsExpectedThrowableC
 					'duplicatedFqcn' => $duplicatedFqcn = Values::CLASS_NAME
 				],
 				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			7  => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::CLASS_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			8  => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::CLASS_NAME
+				],
+				'additionalArguments'        => [
 					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
 					'previous' => $throwablePrevious = Values::createThrowable()
 				],
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			7  => [
+			9  => [
 				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
 				'mainArguments'              => [
 					'duplicatedFqcn' => $duplicatedFqcn = Values::CLASS_NAME
@@ -124,9 +204,15 @@ class ThrowableClassNamesWithDuplicatedFqcnAdditionalArgumentsExpectedThrowableC
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			8  => [
+			10 => [
 				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
 				'mainArguments'              => [
 					'duplicatedFqcn' => $duplicatedFqcn = Values::CLASS_NAME
@@ -138,9 +224,343 @@ class ThrowableClassNamesWithDuplicatedFqcnAdditionalArgumentsExpectedThrowableC
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			9  => [
+			11 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::CLASS_NAME
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			12 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::CLASS_NAME
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			13 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::CLASS_NAME
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			14 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::CLASS_NAME
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			15 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::CLASS_NAME
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			16 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::CLASS_NAME
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			17 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::CLASS_NAME
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			18 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::CLASS_NAME
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			19 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::CLASS_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			20 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::CLASS_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			21 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::CLASS_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			22 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::CLASS_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			23 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::CLASS_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			24 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::CLASS_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			25 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::CLASS_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			26 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::CLASS_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			27 => [
 				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
 				'mainArguments'              => [
 					'duplicatedFqcn' => $duplicatedFqcn = Values::ENUM_NAME
@@ -149,9 +569,15 @@ class ThrowableClassNamesWithDuplicatedFqcnAdditionalArgumentsExpectedThrowableC
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			10 => [
+			28 => [
 				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
 				'mainArguments'              => [
 					'duplicatedFqcn' => $duplicatedFqcn = Values::ENUM_NAME
@@ -162,9 +588,15 @@ class ThrowableClassNamesWithDuplicatedFqcnAdditionalArgumentsExpectedThrowableC
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			11 => [
+			29 => [
 				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
 				'mainArguments'              => [
 					'duplicatedFqcn' => $duplicatedFqcn = Values::ENUM_NAME
@@ -175,9 +607,15 @@ class ThrowableClassNamesWithDuplicatedFqcnAdditionalArgumentsExpectedThrowableC
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			12 => [
+			30 => [
 				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
 				'mainArguments'              => [
 					'duplicatedFqcn' => $duplicatedFqcn = Values::ENUM_NAME
@@ -188,9 +626,15 @@ class ThrowableClassNamesWithDuplicatedFqcnAdditionalArgumentsExpectedThrowableC
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			13 => [
+			31 => [
 				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
 				'mainArguments'              => [
 					'duplicatedFqcn' => $duplicatedFqcn = Values::ENUM_NAME
@@ -201,9 +645,53 @@ class ThrowableClassNamesWithDuplicatedFqcnAdditionalArgumentsExpectedThrowableC
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			14 => [
+			32 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			33 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			34 => [
 				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
 				'mainArguments'              => [
 					'duplicatedFqcn' => $duplicatedFqcn = Values::ENUM_NAME
@@ -215,9 +703,15 @@ class ThrowableClassNamesWithDuplicatedFqcnAdditionalArgumentsExpectedThrowableC
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			15 => [
+			35 => [
 				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
 				'mainArguments'              => [
 					'duplicatedFqcn' => $duplicatedFqcn = Values::ENUM_NAME
@@ -229,9 +723,15 @@ class ThrowableClassNamesWithDuplicatedFqcnAdditionalArgumentsExpectedThrowableC
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			16 => [
+			36 => [
 				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
 				'mainArguments'              => [
 					'duplicatedFqcn' => $duplicatedFqcn = Values::ENUM_NAME
@@ -243,9 +743,15 @@ class ThrowableClassNamesWithDuplicatedFqcnAdditionalArgumentsExpectedThrowableC
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			17 => [
+			37 => [
 				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
 				'mainArguments'              => [
 					'duplicatedFqcn' => $duplicatedFqcn = Values::ENUM_NAME
@@ -257,7 +763,341 @@ class ThrowableClassNamesWithDuplicatedFqcnAdditionalArgumentsExpectedThrowableC
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			38 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			39 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			40 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			41 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			42 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			43 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			44 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			45 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			46 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			47 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			48 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			49 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			50 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			51 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			52 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			53 => [
+				'throwableClassName'         => $throwableClassName = DuplicateObjectException::class,
+				'mainArguments'              => [
+					'duplicatedFqcn' => $duplicatedFqcn = Values::ENUM_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( DuplicateObjectException::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'duplicatedFqcn' => $duplicatedFqcn
+					],
+					'additional' => $throwableContext
+				]
 			]
 		];
 	}

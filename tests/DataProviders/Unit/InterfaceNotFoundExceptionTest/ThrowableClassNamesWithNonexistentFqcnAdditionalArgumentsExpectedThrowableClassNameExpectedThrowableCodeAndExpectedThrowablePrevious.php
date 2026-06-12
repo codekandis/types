@@ -12,7 +12,7 @@ use function sprintf;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowableClassNameExpectedThrowableCodeAndExpectedThrowablePrevious implements DataProviderInterface
+final class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowableClassNameExpectedThrowableCodeAndExpectedThrowablePrevious implements DataProviderInterface
 {
 	/**
 	 * {@inheritdoc}
@@ -21,7 +21,7 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 	public static function provideData(): iterable
 	{
 		return [
-			0 => [
+			0  => [
 				'throwableClassName'         => $throwableClassName = InterfaceNotFoundException::class,
 				'mainArguments'              => [
 					'nonexistentFqcn' => $nonexistentFqcn = Values::INTERFACE_NAME
@@ -30,9 +30,15 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( InterfaceNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			1 => [
+			1  => [
 				'throwableClassName'         => $throwableClassName = InterfaceNotFoundException::class,
 				'mainArguments'              => [
 					'nonexistentFqcn' => $nonexistentFqcn = Values::INTERFACE_NAME
@@ -43,9 +49,15 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( InterfaceNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			2 => [
+			2  => [
 				'throwableClassName'         => $throwableClassName = InterfaceNotFoundException::class,
 				'mainArguments'              => [
 					'nonexistentFqcn' => $nonexistentFqcn = Values::INTERFACE_NAME
@@ -56,9 +68,15 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( InterfaceNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			3 => [
+			3  => [
 				'throwableClassName'         => $throwableClassName = InterfaceNotFoundException::class,
 				'mainArguments'              => [
 					'nonexistentFqcn' => $nonexistentFqcn = Values::INTERFACE_NAME
@@ -69,9 +87,15 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( InterfaceNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			4 => [
+			4  => [
 				'throwableClassName'         => $throwableClassName = InterfaceNotFoundException::class,
 				'mainArguments'              => [
 					'nonexistentFqcn' => $nonexistentFqcn = Values::INTERFACE_NAME
@@ -82,9 +106,53 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( InterfaceNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
 				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			5 => [
+			5  => [
+				'throwableClassName'         => $throwableClassName = InterfaceNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTERFACE_NAME
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( InterfaceNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			6  => [
+				'throwableClassName'         => $throwableClassName = InterfaceNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTERFACE_NAME
+				],
+				'additionalArguments'        => [
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( InterfaceNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			7  => [
 				'throwableClassName'         => $throwableClassName = InterfaceNotFoundException::class,
 				'mainArguments'              => [
 					'nonexistentFqcn' => $nonexistentFqcn = Values::INTERFACE_NAME
@@ -96,9 +164,15 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( InterfaceNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			6 => [
+			8  => [
 				'throwableClassName'         => $throwableClassName = InterfaceNotFoundException::class,
 				'mainArguments'              => [
 					'nonexistentFqcn' => $nonexistentFqcn = Values::INTERFACE_NAME
@@ -110,9 +184,15 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( InterfaceNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			7 => [
+			9  => [
 				'throwableClassName'         => $throwableClassName = InterfaceNotFoundException::class,
 				'mainArguments'              => [
 					'nonexistentFqcn' => $nonexistentFqcn = Values::INTERFACE_NAME
@@ -124,9 +204,15 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( InterfaceNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
 			],
-			8 => [
+			10 => [
 				'throwableClassName'         => $throwableClassName = InterfaceNotFoundException::class,
 				'mainArguments'              => [
 					'nonexistentFqcn' => $nonexistentFqcn = Values::INTERFACE_NAME
@@ -138,7 +224,341 @@ class ThrowableClassNamesWithNonexistentFqcnAdditionalArgumentsExpectedThrowable
 				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf( InterfaceNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
 				'expectedThrowableCode'      => $throwableCode,
-				'expectedThrowablePrevious'  => $throwablePrevious
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => Values::THROWABLE_CONTEXT_DEFAULT
+				]
+			],
+			11 => [
+				'throwableClassName'         => $throwableClassName = InterfaceNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTERFACE_NAME
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( InterfaceNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			12 => [
+				'throwableClassName'         => $throwableClassName = InterfaceNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTERFACE_NAME
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( InterfaceNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			13 => [
+				'throwableClassName'         => $throwableClassName = InterfaceNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTERFACE_NAME
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( InterfaceNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			14 => [
+				'throwableClassName'         => $throwableClassName = InterfaceNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTERFACE_NAME
+				],
+				'additionalArguments'        => [
+					'code'    => $throwableCode = Values::THROWABLE_CODE,
+					'context' => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( InterfaceNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			15 => [
+				'throwableClassName'         => $throwableClassName = InterfaceNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTERFACE_NAME
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( InterfaceNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			16 => [
+				'throwableClassName'         => $throwableClassName = InterfaceNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTERFACE_NAME
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( InterfaceNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			17 => [
+				'throwableClassName'         => $throwableClassName = InterfaceNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTERFACE_NAME
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( InterfaceNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			18 => [
+				'throwableClassName'         => $throwableClassName = InterfaceNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTERFACE_NAME
+				],
+				'additionalArguments'        => [
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( InterfaceNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => Values::THROWABLE_CODE_DEFAULT,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			19 => [
+				'throwableClassName'         => $throwableClassName = InterfaceNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTERFACE_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( InterfaceNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			20 => [
+				'throwableClassName'         => $throwableClassName = InterfaceNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTERFACE_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( InterfaceNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			21 => [
+				'throwableClassName'         => $throwableClassName = InterfaceNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTERFACE_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( InterfaceNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			22 => [
+				'throwableClassName'         => $throwableClassName = InterfaceNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTERFACE_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( InterfaceNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			23 => [
+				'throwableClassName'         => $throwableClassName = InterfaceNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTERFACE_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( InterfaceNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			24 => [
+				'throwableClassName'         => $throwableClassName = InterfaceNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTERFACE_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( InterfaceNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			25 => [
+				'throwableClassName'         => $throwableClassName = InterfaceNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTERFACE_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT_DEFAULT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( InterfaceNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
+			],
+			26 => [
+				'throwableClassName'         => $throwableClassName = InterfaceNotFoundException::class,
+				'mainArguments'              => [
+					'nonexistentFqcn' => $nonexistentFqcn = Values::INTERFACE_NAME
+				],
+				'additionalArguments'        => [
+					'code'     => $throwableCode = Values::THROWABLE_CODE,
+					'previous' => $throwablePrevious = Values::createThrowable(),
+					'context'  => $throwableContext = Values::THROWABLE_CONTEXT
+				],
+				'expectedThrowableClassName' => $throwableClassName,
+				'expectedThrowableMessage'   => sprintf( InterfaceNotFoundException::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious,
+				'expectedThrowableContext'   => [
+					'exception'  => [
+						'nonexistentFqcn' => $nonexistentFqcn
+					],
+					'additional' => $throwableContext
+				]
 			]
 		];
 	}

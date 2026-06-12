@@ -10,7 +10,7 @@ use Override;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-class StringifyablesWithExpectedStringRepresentationDataProvider implements DataProviderInterface
+final class StringifyablesWithExpectedStringRepresentationDataProvider implements DataProviderInterface
 {
 	/**
 	 * @inheritdoc

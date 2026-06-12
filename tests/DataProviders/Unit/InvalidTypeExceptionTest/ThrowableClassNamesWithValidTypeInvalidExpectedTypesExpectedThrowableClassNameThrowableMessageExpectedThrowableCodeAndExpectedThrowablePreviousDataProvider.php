@@ -13,7 +13,7 @@ use function sprintf;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-class ThrowableClassNamesWithValidTypeInvalidExpectedTypesExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider implements DataProviderInterface
+final class ThrowableClassNamesWithValidTypeInvalidExpectedTypesExpectedThrowableClassNameThrowableMessageExpectedThrowableCodeAndExpectedThrowablePreviousDataProvider implements DataProviderInterface
 {
 	/**
 	 * {@inheritdoc}
@@ -23,154 +23,154 @@ class ThrowableClassNamesWithValidTypeInvalidExpectedTypesExpectedThrowableClass
 	{
 		return [
 			0 => [
-				'throwableClassName'         => $expectedThrowableClassName = InvalidTypeException::class,
+				'throwableClassName'         => $throwableClassName = InvalidTypeException::class,
 				'invalidType'                => Types::INVALID_TYPE,
 				'invalidExpectedTypes'       => Types::EXPECTED_TYPES_WITH_SINGLE_INVALID_NULL_TYPE,
-				'code'                       => $expectedThrowableCode = Values::THROWABLE_CODE_DEFAULT,
-				'previous'                   => $expectedPreviousThrowable = Values::THROWABLE_PREVIOUS_DEFAULT,
-				'expectedThrowableClassName' => $expectedThrowableClassName,
+				'code'                       => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+				'previous'                   => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
 					InvalidTypeException::EXCEPTION_MESSAGE_WITH_INVALID_TYPE_AND_EXPECTED_TYPES,
 					Types::GET_TYPE_TYPE_NULL,
 					Types::TYPE_HINT_TYPE_STRING
 				),
-				'expectedThrowableCode'      => $expectedThrowableCode,
-				'expectedPreviousThrowable'  => $expectedPreviousThrowable
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious
 			],
 			1 => [
-				'throwableClassName'         => $expectedThrowableClassName = InvalidTypeException::class,
+				'throwableClassName'         => $throwableClassName = InvalidTypeException::class,
 				'invalidType'                => Types::INVALID_TYPE,
 				'invalidExpectedTypes'       => Types::EXPECTED_TYPES_WITH_SINGLE_INVALID_BOOLEAN_TYPE,
-				'code'                       => $expectedThrowableCode = Values::THROWABLE_CODE_DEFAULT,
-				'previous'                   => $expectedPreviousThrowable = Values::THROWABLE_PREVIOUS_DEFAULT,
-				'expectedThrowableClassName' => $expectedThrowableClassName,
+				'code'                       => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+				'previous'                   => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
 					InvalidTypeException::EXCEPTION_MESSAGE_WITH_INVALID_TYPE_AND_EXPECTED_TYPES,
 					Types::GET_TYPE_TYPE_BOOLEAN,
 					Types::TYPE_HINT_TYPE_STRING
 				),
-				'expectedThrowableCode'      => $expectedThrowableCode,
-				'expectedPreviousThrowable'  => $expectedPreviousThrowable
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious
 			],
 			2 => [
-				'throwableClassName'         => $expectedThrowableClassName = InvalidTypeException::class,
+				'throwableClassName'         => $throwableClassName = InvalidTypeException::class,
 				'invalidType'                => Types::INVALID_TYPE,
 				'invalidExpectedTypes'       => Types::EXPECTED_TYPES_WITH_SINGLE_INVALID_INTEGER_TYPE,
-				'code'                       => $expectedThrowableCode = Values::THROWABLE_CODE_DEFAULT,
-				'previous'                   => $expectedPreviousThrowable = Values::THROWABLE_PREVIOUS_DEFAULT,
-				'expectedThrowableClassName' => $expectedThrowableClassName,
+				'code'                       => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+				'previous'                   => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
 					InvalidTypeException::EXCEPTION_MESSAGE_WITH_INVALID_TYPE_AND_EXPECTED_TYPES,
 					Types::GET_TYPE_TYPE_INTEGER,
 					Types::TYPE_HINT_TYPE_STRING
 				),
-				'expectedThrowableCode'      => $expectedThrowableCode,
-				'expectedPreviousThrowable'  => $expectedPreviousThrowable
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious
 			],
 			3 => [
-				'throwableClassName'         => $expectedThrowableClassName = InvalidTypeException::class,
+				'throwableClassName'         => $throwableClassName = InvalidTypeException::class,
 				'invalidType'                => Types::INVALID_TYPE,
 				'invalidExpectedTypes'       => Types::EXPECTED_TYPES_WITH_VALID_STRING_TYPE_AT_BEGINNING,
-				'code'                       => $expectedThrowableCode = Values::THROWABLE_CODE_DEFAULT,
-				'previous'                   => $expectedPreviousThrowable = Values::THROWABLE_PREVIOUS_DEFAULT,
-				'expectedThrowableClassName' => $expectedThrowableClassName,
+				'code'                       => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+				'previous'                   => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
 					InvalidTypeException::EXCEPTION_MESSAGE_WITH_INVALID_TYPE_AND_EXPECTED_TYPES,
 					Types::GET_TYPE_TYPE_NULL,
 					Types::TYPE_HINT_TYPE_STRING
 				),
-				'expectedThrowableCode'      => $expectedThrowableCode,
-				'expectedPreviousThrowable'  => $expectedPreviousThrowable
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious
 			],
 			4 => [
-				'throwableClassName'         => $expectedThrowableClassName = InvalidTypeException::class,
+				'throwableClassName'         => $throwableClassName = InvalidTypeException::class,
 				'invalidType'                => Types::INVALID_TYPE,
 				'invalidExpectedTypes'       => Types::EXPECTED_TYPES_WITH_MULTIPLE_VALID_TYPE_STRINGS_BEFORE_INVALID_NULL_TYPE,
-				'code'                       => $expectedThrowableCode = Values::THROWABLE_CODE_DEFAULT,
-				'previous'                   => $expectedPreviousThrowable = Values::THROWABLE_PREVIOUS_DEFAULT,
-				'expectedThrowableClassName' => $expectedThrowableClassName,
+				'code'                       => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+				'previous'                   => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
 					InvalidTypeException::EXCEPTION_MESSAGE_WITH_INVALID_TYPE_AND_EXPECTED_TYPES,
 					Types::GET_TYPE_TYPE_NULL,
 					Types::TYPE_HINT_TYPE_STRING
 				),
-				'expectedThrowableCode'      => $expectedThrowableCode,
-				'expectedPreviousThrowable'  => $expectedPreviousThrowable
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious
 			],
 			5 => [
-				'throwableClassName'         => $expectedThrowableClassName = InvalidTypeException::class,
+				'throwableClassName'         => $throwableClassName = InvalidTypeException::class,
 				'invalidType'                => Types::INVALID_TYPE,
 				'invalidExpectedTypes'       => Types::EXPECTED_TYPES_WITH_VALID_STRING_TYPE_IN_BETWEEN,
-				'code'                       => $expectedThrowableCode = Values::THROWABLE_CODE_DEFAULT,
-				'previous'                   => $expectedPreviousThrowable = Values::THROWABLE_PREVIOUS_DEFAULT,
-				'expectedThrowableClassName' => $expectedThrowableClassName,
+				'code'                       => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+				'previous'                   => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
 					InvalidTypeException::EXCEPTION_MESSAGE_WITH_INVALID_TYPE_AND_EXPECTED_TYPES,
 					Types::GET_TYPE_TYPE_NULL,
 					Types::TYPE_HINT_TYPE_STRING
 				),
-				'expectedThrowableCode'      => $expectedThrowableCode,
-				'expectedPreviousThrowable'  => $expectedPreviousThrowable
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious
 			],
 			6 => [
-				'throwableClassName'         => $expectedThrowableClassName = InvalidTypeException::class,
+				'throwableClassName'         => $throwableClassName = InvalidTypeException::class,
 				'invalidType'                => Types::INVALID_TYPE,
 				'invalidExpectedTypes'       => Types::EXPECTED_TYPES_WITH_VALID_STRING_TYPE_AT_END,
-				'code'                       => $expectedThrowableCode = Values::THROWABLE_CODE_DEFAULT,
-				'previous'                   => $expectedPreviousThrowable = Values::THROWABLE_PREVIOUS_DEFAULT,
-				'expectedThrowableClassName' => $expectedThrowableClassName,
+				'code'                       => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+				'previous'                   => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
 					InvalidTypeException::EXCEPTION_MESSAGE_WITH_INVALID_TYPE_AND_EXPECTED_TYPES,
 					Types::GET_TYPE_TYPE_NULL,
 					Types::TYPE_HINT_TYPE_STRING
 				),
-				'expectedThrowableCode'      => $expectedThrowableCode,
-				'expectedPreviousThrowable'  => $expectedPreviousThrowable
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious
 			],
 			7 => [
-				'throwableClassName'         => $expectedThrowableClassName = InvalidTypeException::class,
+				'throwableClassName'         => $throwableClassName = InvalidTypeException::class,
 				'invalidType'                => Types::INVALID_TYPE,
 				'invalidExpectedTypes'       => Types::EXPECTED_TYPES_WITH_MULTIPLE_INVALID_SCALAR_TYPES,
-				'code'                       => $expectedThrowableCode = Values::THROWABLE_CODE_DEFAULT,
-				'previous'                   => $expectedPreviousThrowable = Values::THROWABLE_PREVIOUS_DEFAULT,
-				'expectedThrowableClassName' => $expectedThrowableClassName,
+				'code'                       => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+				'previous'                   => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
 					InvalidTypeException::EXCEPTION_MESSAGE_WITH_INVALID_TYPE_AND_EXPECTED_TYPES,
 					Types::GET_TYPE_TYPE_NULL,
 					Types::TYPE_HINT_TYPE_STRING
 				),
-				'expectedThrowableCode'      => $expectedThrowableCode,
-				'expectedPreviousThrowable'  => $expectedPreviousThrowable
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious
 			],
 			8 => [
-				'throwableClassName'         => $expectedThrowableClassName = InvalidTypeException::class,
+				'throwableClassName'         => $throwableClassName = InvalidTypeException::class,
 				'invalidType'                => Types::INVALID_TYPE,
 				'invalidExpectedTypes'       => Types::EXPECTED_TYPES_WITH_MULTIPLE_INVALID_NUMERIC_TYPES,
-				'code'                       => $expectedThrowableCode = Values::THROWABLE_CODE_DEFAULT,
-				'previous'                   => $expectedPreviousThrowable = Values::THROWABLE_PREVIOUS_DEFAULT,
-				'expectedThrowableClassName' => $expectedThrowableClassName,
+				'code'                       => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+				'previous'                   => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
 					InvalidTypeException::EXCEPTION_MESSAGE_WITH_INVALID_TYPE_AND_EXPECTED_TYPES,
 					Types::GET_TYPE_TYPE_INTEGER,
 					Types::TYPE_HINT_TYPE_STRING
 				),
-				'expectedThrowableCode'      => $expectedThrowableCode,
-				'expectedPreviousThrowable'  => $expectedPreviousThrowable
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious
 			],
 			9 => [
-				'throwableClassName'         => $expectedThrowableClassName = InvalidTypeException::class,
+				'throwableClassName'         => $throwableClassName = InvalidTypeException::class,
 				'invalidType'                => Types::INVALID_TYPE,
 				'invalidExpectedTypes'       => Types::EXPECTED_TYPES_WITH_MULTIPLE_INVALID_ARRAY_AND_BOOLEAN_TYPES,
-				'code'                       => $expectedThrowableCode = Values::THROWABLE_CODE_DEFAULT,
-				'previous'                   => $expectedPreviousThrowable = Values::THROWABLE_PREVIOUS_DEFAULT,
-				'expectedThrowableClassName' => $expectedThrowableClassName,
+				'code'                       => $throwableCode = Values::THROWABLE_CODE_DEFAULT,
+				'previous'                   => $throwablePrevious = Values::THROWABLE_PREVIOUS_DEFAULT,
+				'expectedThrowableClassName' => $throwableClassName,
 				'expectedThrowableMessage'   => sprintf(
 					InvalidTypeException::EXCEPTION_MESSAGE_WITH_INVALID_TYPE_AND_EXPECTED_TYPES,
 					Types::GET_TYPE_TYPE_ARRAY,
 					Types::TYPE_HINT_TYPE_STRING
 				),
-				'expectedThrowableCode'      => $expectedThrowableCode,
-				'expectedPreviousThrowable'  => $expectedPreviousThrowable
+				'expectedThrowableCode'      => $throwableCode,
+				'expectedThrowablePrevious'  => $throwablePrevious
 			]
 		];
 	}

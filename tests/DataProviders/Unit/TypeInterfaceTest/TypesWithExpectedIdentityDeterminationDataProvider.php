@@ -11,7 +11,7 @@ use Override;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-class TypesWithExpectedIdentityDeterminationDataProvider implements DataProviderInterface
+final class TypesWithExpectedIdentityDeterminationDataProvider implements DataProviderInterface
 {
 	/**
 	 * @inheritdoc

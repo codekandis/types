@@ -13,57 +13,85 @@ use Throwable;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-class InvalidIndexExceptionTest extends TestCase
+final class InvalidIndexExceptionTest extends TestCase
 {
 	/**
 	 * Tests if {@link InvalidIndexException::withInvalidIndex()} instantiates the throwable correctly.
 	 * @param class-string<InvalidIndexException> $throwableClassName The class name of the throwable to test.
 	 * @param array<string, mixed> $mainArguments The main arguments to pass.
-	 * @param array{code?: int, previous?: ?Throwable} $additionalArguments The additional arguments to pass.
+	 * @param array{
+	 *     code?: int,
+	 *     previous?: ?Throwable
+	 * } $additionalArguments The additional arguments to pass.
 	 * @param class-string<InvalidIndexException> $expectedThrowableClassName The class name of the expected throwable.
 	 * @param string $expectedThrowableMessage The message of the expected throwable.
 	 * @param int $expectedThrowableCode The code of the expected throwable.
 	 * @param ?Throwable $expectedThrowablePrevious The previously catched throwable of the expected throwable.
+	 * @param array{
+	 *     exception: ?array<string, mixed>,
+	 *     additional: ?array<string, mixed>
+	 * } $expectedThrowableContext The context of the expected throwable.
 	 */
 	#[DataProviderExternal( ThrowableClassNamesWithInvalidIndexAdditionalArgumentsExpectedThrowableClassNameExpectedThrowableCodeAndExpectedThrowablePrevious::class, 'provideData' )]
-	public function testIfMethodWithInvalidIndexInstantiatesThrowableCorrectly( string $throwableClassName, array $mainArguments, array $additionalArguments, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious ): void
+	public function testIfMethodWithInvalidIndexInstantiatesThrowableCorrectly( string $throwableClassName, array $mainArguments, array $additionalArguments, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious, array $expectedThrowableContext ): void
 	{
-		$resultedThrowable          = $throwableClassName::withInvalidIndex( ...$mainArguments, ...$additionalArguments );
-		$resultedThrowableClassName = $resultedThrowable::class;
-		$resultedThrowableMessage   = $resultedThrowable->getMessage();
-		$resultedThrowableCode      = $resultedThrowable->getCode();
-		$resultedThrowablePrevious  = $resultedThrowable->getPrevious();
+		$resultedThrowable = $throwableClassName::withInvalidIndex( ...$mainArguments, ...$additionalArguments );
 
 		static::assertInstanceOf( InvalidIndexException::class, $resultedThrowable );
+
+		$resultedThrowableClassName = $resultedThrowable::class;
 		static::assertSame( $expectedThrowableClassName, $resultedThrowableClassName );
+
+		$resultedThrowableMessage = $resultedThrowable->getMessage();
 		static::assertSame( $expectedThrowableMessage, $resultedThrowableMessage );
+
+		$resultedThrowableCode = $resultedThrowable->getCode();
 		static::assertSame( $expectedThrowableCode, $resultedThrowableCode );
+
+		$resultedThrowablePrevious = $resultedThrowable->getPrevious();
 		static::assertSame( $expectedThrowablePrevious, $resultedThrowablePrevious );
+
+		$resultedThrowableContext = $resultedThrowable->context;
+		static::assertSame( $expectedThrowableContext, $resultedThrowableContext );
 	}
 
 	/**
 	 * Tests if {@link InvalidIndexException::withInvalidIndexAndExpectedIndices()} instantiates the throwable correctly.
 	 * @param class-string<InvalidIndexException> $throwableClassName The class name of the throwable to test.
 	 * @param array<string, mixed> $mainArguments The main arguments to pass.
-	 * @param array{code?: int, previous?: ?Throwable} $additionalArguments The additional arguments to pass.
+	 * @param array{
+	 *     code?: int,
+	 *     previous?: ?Throwable
+	 * } $additionalArguments The additional arguments to pass.
 	 * @param class-string<InvalidIndexException> $expectedThrowableClassName The class name of the expected throwable.
 	 * @param string $expectedThrowableMessage The message of the expected throwable.
 	 * @param int $expectedThrowableCode The code of the expected throwable.
 	 * @param ?Throwable $expectedThrowablePrevious The previously catched throwable of the expected throwable.
+	 * @param array{
+	 *     exception: ?array<string, mixed>,
+	 *     additional: ?array<string, mixed>
+	 * } $expectedThrowableContext The context of the expected throwable.
 	 */
 	#[DataProviderExternal( ThrowableClassNamesWithInvalidIndexExpectedIndicesAdditionalArgumentsExpectedThrowableClassNameExpectedThrowableCodeAndExpectedThrowablePrevious::class, 'provideData' )]
-	public function testIfMethodWithInvalidIndexAndExpectedIndicesInstantiatesThrowableCorrectly( string $throwableClassName, array $mainArguments, array $additionalArguments, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious ): void
+	public function testIfMethodWithInvalidIndexAndExpectedIndicesInstantiatesThrowableCorrectly( string $throwableClassName, array $mainArguments, array $additionalArguments, string $expectedThrowableClassName, string $expectedThrowableMessage, int $expectedThrowableCode, ?Throwable $expectedThrowablePrevious, array $expectedThrowableContext ): void
 	{
-		$resultedThrowable          = $throwableClassName::withInvalidIndexAndExpectedIndices( ...$mainArguments, ...$additionalArguments );
-		$resultedThrowableClassName = $resultedThrowable::class;
-		$resultedThrowableMessage   = $resultedThrowable->getMessage();
-		$resultedThrowableCode      = $resultedThrowable->getCode();
-		$resultedThrowablePrevious  = $resultedThrowable->getPrevious();
+		$resultedThrowable = $throwableClassName::withInvalidIndexAndExpectedIndices( ...$mainArguments, ...$additionalArguments );
 
 		static::assertInstanceOf( InvalidIndexException::class, $resultedThrowable );
+
+		$resultedThrowableClassName = $resultedThrowable::class;
 		static::assertSame( $expectedThrowableClassName, $resultedThrowableClassName );
+
+		$resultedThrowableMessage = $resultedThrowable->getMessage();
 		static::assertSame( $expectedThrowableMessage, $resultedThrowableMessage );
+
+		$resultedThrowableCode = $resultedThrowable->getCode();
 		static::assertSame( $expectedThrowableCode, $resultedThrowableCode );
+
+		$resultedThrowablePrevious = $resultedThrowable->getPrevious();
 		static::assertSame( $expectedThrowablePrevious, $resultedThrowablePrevious );
+
+		$resultedThrowableContext = $resultedThrowable->context;
+		static::assertSame( $expectedThrowableContext, $resultedThrowableContext );
 	}
 }

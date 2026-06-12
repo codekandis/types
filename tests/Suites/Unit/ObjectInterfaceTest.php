@@ -12,7 +12,7 @@ use PHPUnit\Framework\Attributes\DataProviderExternal;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-class ObjectInterfaceTest extends TestCase
+final class ObjectInterfaceTest extends TestCase
 {
 	/**
 	 * Tests if {@link ObjectInterface::$type} returns the type object correctly.
