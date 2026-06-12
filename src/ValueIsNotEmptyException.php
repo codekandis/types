@@ -29,16 +29,23 @@ class ValueIsNotEmptyException extends RuntimeException implements ValueIsNotEmp
 	 * @param mixed $nonEmptyValue The non-empty value.
 	 * @param int $code The error code of the exception.
 	 * @param ?Throwable $previous The previous throwable.
+	 * @param ?array<string, mixed> $context The context of the exception.
 	 * @return static
 	 */
-	public static function withNonEmptyValue( mixed $nonEmptyValue, int $code = 0, ?Throwable $previous = null ): static
+	public static function withNonEmptyValue( mixed $nonEmptyValue, int $code = 0, ?Throwable $previous = null, ?array $context = null ): static
 	{
 		$stringifiedNonEmptyValue = static::stringifyValue( $nonEmptyValue );
 
-		return new static(
+		$exception                         = new static(
 			sprintf( static::EXCEPTION_MESSAGE_WITH_NON_EMPTY_VALUE, $stringifiedNonEmptyValue ),
 			$code,
-			$previous
+			$previous,
+			$context
 		);
+		$exception->context[ 'exception' ] = [
+			'nonEmptyValue' => $nonEmptyValue
+		];
+
+		return $exception;
 	}
 }

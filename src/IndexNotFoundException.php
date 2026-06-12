@@ -38,17 +38,24 @@ class IndexNotFoundException extends RuntimeException implements IndexNotFoundEx
 	 * @param mixed $nonexistentIndex The nonexistent index.
 	 * @param int $code The error code of the exception.
 	 * @param ?Throwable $previous The previous throwable.
+	 * @param ?array<string, mixed> $context The context of the exception.
 	 * @return static
 	 */
-	public static function withNonexistentIndex( mixed $nonexistentIndex, int $code = 0, ?Throwable $previous = null ): static
+	public static function withNonexistentIndex( mixed $nonexistentIndex, int $code = 0, ?Throwable $previous = null, ?array $context = null ): static
 	{
 		$stringifiedNonexistentIndex = static::stringifyValue( $nonexistentIndex );
 
-		return new static(
+		$exception                         = new static(
 			sprintf( static::EXCEPTION_MESSAGE_WITH_NONEXISTENT_INDEX, $stringifiedNonexistentIndex ),
 			$code,
-			$previous
+			$previous,
+			$context
 		);
+		$exception->context[ 'exception' ] = [
+			'nonexistentIndex' => $nonexistentIndex
+		];
+
+		return $exception;
 	}
 
 	/**
@@ -57,9 +64,10 @@ class IndexNotFoundException extends RuntimeException implements IndexNotFoundEx
 	 * @param array<array-key, mixed> $expectedIndices The expected indices.
 	 * @param int $code The error code of the exception.
 	 * @param ?Throwable $previous The previous throwable.
+	 * @param ?array<string, mixed> $context The context of the exception.
 	 * @return static
 	 */
-	public static function withNonexistentIndexAndExpectedIndices( mixed $nonexistentIndex, array $expectedIndices, int $code = 0, ?Throwable $previous = null ): static
+	public static function withNonexistentIndexAndExpectedIndices( mixed $nonexistentIndex, array $expectedIndices, int $code = 0, ?Throwable $previous = null, ?array $context = null ): static
 	{
 		$stringifiedNonexistentIndex = static::stringifyValue( $nonexistentIndex );
 		$stringifiedExpectedIndices  = implode(
@@ -70,10 +78,17 @@ class IndexNotFoundException extends RuntimeException implements IndexNotFoundEx
 			)
 		);
 
-		return new static(
+		$exception                         = new static(
 			sprintf( static::EXCEPTION_MESSAGE_WITH_NONEXISTENT_INDEX_AND_EXPECTED_INDICES, $stringifiedNonexistentIndex, $stringifiedExpectedIndices ),
 			$code,
-			$previous
+			$previous,
+			$context
 		);
+		$exception->context[ 'exception' ] = [
+			'nonexistentIndex' => $nonexistentIndex,
+			'expectedIndices'  => $expectedIndices
+		];
+
+		return $exception;
 	}
 }

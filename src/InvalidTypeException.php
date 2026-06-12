@@ -39,15 +39,22 @@ class InvalidTypeException extends RuntimeException implements InvalidTypeExcept
 	 * @param string $invalidType The invalid type.
 	 * @param int $code The error code of the exception.
 	 * @param ?Throwable $previous The previous throwable.
+	 * @param ?array<string, mixed> $context The context of the exception.
 	 * @return static
 	 */
-	public static function withInvalidType( string $invalidType, int $code = 0, ?Throwable $previous = null ): static
+	public static function withInvalidType( string $invalidType, int $code = 0, ?Throwable $previous = null, ?array $context = null ): static
 	{
-		return new static(
+		$exception                         = new static(
 			sprintf( static::EXCEPTION_MESSAGE_WITH_INVALID_TYPE, $invalidType ),
 			$code,
-			$previous
+			$previous,
+			$context
 		);
+		$exception->context[ 'exception' ] = [
+			'invalidType' => $invalidType
+		];
+
+		return $exception;
 	}
 
 	/**
@@ -56,11 +63,12 @@ class InvalidTypeException extends RuntimeException implements InvalidTypeExcept
 	 * @param array<array-key, string> $expectedTypes The expected types.
 	 * @param int $code The error code of the exception.
 	 * @param ?Throwable $previous The previous throwable.
+	 * @param ?array<string, mixed> $context The context of the exception.
 	 * @return static
 	 * @throws ValueIsEmptyExceptionInterface The expected types are empty.
 	 * @throws InvalidTypeExceptionInterface The type of an expected type is invalid. `string` expected.
 	 */
-	public static function withInvalidTypeAndExpectedTypes( string $invalidType, array $expectedTypes, int $code = 0, ?Throwable $previous = null ): static
+	public static function withInvalidTypeAndExpectedTypes( string $invalidType, array $expectedTypes, int $code = 0, ?Throwable $previous = null, ?array $context = null ): static
 	{
 		if ( $expectedTypes === [] )
 		{
@@ -85,14 +93,21 @@ class InvalidTypeException extends RuntimeException implements InvalidTypeExcept
 			);
 		}
 
-		return new static(
+		$exception                         = new static(
 			sprintf(
 				static::EXCEPTION_MESSAGE_WITH_INVALID_TYPE_AND_EXPECTED_TYPES,
 				$invalidType,
 				implode( ' | ', $expectedTypes )
 			),
 			$code,
-			$previous
+			$previous,
+			$context
 		);
+		$exception->context[ 'exception' ] = [
+			'invalidType'   => $invalidType,
+			'expectedTypes' => $expectedTypes
+		];
+
+		return $exception;
 	}
 }

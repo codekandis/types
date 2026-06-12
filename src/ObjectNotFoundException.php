@@ -33,15 +33,22 @@ class ObjectNotFoundException extends AccessErrorException implements ObjectNotF
 	 * @param string $nonexistentFqcn The nonexistent object's FQCN.
 	 * @param int $code The error code of the exception.
 	 * @param ?Throwable $previous The previous throwable.
+	 * @param ?array<string, mixed> $context The context of the exception.
 	 * @return static
 	 */
-	public static function withNonexistentFqcn( string $nonexistentFqcn, int $code = 0, ?Throwable $previous = null ): static
+	public static function withNonexistentFqcn( string $nonexistentFqcn, int $code = 0, ?Throwable $previous = null, ?array $context = null ): static
 	{
-		return new static(
+		$exception                         = new static(
 			sprintf( static::EXCEPTION_MESSAGE_WITH_NONEXISTENT_FQCN, $nonexistentFqcn ),
 			$code,
-			$previous
+			$previous,
+			$context
 		);
+		$exception->context[ 'exception' ] = [
+			'nonexistentFqcn' => $nonexistentFqcn
+		];
+
+		return $exception;
 	}
 
 	/**
@@ -49,14 +56,21 @@ class ObjectNotFoundException extends AccessErrorException implements ObjectNotF
 	 * @param string $nonexistentQualifiedObjectId The nonexistent object's qualified PHP object ID.
 	 * @param int $code The error code of the exception.
 	 * @param ?Throwable $previous The previous throwable.
+	 * @param ?array<string, mixed> $context The context of the exception.
 	 * @return static
 	 */
-	public static function withNonexistentQualifiedObjectId( string $nonexistentQualifiedObjectId, int $code = 0, ?Throwable $previous = null ): static
+	public static function withNonexistentQualifiedObjectId( string $nonexistentQualifiedObjectId, int $code = 0, ?Throwable $previous = null, ?array $context = null ): static
 	{
-		return new static(
+		$exception                         = new static(
 			sprintf( static::EXCEPTION_MESSAGE_WITH_NONEXISTENT_QUALIFIED_OBJECT_ID, $nonexistentQualifiedObjectId ),
 			$code,
-			$previous
+			$previous,
+			$context
 		);
+		$exception->context[ 'exception' ] = [
+			'nonexistentQualifiedObjectId' => $nonexistentQualifiedObjectId
+		];
+
+		return $exception;
 	}
 }

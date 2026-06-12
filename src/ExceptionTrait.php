@@ -12,12 +12,21 @@ use Throwable;
 trait ExceptionTrait
 {
 	/**
+	 * {@inheritDoc}
+	 */
+	public protected(set) array $context = [
+		'exception'  => null,
+		'additional' => null
+	];
+
+	/**
 	 * Constructor method.
 	 * @param string $message The message of the exception, or an empty string to use the default message.
 	 * @param int $code The error code of the exception.
 	 * @param ?Throwable $previous The previous throwable.
+	 * @param ?array<string, mixed> $context The context of the exception.
 	 */
-	public function __construct( string $message = '', int $code = 0, ?Throwable $previous = null )
+	public function __construct( string $message = '', int $code = 0, ?Throwable $previous = null, ?array $context = null )
 	{
 		parent::__construct(
 			$message === ''
@@ -26,5 +35,7 @@ trait ExceptionTrait
 			$code,
 			$previous
 		);
+
+		$this->context[ 'additional' ] = $context;
 	}
 }

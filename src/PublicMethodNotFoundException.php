@@ -27,10 +27,11 @@ class PublicMethodNotFoundException extends MethodNotFoundException implements P
 	 * @param string $nonexistentMethodName The nonexistent public method name.
 	 * @param int $code The error code of the exception.
 	 * @param ?Throwable $previous The previous throwable.
+	 * @param ?array<string, mixed> $context The context of the exception.
 	 * @return static
 	 */
-	public static function withFqcnAndNonexistentMethodName( string $fqcn, string $nonexistentMethodName, int $code = 0, ?Throwable $previous = null ): static
+	public static function withFqcnAndNonexistentMethodName( string $fqcn, string $nonexistentMethodName, int $code = 0, ?Throwable $previous = null, ?array $context = null ): static
 	{
-		return parent::withFqcnAndNonexistentMethodName( $fqcn, $nonexistentMethodName, $code, $previous );
+		return parent::withFqcnAndNonexistentMethodName( $fqcn, $nonexistentMethodName, $code, $previous, $context );
 	}
 }

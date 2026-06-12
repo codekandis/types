@@ -26,14 +26,21 @@ class UnexpectedErrorException extends RuntimeException implements UnexpectedErr
 	 * Static constructor method.
 	 * @param Throwable $previouslyCatchedThrowable The previous throwable.
 	 * @param int $code The error code of the exception.
+	 * @param ?array<string, mixed> $context The context of the exception.
 	 * @return static
 	 */
-	public static function withPreviouslyCatchedThrowable( Throwable $previouslyCatchedThrowable, int $code = 0 ): static
+	public static function withPreviouslyCatchedThrowable( Throwable $previouslyCatchedThrowable, int $code = 0, ?array $context = null ): static
 	{
-		return new static(
+		$exception                         = new static(
 			sprintf( static::EXCEPTION_MESSAGE_WITH_PREVIOUSLY_CATCHED_THROWABLE, $previouslyCatchedThrowable::class ),
 			$code,
-			$previouslyCatchedThrowable
+			$previouslyCatchedThrowable,
+			$context
 		);
+		$exception->context[ 'exception' ] = [
+			'previouslyCatchedThrowable' => $previouslyCatchedThrowable
+		];
+
+		return $exception;
 	}
 }

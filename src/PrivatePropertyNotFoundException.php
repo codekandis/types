@@ -29,8 +29,8 @@ class PrivatePropertyNotFoundException extends PropertyNotFoundException impleme
 	 * @param ?Throwable $previous The previous throwable.
 	 * @return static
 	 */
-	public static function withFqcnAndNonexistentPropertyName( string $fqcn, string $nonexistentPropertyName, int $code = 0, ?Throwable $previous = null ): static
+	public static function withFqcnAndNonexistentPropertyName( string $fqcn, string $nonexistentPropertyName, int $code = 0, ?Throwable $previous = null, ?array $context = null ): static
 	{
-		return parent::withFqcnAndNonexistentPropertyName( $fqcn, $nonexistentPropertyName, $code, $previous );
+		return parent::withFqcnAndNonexistentPropertyName( $fqcn, $nonexistentPropertyName, $code, $previous, $context );
 	}
 }

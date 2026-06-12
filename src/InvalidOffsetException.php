@@ -38,17 +38,24 @@ class InvalidOffsetException extends RuntimeException implements InvalidOffsetEx
 	 * @param mixed $invalidOffset The invalid offset.
 	 * @param int $code The error code of the exception.
 	 * @param ?Throwable $previous The previous throwable.
+	 * @param ?array<string, mixed> $context The context of the exception.
 	 * @return static
 	 */
-	public static function withInvalidOffset( mixed $invalidOffset, int $code = 0, ?Throwable $previous = null ): static
+	public static function withInvalidOffset( mixed $invalidOffset, int $code = 0, ?Throwable $previous = null, ?array $context = null ): static
 	{
 		$stringifiedInvalidOffset = static::stringifyValue( $invalidOffset );
 
-		return new static(
+		$exception                         = new static(
 			sprintf( static::EXCEPTION_MESSAGE_WITH_INVALID_OFFSET, $stringifiedInvalidOffset ),
 			$code,
-			$previous
+			$previous,
+			$context
 		);
+		$exception->context[ 'exception' ] = [
+			'invalidOffset' => $invalidOffset
+		];
+
+		return $exception;
 	}
 
 	/**
@@ -57,9 +64,10 @@ class InvalidOffsetException extends RuntimeException implements InvalidOffsetEx
 	 * @param array<array-key, mixed> $expectedOffsets The expected offsets.
 	 * @param int $code The error code of the exception.
 	 * @param ?Throwable $previous The previous throwable.
+	 * @param ?array<string, mixed> $context The context of the exception.
 	 * @return static
 	 */
-	public static function withInvalidOffsetAndExpectedOffsets( mixed $invalidOffset, array $expectedOffsets, int $code = 0, ?Throwable $previous = null ): static
+	public static function withInvalidOffsetAndExpectedOffsets( mixed $invalidOffset, array $expectedOffsets, int $code = 0, ?Throwable $previous = null, ?array $context = null ): static
 	{
 		$stringifiedInvalidOffset   = static::stringifyValue( $invalidOffset );
 		$stringifiedExpectedOffsets = implode(
@@ -70,10 +78,17 @@ class InvalidOffsetException extends RuntimeException implements InvalidOffsetEx
 			)
 		);
 
-		return new static(
+		$exception                         = new static(
 			sprintf( static::EXCEPTION_MESSAGE_WITH_INVALID_OFFSET_AND_EXPECTED_OFFSETS, $stringifiedInvalidOffset, $stringifiedExpectedOffsets ),
 			$code,
-			$previous
+			$previous,
+			$context
 		);
+		$exception->context[ 'exception' ] = [
+			'invalidOffset'   => $invalidOffset,
+			'expectedOffsets' => $expectedOffsets
+		];
+
+		return $exception;
 	}
 }

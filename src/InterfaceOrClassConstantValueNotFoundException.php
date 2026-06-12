@@ -30,16 +30,24 @@ class InterfaceOrClassConstantValueNotFoundException extends AccessErrorExceptio
 	 * @param null|bool|int|float|string|array<array-key, mixed> $nonexistentConstantValue The nonexistent constant value.
 	 * @param int $code The error code of the exception.
 	 * @param ?Throwable $previous The previous throwable.
+	 * @param ?array<string, mixed> $context The context of the exception.
 	 * @return static
 	 */
-	public static function withFqcnAndNonexistentConstantValue( string $fqcn, null | bool | int | float | string | array $nonexistentConstantValue, int $code = 0, ?Throwable $previous = null ): static
+	public static function withFqcnAndNonexistentConstantValue( string $fqcn, null | bool | int | float | string | array $nonexistentConstantValue, int $code = 0, ?Throwable $previous = null, ?array $context = null ): static
 	{
 		$stringifiedNonexistentConstantValue = static::stringifyValue( $nonexistentConstantValue );
 
-		return new static(
+		$exception                         = new static(
 			sprintf( static::EXCEPTION_MESSAGE_WITH_FQCN_AND_NONEXISTENT_CONSTANT_VALUE, $fqcn, $stringifiedNonexistentConstantValue ),
 			$code,
-			$previous
+			$previous,
+			$context
 		);
+		$exception->context[ 'exception' ] = [
+			'fqcn'                     => $fqcn,
+			'nonexistentConstantValue' => $nonexistentConstantValue
+		];
+
+		return $exception;
 	}
 }

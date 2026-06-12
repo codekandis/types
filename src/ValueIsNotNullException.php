@@ -29,16 +29,23 @@ class ValueIsNotNullException extends RuntimeException implements ValueIsNotNull
 	 * @param mixed $nonNullValue The non-null value.
 	 * @param int $code The error code of the exception.
 	 * @param ?Throwable $previous The previous throwable.
+	 * @param ?array<string, mixed> $context The context of the exception.
 	 * @return static
 	 */
-	public static function withNonNullValue( mixed $nonNullValue, int $code = 0, ?Throwable $previous = null ): static
+	public static function withNonNullValue( mixed $nonNullValue, int $code = 0, ?Throwable $previous = null, ?array $context = null ): static
 	{
 		$stringifiedNonNullValue = static::stringifyValue( $nonNullValue );
 
-		return new static(
+		$exception                         = new static(
 			sprintf( static::EXCEPTION_MESSAGE_WITH_NON_NULL_VALUE, $stringifiedNonNullValue ),
 			$code,
-			$previous
+			$previous,
+			$context
 		);
+		$exception->context[ 'exception' ] = [
+			'nonNullValue' => $nonNullValue
+		];
+
+		return $exception;
 	}
 }

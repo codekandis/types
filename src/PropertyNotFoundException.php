@@ -28,14 +28,22 @@ class PropertyNotFoundException extends AccessErrorException implements Property
 	 * @param string $nonexistentPropertyName The nonexistent property name.
 	 * @param int $code The error code of the exception.
 	 * @param ?Throwable $previous The previous throwable.
+	 * @param ?array<string, mixed> $context The context of the exception.
 	 * @return static
 	 */
-	public static function withFqcnAndNonexistentPropertyName( string $fqcn, string $nonexistentPropertyName, int $code = 0, ?Throwable $previous = null ): static
+	public static function withFqcnAndNonexistentPropertyName( string $fqcn, string $nonexistentPropertyName, int $code = 0, ?Throwable $previous = null, ?array $context = null ): static
 	{
-		return new static(
+		$exception                         = new static(
 			sprintf( static::EXCEPTION_MESSAGE_WITH_FQCN_AND_NONEXISTENT_PROPERTY_NAME, $fqcn, $nonexistentPropertyName ),
 			$code,
-			$previous
+			$previous,
+			$context
 		);
+		$exception->context[ 'exception' ] = [
+			'fqcn'                    => $fqcn,
+			'nonexistentPropertyName' => $nonexistentPropertyName
+		];
+
+		return $exception;
 	}
 }

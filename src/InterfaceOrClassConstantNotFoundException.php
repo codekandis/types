@@ -28,14 +28,22 @@ class InterfaceOrClassConstantNotFoundException extends AccessErrorException imp
 	 * @param string $nonexistentConstantName The nonexistent constant name.
 	 * @param int $code The error code of the exception.
 	 * @param ?Throwable $previous The previous throwable.
+	 * @param ?array<string, mixed> $context The context of the exception.
 	 * @return static
 	 */
-	public static function withFqcnAndNonexistentConstantName( string $fqcn, string $nonexistentConstantName, int $code = 0, ?Throwable $previous = null ): static
+	public static function withFqcnAndNonexistentConstantName( string $fqcn, string $nonexistentConstantName, int $code = 0, ?Throwable $previous = null, ?array $context = null ): static
 	{
-		return new static(
+		$exception                         = new static(
 			sprintf( static::EXCEPTION_MESSAGE_WITH_FQCN_AND_NONEXISTENT_CONSTANT_NAME, $fqcn, $nonexistentConstantName ),
 			$code,
-			$previous
+			$previous,
+			$context
 		);
+		$exception->context[ 'exception' ] = [
+			'fqcn'                    => $fqcn,
+			'nonexistentConstantName' => $nonexistentConstantName
+		];
+
+		return $exception;
 	}
 }

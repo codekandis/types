@@ -38,17 +38,24 @@ class InvalidIndexException extends RuntimeException implements InvalidIndexExce
 	 * @param mixed $invalidIndex The invalid index.
 	 * @param int $code The error code of the exception.
 	 * @param ?Throwable $previous The previous throwable.
+	 * @param ?array<string, mixed> $context The context of the exception.
 	 * @return static
 	 */
-	public static function withInvalidIndex( mixed $invalidIndex, int $code = 0, ?Throwable $previous = null ): static
+	public static function withInvalidIndex( mixed $invalidIndex, int $code = 0, ?Throwable $previous = null, ?array $context = null ): static
 	{
 		$stringifiedInvalidIndex = static::stringifyValue( $invalidIndex );
 
-		return new static(
+		$exception                         = new static(
 			sprintf( static::EXCEPTION_MESSAGE_WITH_INVALID_INDEX, $stringifiedInvalidIndex ),
 			$code,
-			$previous
+			$previous,
+			$context
 		);
+		$exception->context[ 'exception' ] = [
+			'invalidIndex' => $invalidIndex
+		];
+
+		return $exception;
 	}
 
 	/**
@@ -57,9 +64,10 @@ class InvalidIndexException extends RuntimeException implements InvalidIndexExce
 	 * @param array<array-key, mixed> $expectedIndices The expected indices.
 	 * @param int $code The error code of the exception.
 	 * @param ?Throwable $previous The previous throwable.
+	 * @param ?array<string, mixed> $context The context of the exception.
 	 * @return static
 	 */
-	public static function withInvalidIndexAndExpectedIndices( mixed $invalidIndex, array $expectedIndices, int $code = 0, ?Throwable $previous = null ): static
+	public static function withInvalidIndexAndExpectedIndices( mixed $invalidIndex, array $expectedIndices, int $code = 0, ?Throwable $previous = null, ?array $context = null ): static
 	{
 		$stringifiedInvalidIndex    = static::stringifyValue( $invalidIndex );
 		$stringifiedExpectedIndices = implode(
@@ -70,10 +78,17 @@ class InvalidIndexException extends RuntimeException implements InvalidIndexExce
 			)
 		);
 
-		return new static(
+		$exception                         = new static(
 			sprintf( static::EXCEPTION_MESSAGE_WITH_INVALID_INDEX_AND_EXPECTED_INDICES, $stringifiedInvalidIndex, $stringifiedExpectedIndices ),
 			$code,
-			$previous
+			$previous,
+			$context
 		);
+		$exception->context[ 'exception' ] = [
+			'invalidIndex'    => $invalidIndex,
+			'expectedIndices' => $expectedIndices
+		];
+
+		return $exception;
 	}
 }

@@ -9,6 +9,6 @@ use Throwable;
  * @package codekandis/types
  * @author Christian Ramelow <info@codekandis.net>
  */
-interface ExceptionInterface extends Throwable
+interface ExceptionInterface extends Throwable, ContextProviderInterface
 {
 }

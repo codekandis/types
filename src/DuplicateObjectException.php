@@ -33,15 +33,22 @@ class DuplicateObjectException extends AccessErrorException implements Duplicate
 	 * @param string $duplicatedFqcn The duplicated object's FQCN.
 	 * @param int $code The error code of the exception.
 	 * @param ?Throwable $previous The previous throwable.
+	 * @param ?array<string, mixed> $context The context of the exception.
 	 * @return static
 	 */
-	public static function withDuplicatedFqcn( string $duplicatedFqcn, int $code = 0, ?Throwable $previous = null ): static
+	public static function withDuplicatedFqcn( string $duplicatedFqcn, int $code = 0, ?Throwable $previous = null, ?array $context = null ): static
 	{
-		return new static(
+		$exception                         = new static(
 			sprintf( static::EXCEPTION_MESSAGE_WITH_DUPLICATED_FQCN, $duplicatedFqcn ),
 			$code,
-			$previous
+			$previous,
+			$context
 		);
+		$exception->context[ 'exception' ] = [
+			'duplicatedFqcn' => $duplicatedFqcn
+		];
+
+		return $exception;
 	}
 
 	/**
@@ -49,14 +56,21 @@ class DuplicateObjectException extends AccessErrorException implements Duplicate
 	 * @param string $duplicatedQualifiedObjectId The duplicated object's qualified PHP object ID.
 	 * @param int $code The error code of the exception.
 	 * @param ?Throwable $previous The previous throwable.
+	 * @param ?array<string, mixed> $context The context of the exception.
 	 * @return static
 	 */
-	public static function withDuplicatedQualifiedObjectId( string $duplicatedQualifiedObjectId, int $code = 0, ?Throwable $previous = null ): static
+	public static function withDuplicatedQualifiedObjectId( string $duplicatedQualifiedObjectId, int $code = 0, ?Throwable $previous = null, ?array $context = null ): static
 	{
-		return new static(
+		$exception                         = new static(
 			sprintf( static::EXCEPTION_MESSAGE_WITH_DUPLICATED_QUALIFIED_OBJECT_ID, $duplicatedQualifiedObjectId ),
 			$code,
-			$previous
+			$previous,
+			$context
 		);
+		$exception->context[ 'exception' ] = [
+			'duplicatedQualifiedObjectId' => $duplicatedQualifiedObjectId
+		];
+
+		return $exception;
 	}
 }

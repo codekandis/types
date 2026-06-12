@@ -37,17 +37,24 @@ class InvalidValueException extends RuntimeException implements InvalidValueExce
 	 * @param mixed $invalidValue The invalid value.
 	 * @param int $code The error code of the exception.
 	 * @param ?Throwable $previous The previous throwable.
+	 * @param ?array<string, mixed> $context The context of the exception.
 	 * @return static
 	 */
-	public static function withInvalidValue( mixed $invalidValue, int $code = 0, ?Throwable $previous = null ): static
+	public static function withInvalidValue( mixed $invalidValue, int $code = 0, ?Throwable $previous = null, ?array $context = null ): static
 	{
 		$stringifiedInvalidValue = static::stringifyValue( $invalidValue );
 
-		return new static(
+		$exception                         = new static(
 			sprintf( static::EXCEPTION_MESSAGE_WITH_INVALID_VALUE, $stringifiedInvalidValue ),
 			$code,
-			$previous
+			$previous,
+			$context
 		);
+		$exception->context[ 'exception' ] = [
+			'invalidValue' => $invalidValue
+		];
+
+		return $exception;
 	}
 
 	/**
@@ -56,17 +63,25 @@ class InvalidValueException extends RuntimeException implements InvalidValueExce
 	 * @param array<array-key, mixed> $expectedValues The expected values.
 	 * @param int $code The error code of the exception.
 	 * @param ?Throwable $previous The previous throwable.
+	 * @param ?array<string, mixed> $context The context of the exception.
 	 * @return static
 	 */
-	public static function withInvalidValueAndExpectedValues( mixed $invalidValue, array $expectedValues, int $code = 0, ?Throwable $previous = null ): static
+	public static function withInvalidValueAndExpectedValues( mixed $invalidValue, array $expectedValues, int $code = 0, ?Throwable $previous = null, ?array $context = null ): static
 	{
 		$stringifiedInvalidValue   = static::stringifyValue( $invalidValue );
 		$stringifiedExpectedValues = implode( ' | ', $expectedValues );
 
-		return new static(
+		$exception                         = new static(
 			sprintf( static::EXCEPTION_MESSAGE_WITH_INVALID_VALUE_AND_EXPECTED_VALUES, $stringifiedInvalidValue, $stringifiedExpectedValues ),
 			$code,
-			$previous
+			$previous,
+			$context
 		);
+		$exception->context[ 'exception' ] = [
+			'invalidValue'   => $invalidValue,
+			'expectedValues' => $expectedValues
+		];
+
+		return $exception;
 	}
 }

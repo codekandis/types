@@ -27,10 +27,11 @@ class PublicPropertyNotFoundException extends PropertyNotFoundException implemen
 	 * @param string $nonexistentPropertyName The nonexistent public property name.
 	 * @param int $code The error code of the exception.
 	 * @param ?Throwable $previous The previous throwable.
+	 * @param ?array<string, mixed> $context The context of the exception.
 	 * @return static
 	 */
-	public static function withFqcnAndNonexistentPropertyName( string $fqcn, string $nonexistentPropertyName, int $code = 0, ?Throwable $previous = null ): static
+	public static function withFqcnAndNonexistentPropertyName( string $fqcn, string $nonexistentPropertyName, int $code = 0, ?Throwable $previous = null, ?array $context = null ): static
 	{
-		return parent::withFqcnAndNonexistentPropertyName( $fqcn, $nonexistentPropertyName, $code, $previous );
+		return parent::withFqcnAndNonexistentPropertyName( $fqcn, $nonexistentPropertyName, $code, $previous, $context );
 	}
 }

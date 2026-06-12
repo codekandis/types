@@ -37,17 +37,24 @@ class IndexOutOfRangeException extends RuntimeException implements IndexOutOfRan
 	 * @param mixed $outOfRangeIndex The out of range index.
 	 * @param int $code The error code of the exception.
 	 * @param ?Throwable $previous The previous throwable.
+	 * @param ?array<string, mixed> $context The context of the exception.
 	 * @return static
 	 */
-	public static function withOutOfRangeIndex( mixed $outOfRangeIndex, int $code = 0, ?Throwable $previous = null ): static
+	public static function withOutOfRangeIndex( mixed $outOfRangeIndex, int $code = 0, ?Throwable $previous = null, ?array $context = null ): static
 	{
 		$stringifiedOutOfRangeIndex = static::stringifyValue( $outOfRangeIndex );
 
-		return new static(
+		$exception                         = new static(
 			sprintf( static::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX, $stringifiedOutOfRangeIndex ),
 			$code,
-			$previous
+			$previous,
+			$context
 		);
+		$exception->context[ 'exception' ] = [
+			'outOfRangeIndex' => $outOfRangeIndex
+		];
+
+		return $exception;
 	}
 
 	/**
@@ -57,18 +64,27 @@ class IndexOutOfRangeException extends RuntimeException implements IndexOutOfRan
 	 * @param mixed $expectedMaxIndex The expected maximum index.
 	 * @param int $code The error code of the exception.
 	 * @param ?Throwable $previous The previous throwable.
+	 * @param ?array<string, mixed> $context The context of the exception.
 	 * @return static
 	 */
-	public static function withOutOfRangeIndexExpectedMinIndexAndExpectedMaxIndex( mixed $outOfRangeIndex, mixed $expectedMinIndex, mixed $expectedMaxIndex, int $code = 0, ?Throwable $previous = null ): static
+	public static function withOutOfRangeIndexExpectedMinIndexAndExpectedMaxIndex( mixed $outOfRangeIndex, mixed $expectedMinIndex, mixed $expectedMaxIndex, int $code = 0, ?Throwable $previous = null, ?array $context = null ): static
 	{
 		$stringifiedOutOfRangeIndex  = static::stringifyValue( $outOfRangeIndex );
 		$stringifiedExpectedMinIndex = static::stringifyValue( $expectedMinIndex );
 		$stringifiedExpectedMaxIndex = static::stringifyValue( $expectedMaxIndex );
 
-		return new static(
+		$exception                         = new static(
 			sprintf( static::EXCEPTION_MESSAGE_WITH_OUT_OF_RANGE_INDEX_EXPECTED_MIN_INDEX_AND_EXPECTED_MAX_INDEX, $stringifiedOutOfRangeIndex, $stringifiedExpectedMinIndex, $stringifiedExpectedMaxIndex ),
 			$code,
-			$previous
+			$previous,
+			$context
 		);
+		$exception->context[ 'exception' ] = [
+			'outOfRangeIndex'  => $outOfRangeIndex,
+			'expectedMinIndex' => $expectedMinIndex,
+			'expectedMaxIndex' => $expectedMaxIndex
+		];
+
+		return $exception;
 	}
 }

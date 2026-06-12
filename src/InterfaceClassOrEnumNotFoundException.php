@@ -26,10 +26,11 @@ class InterfaceClassOrEnumNotFoundException extends InterfaceClassEnumOrTraitNot
 	 * @param string $nonexistentFqcn The nonexistent interface, class or enum FQCN.
 	 * @param int $code The error code of the exception.
 	 * @param ?Throwable $previous The previous throwable.
+	 * @param ?array<string, mixed> $context The context of the exception.
 	 * @return static
 	 */
-	public static function withNonexistentFqcn( string $nonexistentFqcn, int $code = 0, ?Throwable $previous = null ): static
+	public static function withNonexistentFqcn( string $nonexistentFqcn, int $code = 0, ?Throwable $previous = null, ?array $context = null ): static
 	{
-		return parent::withNonexistentFqcn( $nonexistentFqcn, $code, $previous );
+		return parent::withNonexistentFqcn( $nonexistentFqcn, $code, $previous, $context );
 	}
 }
